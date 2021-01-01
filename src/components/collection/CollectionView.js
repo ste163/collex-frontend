@@ -54,7 +54,11 @@ export const CollectionView = () => {
         <section className="view__container">
             <Modal ref={modal} contentFunction={<CollectionForm />} width={"modal__width--widest"}/>
 
-            {/* Condensed List */}
+            {/* 
+            Condensed List
+            Should (as with the others) be made into components
+            So I can reuse them on the Community page
+            */}
             <section className="collection__list">
                 {
                     collections.length === 0 ? <NoCreatedCollectionCard /> :
@@ -71,12 +75,12 @@ export const CollectionView = () => {
             </section>
 
             {/* Selected Collection */}
-            <section className="">
+            <section className="collection__selected">
                 Selected Collection
             </section>
 
             {/* Thesaurus */}
-            <section className="">
+            <section className="collection__thesaurus">
                 Thesaurus
             </section>
         </section>

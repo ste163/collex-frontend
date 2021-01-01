@@ -70,6 +70,34 @@
   width: 20vw;
 }
 
+/* Selected collection column */
+.collection__selected {
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+
+/* Thesaurus column */
+.collection__thesaurus {
+
+}
+
+
+@media screen and (max-width: 1215px) {
+
+  .view__container {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .collection__list {
+    display: none
+  }
+
+  .collection__selected {
+    margin-left: 0;
+  }
+}
+
+
 /* Set Defaults */
 
 * {
