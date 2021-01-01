@@ -49,12 +49,13 @@ export const HeaderSettings = () => {
             updateSettings({
                 id: settings[0].id,
                 userId: userId,
-                defaultView: currentSettings.defaultView,
-                defaultProject: +currentSettings.defaultProject,
+                defaultCollection: +currentSettings.defaultCollection,
+                TotalRecentsToStore: currentSettings.TotalRecentsToStore,
+                addToMultiple: currentSettings.addToMultiple,
                 colorMode: currentSettings.colorMode
             })
             sessionStorage.setItem("defaultView", currentSettings.defaultView)
-            sessionStorage.setItem("defaultProject", +currentSettings.defaultProject) 
+            sessionStorage.setItem("defaultCollection", +currentSettings.defaultCollection) 
             sessionStorage.setItem("colorMode", currentSettings.colorMode)
             HeaderColorMode()
         }
@@ -62,32 +63,20 @@ export const HeaderSettings = () => {
 
     return (
         <>
-        {settings[0] === undefined ? null : 
+        {/* {settings[0] === undefined ? null :  */}
             <>
             <div className="container__settings">
                 <h2 className="modal__h2">Settings</h2>
                 <form className="form__settings">
-                    <fieldset className="settings__fieldset">
-                        <label htmlFor="defaultView">Set default view:</label>
-                        <select
-                        id="defaultView"
-                        name="defaultView"
-                        value={settings[0].defaultView}
-                        onChange={handleControlledInputChange}>
-                            <option value="/projects">Projects</option>
-                            <option value="/table">Table</option>
-                            <option value="/dashboard">Dashboard</option>
-                        </select>
                         
-                    </fieldset>
                     <fieldset className="settings__fieldset">
-                        <label htmlFor="defaultProject">Set default project:</label>
+                        <label htmlFor="defaultCollection">Set default project:</label>
                         <select
-                        id="defaultProject"
-                        name="defaultProject"
-                        value={settings[0].defaultProject}
+                        id="defaultCollection"
+                        name="defaultCollection"
+                        // value={settings[0].defaultCollection}
                         onChange={handleControlledInputChange}>
-                            <option value="0">Select default project</option>
+                            <option value="0">Select default collection</option>
                             {/* {projects.map(project => (
                                 <option key={project.id} value={project.id}>
                                     {project.name}
@@ -99,13 +88,13 @@ export const HeaderSettings = () => {
                         <label htmlFor="darkMode">Color mode:</label>
                         <div className="radios">
                             <input className="input__radio" type="radio" id="light" name="colorMode" value="light" required
-                            checked={settings[0].colorMode === "light" ? "light" : ""}
+                            // checked={settings[0].colorMode === "light" ? "light" : ""}
                             onChange={handleControlledInputChange}
                             />
                             <label htmlFor="daily">Light</label>
                             
                             <input className="input__radio" type="radio" id="dark" name="colorMode" value="dark" required
-                            checked={settings[0].colorMode === "dark" ? "dark" : ""}
+                            // checked={settings[0].colorMode === "dark" ? "dark" : ""}
                             onChange={handleControlledInputChange}
                             />
                             <label htmlFor="weekly">Dark</label>
@@ -116,7 +105,7 @@ export const HeaderSettings = () => {
             <button className="btn"
             onClick={e => e.currentTarget.parentElement.parentElement.parentElement.className = "background__modal"}>Close</button>
             </>
-        }
+        {/* } */}
         </>
     )
 }

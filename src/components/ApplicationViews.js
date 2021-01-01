@@ -9,7 +9,7 @@ export const ApplicationViews = () => {
     return (
         <>
             <SettingsProvider>
-
+                {/* Header will need the Collections Provider to generate list of default collections to load */}
                 <Header />
 
                 <Route exact path="/">
