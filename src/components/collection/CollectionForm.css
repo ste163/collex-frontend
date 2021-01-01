@@ -1,0 +1,71 @@
+.form__project {
+    width: 15.5em;
+}
+
+.form__h4--goal {
+    margin-top: 2em !important;
+}
+
+.freq__radios {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.radios {
+    display: flex;
+    align-items: center;
+}
+
+.freq__days {
+    margin-top: 0.2em;
+    margin-left: 2em;
+    padding: 0;
+}
+
+.label__days {
+    color: var(--fontColorInactive);
+    margin-bottom: 0.3em;
+}
+
+.days--active {
+    color: var(--fontColor)
+}
+
+.freq__selected {
+    background-color: var(--mediumGray);
+    border-radius: var(--formFieldRadius);
+    padding: 0 0.3em;
+}
+
+.project__submit {
+    display: flex;
+    justify-content: center;
+}
+
+.day__placeholder--active::-moz-placeholder {
+    color:var(--fontColor);
+}
+
+.day__placeholder--active::-webkit-input-placeholder {
+    color:var(--fontColor);
+}
+
+.day__placeholder--active {
+    background-color: var(--mediumGray);
+    color: var(--fontColor);
+    width: 2.6em;
+}
+
+.day__placeholder--inactive::-webkit-input-placeholder {
+    color: var(--fontColorInactive);
+}
+
+.day__placeholder--inactive::-moz-placeholder {
+    color:var(--fontColorInactive);
+}
+
+.day__placeholder--inactive {
+    background-color: var(--inactiveFormField);
+    color:var(--fontColorInactive);
+    width: 2.6em;
+}
