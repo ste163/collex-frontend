@@ -40,6 +40,6 @@
 .collection__arrow {
     grid-column: 3;
     grid-row: 1 / 4;
-    justify-self: center;
+    justify-self: right;
     align-self: center
 }

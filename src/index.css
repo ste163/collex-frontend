@@ -55,7 +55,7 @@
 #root {
   display: grid;
   grid-template-rows: min-content min-content auto min-content;
-  height: 100vh;
+  height: 120vh;
 }
 
 .view__container {
@@ -66,8 +66,8 @@
 /* Concise collection column */
 .collection__list {
   overflow-y: scroll;
-  max-height: 70vh;
-  width: 20vw;
+  max-height: 87vh;
+  width: 22vw;
 }
 
 /* Selected collection column */
