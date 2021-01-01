@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { SettingsContext } from "../settings/SettingsProvider"
-// import { ProjectContext } from "../projects/ProjectProvider"
+import { CollectionContext } from "../collection/CollectionProvider"
 import { HeaderColorMode } from "./HeaderColorMode"
 
 // Create the heading form to be passed into the modal
@@ -25,7 +25,7 @@ export const HeaderSettings = () => {
     const [ currentSettings, setCurrentSettings ] = useState(defaultSettings)
     
     const { settings, getSettings, updateSettings } = useContext(SettingsContext)
-    // const { projects, getProjects } = useContext(ProjectContext)
+    const { collections, getCollections } = useContext(CollectionContext)
     
     const handleControlledInputChange = e => {
         const newSetting = {...settings[0]}
@@ -34,13 +34,13 @@ export const HeaderSettings = () => {
     }
 
     // Needed to populate the drop-downs and set colors
-    // useEffect(() => {
-    //     getProjects(userId)
-    //     .then(() => {
-    //         getSettings(userId)
-    //         HeaderColorMode()
-    //     })
-    // }, [])
+    useEffect(() => {
+        getCollections(userId)
+        .then(() => {
+            getSettings(userId)
+            HeaderColorMode()
+        })
+    }, [])
 
     // Wait for any settings to change, then re-run this code
     // saving the new settings, storing the values in storage, and re-running the color mode script
@@ -63,38 +63,38 @@ export const HeaderSettings = () => {
 
     return (
         <>
-        {/* {settings[0] === undefined ? null :  */}
+        {settings[0] === undefined ? null : 
             <>
             <div className="container__settings">
                 <h2 className="modal__h2">Settings</h2>
                 <form className="form__settings">
                         
                     <fieldset className="settings__fieldset">
-                        <label htmlFor="defaultCollection">Set default project:</label>
+                        <label htmlFor="defaultCollection">Set default collection:</label>
                         <select
                         id="defaultCollection"
                         name="defaultCollection"
-                        // value={settings[0].defaultCollection}
+                        value={settings[0].defaultCollection}
                         onChange={handleControlledInputChange}>
                             <option value="0">Select default collection</option>
-                            {/* {projects.map(project => (
-                                <option key={project.id} value={project.id}>
-                                    {project.name}
+                            {collections.map(collection => (
+                                <option key={collection.id} value={collection.id}>
+                                    {collection.name}
                                 </option>
-                            ))} */}
+                            ))}
                         </select>
                     </fieldset>
                     <fieldset className="settings__fieldset">
                         <label htmlFor="darkMode">Color mode:</label>
                         <div className="radios">
                             <input className="input__radio" type="radio" id="light" name="colorMode" value="light" required
-                            // checked={settings[0].colorMode === "light" ? "light" : ""}
+                            checked={settings[0].colorMode === "light" ? "light" : ""}
                             onChange={handleControlledInputChange}
                             />
                             <label htmlFor="daily">Light</label>
                             
                             <input className="input__radio" type="radio" id="dark" name="colorMode" value="dark" required
-                            // checked={settings[0].colorMode === "dark" ? "dark" : ""}
+                            checked={settings[0].colorMode === "dark" ? "dark" : ""}
                             onChange={handleControlledInputChange}
                             />
                             <label htmlFor="weekly">Dark</label>
@@ -105,7 +105,7 @@ export const HeaderSettings = () => {
             <button className="btn"
             onClick={e => e.currentTarget.parentElement.parentElement.parentElement.className = "background__modal"}>Close</button>
             </>
-        {/* } */}
+        }
         </>
     )
 }
