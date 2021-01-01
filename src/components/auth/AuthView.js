@@ -22,6 +22,7 @@ export const AuthView = props => {
         const underline = useRef()
         const [activeBtn, setBtn] = useState(true)
 
+        // CAN NOT USE FOR CURRENT TESTING
         // Create default settings for user or load user's settings
         // const { settings, getSettingsOnLogin, addDefaultSettings } = useContext(SettingsContext)
 
@@ -63,9 +64,9 @@ export const AuthView = props => {
             e.preventDefault()
             const username = e.target[1].value
             console.log(username)
-            // Need to compare if the Username in LocalStorage matches the Username we got from the database
-            // If there is a username that matches, show failure message. Otherwise, Work with duplicating Ids
-            if (!localStorage.getItem("Username")) {
+            const retrievedUsername = localStorage.getItem("Username")
+
+            if (retrievedUsername != username) {
                 localStorage.setItem("UserId", 1)
                 localStorage.setItem("Username", username)
             } else {
@@ -91,7 +92,7 @@ export const AuthView = props => {
             <h2 className="modal__warning">Warning</h2>
             <p className="auth__warning">Username has already been taken.</p>
             <button className="btn"
-            onClick={e => conflictDialog.current.className = "background__modal"}>
+            onClick={e => conflictDialog.className = "background__modal"}>
                 Close
             </button>
         </>
@@ -99,6 +100,9 @@ export const AuthView = props => {
 
     return (
         <main className="auth__container">
+
+            <Modal ref={existDialog} contentFunction={<ExistDialog/>} width={"modal__width--smallest"}/>
+            <Modal ref={conflictDialog} contentFunction={<ConflictDialog/>} width={"modal__width--small"} />    
 
             <div className="auth__column--middle">
                 <div>COLLEX LOGO</div>
