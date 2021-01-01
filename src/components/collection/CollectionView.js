@@ -15,7 +15,7 @@ export const CollectionView = () => {
     const modal = useRef()
 
     useEffect(() => {
-        getCollections()
+        getCollections(activeUser)
         // will need to get all collections and all words... probably all words...
     }, [])
 

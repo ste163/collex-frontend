@@ -20,7 +20,7 @@ export const CollectionForm = props => {
         starred: ""
     } 
 
-    const { collections, addCollections, updateCollections } = useContext(CollectionContext)
+    const { collections, addCollection, updateCollection } = useContext(CollectionContext)
     
     // Sets state for creating the project
     const [ collection, setCollection ] = useState(defaultCollection)
@@ -29,64 +29,53 @@ export const CollectionForm = props => {
 
     // Check on load and when collections change, if we have an editable collection or not
     useEffect(() => {
-            if (editableCollection) {
-                setCollection(editableCollection)
-                setIsLoading(false);
-            } else {
-                setIsLoading(false)
-            }
+        if (editableCollection) {
+            setCollection(editableCollection)
+            setIsLoading(false);
+        } else {
+            setIsLoading(false)
+        }
     }, [collections])
 
     const handleControlledInputChange = e => {
-            const newCollection = { ...collection }
-            newCollection[e.target.name] = e.target.value
-            setCollection(newCollection)
+        const newCollection = { ...collection }
+        newCollection[e.target.name] = e.target.value
+        setCollection(newCollection)
     }
 
     const constructNewCollection = (e) => {
-        // if (!parseInt(collection.public)) {
-        //     typeModal.current.className = "background__modal modal__active"
-        // } else {
-        //     // Prepare not entered inputs for saving
-        //     if (collection.goalFrequency === "daily") {
-        //         collection.daysPerFrequency = 1
-        //     }
+        if (!parseInt(collection.public)) {
+            visModal.current.className = "background__modal modal__active"
+        } else {
+            if (editableCollection) {
+                updateCollection({
+                    id: editableCollection.id,
+                    userId,
+                    name: collection.name,
+                    description: collection.description,
+                    public: collection.public,
+                    categorizationType: collection.categorizationType,
+                    starred: collection.starred,
+                })
+                // May need to re-get all WORDS here and recent words, but not sure
+                // .then(() => {
+                //     getProgressByCollectionId(editableCollection.id)
+                // })
 
-        //     if (+collection.wordCountGoal === 0) {
-        //         wordGoalModal.current.className = "background__modal modal__active"
-        //     } else {
-        //         if (editableCollection) {
-        //             updateCollection({
-        //                 id: editableCollection.id,
-        //                 name: collection.name,
-        //                 userId,
-        //                 public: +collection.public,
-        //                 dateStarted: collection.dateStarted,
-        //                 wordCountGoal: +collection.wordCountGoal,
-        //                 goalFrequency: collection.goalFrequency,
-        //                 daysPerFrequency: +collection.daysPerFrequency,
-        //                 completed: false
-        //             }).then(() => {
-        //                 getProgressByCollectionId(editableCollection.id)
-        //             })
-    
-        //         } else {
-        //             addCollection({
-        //                 name: collection.name,
-        //                 userId,
-        //                 public: +collection.public,
-        //                 dateStarted: collection.dateStarted,
-        //                 wordCountGoal: +collection.wordCountGoal,
-        //                 goalFrequency: collection.goalFrequency,
-        //                 daysPerFrequency: +collection.daysPerFrequency,
-        //                 completed: false
-        //             })
-        //             setCollection(defaultCollection)
-        //         }  
-        //         e.currentTarget.parentNode.parentNode.parentNode.className = "background__modal"
-        //     }   
-        // }
-    }
+            } else {
+                addCollection({
+                    userId,
+                    name: collection.name,
+                    description: collection.description,
+                    public: collection.public,
+                    categorizationType: collection.categorizationType,
+                    starred: collection.starred
+                })
+                setCollection(defaultCollection)
+            }  
+                e.currentTarget.parentNode.parentNode.parentNode.className = "background__modal"
+            }   
+        }
 
     const createCollection = (e) => {
         e.preventDefault()

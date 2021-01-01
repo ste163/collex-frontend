@@ -10,12 +10,31 @@
       "id": 1,
       "userId": 1,
       "defaultCollection": 0,
-      "TotalRecentsToStore": 6,
-      "addToMultiple": true,
+      "TotalRecentsToStore": "6",
+      "addToMultiple": "true",
       "colorMode": "light"
     }
   ],
-  "collections": [],
+  "collections": [
+    {
+      "userId": 1,
+      "name": "testCollection",
+      "description": "asdfasd",
+      "public": "2",
+      "categorizationType": "",
+      "starred": "",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "name": "123",
+      "description": "gfadgfda",
+      "public": "2",
+      "categorizationType": "",
+      "starred": "",
+      "id": 2
+    }
+  ],
   "recents": [],
   "words": []
 }

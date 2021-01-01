@@ -25,7 +25,7 @@ export const HeaderSettings = () => {
     const [ currentSettings, setCurrentSettings ] = useState(defaultSettings)
     
     const { settings, getSettings, updateSettings } = useContext(SettingsContext)
-    const { collections, getCollections } = useContext(CollectionContext)
+    const { collections } = useContext(CollectionContext)
     
     const handleControlledInputChange = e => {
         const newSetting = {...settings[0]}
@@ -35,12 +35,9 @@ export const HeaderSettings = () => {
 
     // Needed to populate the drop-downs and set colors
     useEffect(() => {
-        getCollections(userId)
-        .then(() => {
-            getSettings(userId)
-            HeaderColorMode()
-        })
-    }, [])
+        getSettings(userId)
+        HeaderColorMode()
+    }, [collections])
 
     // Wait for any settings to change, then re-run this code
     // saving the new settings, storing the values in storage, and re-running the color mode script
