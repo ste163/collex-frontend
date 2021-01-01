@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import { CollectionContext } from "./CollectionProvider"
 import { CollectionViewHeader } from "./CollectionViewHeader"
 import { NoCreatedCollectionCard } from "./NoCreatedCollectionCard"
@@ -8,19 +8,32 @@ import { CollectionSearch } from "./CollectionSearch"
 
 export const CollectionView = () => {
 
-    const {collections, getCollections } = useContext(CollectionContext)
+    const {collections, getCollections, searchTerms } = useContext(CollectionContext)
     const activeUser = +sessionStorage.getItem("userId")
 
+    const [filteredCollections, setFiltered] = useState([])
 
+    // Run once to get all collections
     useEffect(() => {
         getCollections(activeUser)
         // will need to get all collections and all words... probably all words...
     }, [])
 
+    // Run whenever we enter into the search box
+    useEffect(() => {
+        if (searchTerms !== "") {
+            const subset = collections.filter(collection => collection.name.toLowerCase().includes(searchTerms.toLowerCase().trim()))
+            setFiltered(subset)
+        } else {
+            // no terms in search, so display all collections
+            setFiltered(collections)
+        }
+    }, [searchTerms, collections])
+
     return (
         <>
        
-       <CollectionViewHeader />
+        <CollectionViewHeader />
 
         <section className="view__container">
             {/* 
@@ -32,17 +45,9 @@ export const CollectionView = () => {
                 {
                     collections.length === 0 ? <NoCreatedCollectionCard /> :
                     <>
-
                     <CollectionSearch />
-
-                    {/* 
-                        To get the correct collections, I'll need to pass whatever collection results are from Search
-                        into the collections.map. This may mean that I'll need a different State that handles just the search results
-                        because I don't want to screw up the Collections in other places (like Settings)
-                    */}
-
                     {              
-                        collections.map(collection => {
+                        filteredCollections.map(collection => {
                             // may need to wrap each in it's own word provider? or recent words provider?
                             // return <ProgressProvider key={project.id}><ProjectCard key={project.id} project={project} /></ProgressProvider>
                             return <CollectionCard key={collection.id} collection={collection} />

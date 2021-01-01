@@ -11,6 +11,10 @@
     min-width: min-content;
 }
 
+.card__collection--search {
+    margin-bottom: 2em;
+}
+
 .card__btn {
     background-color: transparent;
     border: none;

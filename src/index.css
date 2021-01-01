@@ -2,6 +2,7 @@
 @import "./styles/form.css";
 @import "./styles/viewHeader.css";
 @import "./styles/card.css";
+@import "./styles/scrollbar.css";
 
 :root {
   /* Colors */

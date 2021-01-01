@@ -5,6 +5,7 @@ export const CollectionContext = createContext()
 export const CollectionProvider = props => {
 
     const [collections, setCollection] = useState([])
+    const [ searchTerms, setSearchTerms] = useState("")
 
     const getCollections = userId => {
         return fetch(`http://localhost:8088/collections/?userId=${userId}`)
@@ -40,7 +41,7 @@ export const CollectionProvider = props => {
 
     return (
         <CollectionContext.Provider value={{
-            collections, getCollections, addCollection, updateCollection
+            collections, getCollections, addCollection, updateCollection, searchTerms, setSearchTerms
         }}>
             {props.children}
         </CollectionContext.Provider>
