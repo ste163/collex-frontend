@@ -43,16 +43,24 @@ export const AuthView = props => {
     const handleLogin = (e) => {
         e.preventDefault()
 
-            const username = e.target[1].value
-            const retrievedUsername = localStorage.getItem("Username")
-            
-            if (retrievedUsername === username) {
-                sessionStorage.setItem("userId", 1)
-                sessionStorage.setItem("Username", username)
-                history.push("/")
-            } else {
-                existDialog.current.className = "background__modal modal__active"
-            }
+        existingUserCheckLogin()
+            .then(exists => {
+                if (exists) {
+                    sessionStorage.setItem("userId", exists.id)
+                    getSettingsOnLogin(exists.id)
+                    .then(settingsExists => {
+                        if (settingsExists) {
+                            sessionStorage.setItem("defaultCollection", settingsExists[0].defaultCollection)
+                            sessionStorage.setItem("TotalRecentsToStore", settingsExists[0].TotalRecentsToStore)
+                            sessionStorage.setItem("addToMultiple", settingsExists[0].addToMultiple)
+                            sessionStorage.setItem("colorMode", settingsExists[0].colorMode)
+                        }
+                        history.push("/")
+                    })
+                } else {
+                    existDialog.current.className = "background__modal modal__active"
+                }
+            })
     }
     
     const handleRegister = (e) => {
