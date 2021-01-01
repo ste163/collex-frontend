@@ -17,6 +17,5 @@ export const Collex = () => (
     <Route exact path="/login">
         <AuthView />
     </Route>
-
     </>
 );
