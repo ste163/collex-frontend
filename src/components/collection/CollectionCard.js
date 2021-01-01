@@ -15,7 +15,7 @@ export const CollectionCard = ({collection}) => {
         <article className="card card__color--white card__collection">
             <h2 className="collection__h2--card">{collection.name}</h2>
             <p className="collection__p">{collection.description}</p>
-            <p className="collection__visibility">{collection.public === "public" ? <>Public</> : <></>}</p>
+            <p className="collection__visibility">{collection.public === "2" ? <>Public</> : <></>}</p>
             <div className="collection__arrow">
                 <IconArrow color="icon__gray"/>
             </div>
