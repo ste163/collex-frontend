@@ -87,7 +87,7 @@ export const AuthView = props => {
             <h2 className="modal__warning">Warning</h2>
             <p className="auth__warning">Username has already been taken.</p>
             <button className="btn"
-            onClick={e => conflictDialog.className = "background__modal"}>
+            onClick={e => conflictDialog.current.className = "background__modal"}>
                 Close
             </button>
         </>
