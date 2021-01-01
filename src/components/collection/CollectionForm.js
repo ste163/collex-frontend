@@ -9,17 +9,15 @@ export const CollectionForm = props => {
     const editableCollection = props.props
     const userId = +sessionStorage.getItem("userId")
 
-    const typeModal = useRef()
-    const wordGoalModal = useRef()
+    const visModal = useRef()
 
     // Set the default project so the form can reset.
     const defaultCollection = {
         name: "",
-        typeId: "",
-        dateStarted: "",
-        wordCountGoal: "",
-        goalFrequency: "",
-        daysPerFrequency: ""
+        description: "",
+        categorizationType: "",
+        public: "",
+        starred: ""
     } 
 
     const { collections, addCollections, updateCollections } = useContext(CollectionContext)
@@ -46,7 +44,7 @@ export const CollectionForm = props => {
     }
 
     const constructNewCollection = (e) => {
-        // if (!parseInt(collection.typeId)) {
+        // if (!parseInt(collection.public)) {
         //     typeModal.current.className = "background__modal modal__active"
         // } else {
         //     // Prepare not entered inputs for saving
@@ -62,7 +60,7 @@ export const CollectionForm = props => {
         //                 id: editableCollection.id,
         //                 name: collection.name,
         //                 userId,
-        //                 typeId: +collection.typeId,
+        //                 public: +collection.public,
         //                 dateStarted: collection.dateStarted,
         //                 wordCountGoal: +collection.wordCountGoal,
         //                 goalFrequency: collection.goalFrequency,
@@ -76,7 +74,7 @@ export const CollectionForm = props => {
         //             addCollection({
         //                 name: collection.name,
         //                 userId,
-        //                 typeId: +collection.typeId,
+        //                 public: +collection.public,
         //                 dateStarted: collection.dateStarted,
         //                 wordCountGoal: +collection.wordCountGoal,
         //                 goalFrequency: collection.goalFrequency,
@@ -90,49 +88,68 @@ export const CollectionForm = props => {
         // }
     }
 
-    const createProject = (e) => {
+    const createCollection = (e) => {
         e.preventDefault()
         constructNewCollection(e)
     }
 
+    const VisibilityWarning = () => (
+        <>
+            <h2 className="modal__warning">Warning</h2>
+            <p className="warning__p">No project type selected.</p>
+            <button className="btn btn--red"
+            onClick={e => visModal.current.className = "background__modal"}>
+                Close
+            </button>
+        </>
+    )
+
     return (
         <>
-        <form className="form__project" onSubmit={createProject}>
+        <Modal ref={visModal} contentFunction={<VisibilityWarning/>} width={"modal__width--small"}/>
+
+        <form className="form__project" onSubmit={createCollection}>
 
             <h3 className="form__h3">
-                {editableCollection ? "Update Project ": "Create New Project"}
+                {editableCollection ? (<>Update {editableCollection.name}</>) : "Create New Collection"}
             </h3>
-            
-            <h4 className="form__h4">Project Setup</h4>
 
             <fieldset>
-                <label htmlFor="projectName">Collection name: </label>
+                <label htmlFor="collectionName">Name: </label>
                 <input type="text"
                 onChange={handleControlledInputChange}
-                id="projectName"
+                id="collectionName"
                 name="name"
                 value={collection.name}
-                placeholder="Project name"
+                placeholder="Collection name"
                 required
                 autoFocus/>
+            </fieldset>
+
+            <fieldset>
+                <label htmlFor="collectionDescription">Description: </label>
+                <input type="text"
+                onChange={handleControlledInputChange}
+                id="collectionDescription"
+                name="description"
+                value={collection.description}
+                placeholder="Collection description"
+                />
             </fieldset>
             
             {/* Make this Public or Private, with a note that you can change this later */}
             <fieldset>
-                <label htmlFor="projectType">Project Type:</label>
+                <label htmlFor="public">Visibility (can change later): </label>
                 <select
                 onChange={handleControlledInputChange}
-                id="projectType"
-                name="typeId"
-                // value={project.typeId}
+                id="public"
+                name="public"
+                value={collection.public}
                 required
                 autoFocus>
-                    <option value="0">Select a project type</option>
-                    {/* {types.map(type => (
-                        <option key={type.id} value={type.id}>
-                            {type.name}
-                        </option>
-                    ))} */}
+                    <option value="0">Select a visibility</option>
+                    <option value="1">Private</option>
+                    <option value="2">Public</option>
                 </select>
             </fieldset>  
             
