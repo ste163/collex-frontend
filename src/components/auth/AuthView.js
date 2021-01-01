@@ -1,8 +1,102 @@
 import React, { useRef, useState, useContext } from "react"
 import { useHistory } from "react-router-dom"
+import { Modal } from "../modal/Modal";
 import "./AuthView.css"
 
 export const AuthView = props => {
+
+        // If logging out with dark mode active, this resets colors to white 
+        // HeaderColorMode()
+    
+        // Get references for all of the elements that will change
+        const usernameLogin = useRef()
+        const usernameRegister = useRef()
+        const existDialog = useRef()
+        const conflictDialog = useRef()
+        const history = useHistory()
+    
+        const loginBtn = useRef()
+        const registerBtn = useRef()
+    
+        // To allow for the nav underline to move, target it by useRef
+        const underline = useRef()
+        const [activeBtn, setBtn] = useState(true)
+
+        // Create default settings for user or load user's settings
+        // const { settings, getSettingsOnLogin, addDefaultSettings } = useContext(SettingsContext)
+
+        // // Fetch for only login field
+        // const existingUserCheckLogin = () => {
+        //     return fetch(`http://localhost:8088/users?username=${usernameLogin.current.value}`)
+        //         .then(res => res.json())
+        //         .then(user => user.length ? user[0] : false)
+        // }
+    
+        // // Fetch for only register field
+        // const existingUserCheckRegister = () => {
+        //     return fetch(`http://localhost:8088/users?username=${usernameRegister.current.value}`)
+        //         .then(res => res.json())
+        //         .then(user => user.length ? user[0] : false)
+        // }
+    
+        const handleLogin = (e) => {
+            e.preventDefault()
+                // Get the username the person entered. If it matches, then GOOD!
+                // IF IT DOESN"T MAtCH the 1 in the database, fail.
+                
+                if (true) {
+                    sessionStorage.setItem("userId", "WORKS")
+                    .then(settingsExists => {
+                        if (settingsExists) {
+                            sessionStorage.setItem("defaultView", settingsExists[0].defaultView)
+                            sessionStorage.setItem("defaultProject", settingsExists[0].defaultProject)
+                            sessionStorage.setItem("colorMode", settingsExists[0].colorMode)
+                        }
+                        history.push("/")
+                    })
+                } else {
+                        existDialog.current.className = "background__modal modal__active"
+                }
+        }
+    
+        const handleRegister = (e) => {
+            e.preventDefault()
+            const username = e.target[1].value
+            console.log(username)
+            // Need to compare if the Username in LocalStorage matches the Username we got from the database
+            // If there is a username that matches, show failure message. Otherwise, Work with duplicating Ids
+            if (!localStorage.getItem("Username")) {
+                localStorage.setItem("UserId", 1)
+                localStorage.setItem("Username", username)
+            } else {
+                conflictDialog.current.className = "background__modal modal__active"
+            }
+        }
+    
+    // Content for warning modal
+    const ExistDialog = () => (
+        <>
+            <h2 className="modal__warning">Warning</h2>
+            <p className="auth__warning">User does not exist.</p>
+            <button className="btn"
+            onClick={e => existDialog.current.className = "background__modal"}>
+                Close
+            </button>
+        </>
+    )
+
+    // Content for warning modal
+    const ConflictDialog = () => (
+        <>
+            <h2 className="modal__warning">Warning</h2>
+            <p className="auth__warning">Username has already been taken.</p>
+            <button className="btn"
+            onClick={e => conflictDialog.current.className = "background__modal"}>
+                Close
+            </button>
+        </>
+    )
+
     return (
         <main className="auth__container">
 
@@ -14,7 +108,70 @@ export const AuthView = props => {
                     using Merriam-Webster's CollegiateR Thesaurus
                 </h2>
                 <div>MW LOGO</div>
-            
+
+                <section className="card card__color--white card__auth">
+                    <ul  className="auth__btns">
+                        
+                        <li className="btns__li">
+                            <button
+                            className={activeBtn ? "auth__btn auth__btn--active" : "auth__btn"}
+                            onClick={e => {
+                                setBtn(true)
+                                if (usernameRegister.current !== undefined && usernameRegister.current !== null) {
+                                    usernameRegister.current.value = ""
+                                }
+                            }}
+                            onMouseEnter={e => underline.current.className = "auth__line line__login--active"}
+                            onMouseLeave={e => underline.current.className = `auth__line ${activeBtn ? "line__login--active" : "line__register--active"}`}>
+                                Log in
+                            </button>
+                        </li>
+                        
+                        <li className="btns__li">
+                            <button
+                            className={activeBtn ? "auth__btn" : "auth__btn auth__btn--active"}
+                            onClick={e => {
+                                setBtn(false)
+                                if (usernameLogin.current !== undefined  && usernameLogin.current !== null) {
+                                    usernameLogin.current.value = ""
+                                }
+                            }}
+                            onMouseEnter={e => underline.current.className = "auth__line line__register--active"}
+                            onMouseLeave={e => underline.current.className = `auth__line ${activeBtn ? "line__login--active" : "line__register--active"}`}>
+                                Register
+                            </button>
+                        </li>
+                        
+                        <div ref={underline} className={`auth__line ${activeBtn ? "line__login--active" : "line__register--active"}`}></div>
+                    
+                    </ul>
+
+                    <section>
+                        <form className="form"
+                        onSubmit={activeBtn ? handleLogin : handleRegister}>
+
+                            <fieldset>
+                                <label htmlFor={activeBtn ? "usernameLogin" : "usernameRegister"}>Username</label>
+                                <input className="input--auth" ref={activeBtn ? usernameLogin : usernameRegister} type="text"
+                                    id={activeBtn ? "usernameLogin" : "usernameRegister"}
+                                    placeholder="Author123"
+                                    required autoFocus />
+                            </fieldset>
+
+                            <fieldset className="fieldset__btn">
+                                <button 
+                                ref={loginBtn}
+                                className={`btn btn--green btn__authSubmit ${activeBtn ? "login__active" : " login__inactive"}`}
+                                type="submit">Login</button>
+                                <button
+                                ref={registerBtn} 
+                                className={`btn btn--green btn__authSubmit ${activeBtn ? "register__inactive" : "register__active"}`}
+                                type="submit">Register</button>
+                            </fieldset>
+
+                        </form>
+                    </section>
+                </section>
             </div>
 
         </main>

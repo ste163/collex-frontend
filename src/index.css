@@ -1,7 +1,7 @@
-/* @import "./styles/buttons.css"; */
-/* @import "./styles/forms.css"; */
+@import "./styles/button.css";
+@import "./styles/form.css";
 /* @import "./styles/viewHeader.css"; */
-/* @import "./styles/card.css"; */
+@import "./styles/card.css";
 
 :root {
   /* Colors */

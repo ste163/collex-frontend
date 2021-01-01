@@ -1,0 +1,73 @@
+.icon__hovered {
+    fill: var(--lighterBlack);
+    transition: var(--btnHover);
+}
+
+.icon__hovered--logout {
+    transform: translateX(1em);
+    transition: var(--btnHover);
+}
+
+.icon__gray {
+    fill: var(--darkGray);
+    transition: var(--btnHover);
+}
+
+.icon__lightGray {
+    fill: var(--mediumGray);
+    transition: var(--btnHover);
+}
+
+.icon__black {
+    fill: var(--lightBlack);
+    transition: var(--btnHover);
+}
+
+.icon__white {
+    fill: var(--offWhite);
+    transition: var(--btnHover);
+}
+
+.icon__whiteNoChange {
+    fill: white;
+    transition: var(--btnHover);
+}
+
+.icon__plus {
+    height: 1em;
+    width: 1em;
+    margin: 0.3em 0.4em;
+}
+
+.icon__dots {
+    width: 2em;
+    height: 1em;
+}
+
+.icon__arrow {
+    height: 1em;
+}
+
+.icon__graph {
+    margin-right: 0.4em;
+}
+
+.icon__table--link, .icon__graph--link {
+    transform: scale(2);
+    height: 0.8em;
+    width: 0.8em;
+    margin-top: 0.4em;
+    padding: 0.08em .25em;
+}
+
+.icon__gear {
+    height: 1.6em;
+}
+
+.icon__logout {
+    height: 1.5em;
+}
+
+.icon__divider {
+    margin: 0 1em;
+}

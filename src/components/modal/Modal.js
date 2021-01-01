@@ -25,7 +25,8 @@ export const Modal = (React.forwardRef((props, ref) => (
 
                     <button className="modal__close"
                     onClick={e => ref.current.className = "background__modal"}>
-                        <IconClose color="icon__gray" /></button>
+                        <IconClose color="icon__gray" />
+                    </button>
 
                 </section>
 
