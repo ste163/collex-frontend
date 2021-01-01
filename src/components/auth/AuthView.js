@@ -1,73 +1,96 @@
 import React, { useRef, useState, useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { Modal } from "../modal/Modal";
+import { SettingsContext } from "../settings/SettingsProvider"
 import "./AuthView.css"
 
 export const AuthView = props => {
 
-        // If logging out with dark mode active, this resets colors to white 
-        // HeaderColorMode()
-    
-        // Get references for all of the elements that will change
-        const usernameLogin = useRef()
-        const usernameRegister = useRef()
-        const existDialog = useRef()
-        const conflictDialog = useRef()
-        const history = useHistory()
-    
-        const loginBtn = useRef()
-        const registerBtn = useRef()
-    
-        // To allow for the nav underline to move, target it by useRef
-        const underline = useRef()
-        const [activeBtn, setBtn] = useState(true)
+    // If logging out with dark mode active, this resets colors to white 
+    // HeaderColorMode()
 
-        // CAN NOT USE FOR CURRENT TESTING
-        // Create default settings for user or load user's settings
-        // const { settings, getSettingsOnLogin, addDefaultSettings } = useContext(SettingsContext)
+    // Get references for all of the elements that will change
+    const usernameLogin = useRef()
+    const usernameRegister = useRef()
+    const existDialog = useRef()
+    const conflictDialog = useRef()
+    const history = useHistory()
 
-        // // Fetch for only login field
-        // const existingUserCheckLogin = () => {
-        //     return fetch(`http://localhost:8088/users?username=${usernameLogin.current.value}`)
-        //         .then(res => res.json())
-        //         .then(user => user.length ? user[0] : false)
-        // }
+    const loginBtn = useRef()
+    const registerBtn = useRef()
+
+    // To allow for the nav underline to move, target it by useRef
+    const underline = useRef()
+    const [activeBtn, setBtn] = useState(true)
+
+    // Create default settings for user or load user's settings
+    const { settings, getSettingsOnLogin, addDefaultSettings } = useContext(SettingsContext)
+
+    // // Fetch for only login field
+    const existingUserCheckLogin = () => {
+        return fetch(`http://localhost:8088/users?username=${usernameLogin.current.value}`)
+            .then(res => res.json())
+            .then(user => user.length ? user[0] : false)
+    }
+
+    // // Fetch for only register field
+    const existingUserCheckRegister = () => {
+        return fetch(`http://localhost:8088/users?username=${usernameRegister.current.value}`)
+            .then(res => res.json())
+            .then(user => user.length ? user[0] : false)
+    }
     
-        // // Fetch for only register field
-        // const existingUserCheckRegister = () => {
-        //     return fetch(`http://localhost:8088/users?username=${usernameRegister.current.value}`)
-        //         .then(res => res.json())
-        //         .then(user => user.length ? user[0] : false)
-        // }
-    
-        const handleLogin = (e) => {
-            e.preventDefault()
-                // Get the username the person entered. If it matches, then GOOD!
-                // IF IT DOESN"T MAtCH the 1 in the database, fail.
-                const username = e.target[1].value
-                const retrievedUsername = localStorage.getItem("Username")
-                
-                if (retrievedUsername === username) {
-                    sessionStorage.setItem("userId", 1)
-                    sessionStorage.setItem("Username", username)
-                    history.push("/")
-                } else {
-                    existDialog.current.className = "background__modal modal__active"
-                }
-        }
-    
-        const handleRegister = (e) => {
-            e.preventDefault()
+    const handleLogin = (e) => {
+        e.preventDefault()
+
             const username = e.target[1].value
             const retrievedUsername = localStorage.getItem("Username")
+            
+            if (retrievedUsername === username) {
+                sessionStorage.setItem("userId", 1)
+                sessionStorage.setItem("Username", username)
+                history.push("/")
+            } else {
+                existDialog.current.className = "background__modal modal__active"
+            }
+    }
+    
+    const handleRegister = (e) => {
+        e.preventDefault()
 
-            if (retrievedUsername !== username) {
-                localStorage.setItem("UserId", 1)
-                localStorage.setItem("Username", username)
+        existingUserCheckRegister()
+        .then((userExists) => {
+            if (!userExists) {
+                fetch("http://localhost:8088/users", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        username: usernameRegister.current.value,
+                    })
+                })
+                    .then(_ => _.json())
+                    .then(createdUser => {
+                        if (createdUser.hasOwnProperty("id")) {
+                            sessionStorage.setItem("userId", createdUser.id)
+                            // Should move the actual default settings into the default settings function.
+                            addDefaultSettings(createdUser)
+                                .then(() => {
+                                    sessionStorage.setItem("defaultCollection", 0)
+                                    sessionStorage.setItem("TotalRecentsToStore", 6)
+                                    sessionStorage.setItem("addToMultiple", true)
+                                    sessionStorage.setItem("colorMode", "light")
+                                    history.push("/")
+                            })
+                        }
+                    })
             } else {
                 conflictDialog.current.className = "background__modal modal__active"
             }
-        }
+        })
+    }
+    
     
     // Content for warning modal
     const ExistDialog = () => (
