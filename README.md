@@ -1,7 +1,10 @@
 # Collex Frontend
 This is a testing ground for Collex's frontend built using ```create-react-app```.
 
-All data will be stored in Local Storage for testing purposes.
+Collex (a mash-up of Collections and Lexicon) allows users to create word collections based on their own categorization methods.
+
+Writing a story that takes place during the winter? Collex allows you to search through a thesaurus, displaying multiple words
+and their synonyms and antonyms at a time, so you are able to explore and save wintery-related words to your own collection.
 
 ### `npm start`
 
