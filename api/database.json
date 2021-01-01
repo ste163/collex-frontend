@@ -1,6 +1,20 @@
 {
-  "users": [],
-  "settings": [],
+  "users": [
+    {
+      "username": "test",
+      "id": 1
+    }
+  ],
+  "settings": [
+    {
+      "userId": 1,
+      "defaultCollection": 0,
+      "TotalRecentsToStore": 6,
+      "addToMultiple": true,
+      "colorMode": "light",
+      "id": 1
+    }
+  ],
   "collections": [],
   "recents": [],
   "words": []

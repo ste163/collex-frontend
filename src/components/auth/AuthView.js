@@ -2,12 +2,13 @@ import React, { useRef, useState, useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { Modal } from "../modal/Modal";
 import { SettingsContext } from "../settings/SettingsProvider"
+import { HeaderColorMode } from "../header/HeaderColorMode"
 import "./AuthView.css"
 
 export const AuthView = props => {
 
     // If logging out with dark mode active, this resets colors to white 
-    // HeaderColorMode()
+    HeaderColorMode()
 
     // Get references for all of the elements that will change
     const usernameLogin = useRef()
