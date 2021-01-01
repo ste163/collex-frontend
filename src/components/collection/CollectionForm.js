@@ -15,9 +15,11 @@ export const CollectionForm = props => {
     const defaultCollection = {
         name: "",
         description: "",
+        // categorizationType should probably be an int
         categorizationType: "",
-        public: "",
-        starred: ""
+        // public is a bool
+        public: "", 
+        starred: false
     } 
 
     const { collections, addCollection, updateCollection } = useContext(CollectionContext)
@@ -85,7 +87,7 @@ export const CollectionForm = props => {
     const VisibilityWarning = () => (
         <>
             <h2 className="modal__warning">Warning</h2>
-            <p className="warning__p">No project type selected.</p>
+            <p className="warning__p">No collection visibility selected.</p>
             <button className="btn btn--red"
             onClick={e => visModal.current.className = "background__modal"}>
                 Close
@@ -97,7 +99,7 @@ export const CollectionForm = props => {
         <>
         <Modal ref={visModal} contentFunction={<VisibilityWarning/>} width={"modal__width--small"}/>
 
-        <form className="form__project" onSubmit={createCollection}>
+        <form className="form__collection" onSubmit={createCollection}>
 
             <h3 className="form__h3">
                 {editableCollection ? (<>Update {editableCollection.name}</>) : "Create New Collection"}
@@ -142,7 +144,7 @@ export const CollectionForm = props => {
                 </select>
             </fieldset>  
             
-            <div className="project__submit">
+            <div className="collection__submit">
                 <button 
                 className="btn"
                 type="submit"

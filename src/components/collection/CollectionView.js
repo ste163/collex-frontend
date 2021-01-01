@@ -6,6 +6,7 @@ import { IconDivider } from "../icons/IconDivider"
 import { NoCreatedCollectionCard } from "./NoCreatedCollectionCard"
 import { NoSelectedCollectionCard } from "./NoSelectedCollectionCard"
 import { CollectionForm } from "./CollectionForm"
+import { CollectionCard } from "./CollectionCard"
 
 export const CollectionView = () => {
 
@@ -54,13 +55,15 @@ export const CollectionView = () => {
             <Modal ref={modal} contentFunction={<CollectionForm />} width={"modal__width--widest"}/>
 
             {/* Condensed List */}
-            <section className="project__cards">
+            <section className="collection__list">
                 {
                     collections.length === 0 ? <NoCreatedCollectionCard /> :
                     <>
-                    {                   
+                    {              
                         collections.map(collection => {
+                            // may need to wrap each in it's own word provider? or recent words provider?
                             // return <ProgressProvider key={project.id}><ProjectCard key={project.id} project={project} /></ProgressProvider>
+                            return <CollectionCard key={collection.id} collection={collection} />
                         })               
                     }
                     </>

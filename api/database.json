@@ -12,7 +12,7 @@
       "defaultCollection": 0,
       "TotalRecentsToStore": "6",
       "addToMultiple": "true",
-      "colorMode": "light"
+      "colorMode": "dark"
     }
   ],
   "collections": [
@@ -33,6 +33,78 @@
       "categorizationType": "",
       "starred": "",
       "id": 2
+    },
+    {
+      "userId": 1,
+      "name": "Test4",
+      "description": "fdaadgfgafd",
+      "public": "1",
+      "categorizationType": "",
+      "starred": "",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "name": "keep 'em coming",
+      "description": "",
+      "public": "2",
+      "categorizationType": "",
+      "starred": false,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "name": "adgfafdg",
+      "description": "sadf",
+      "public": "1",
+      "categorizationType": "",
+      "starred": false,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "name": "ghfshgsfghfs",
+      "description": "asdfsda",
+      "public": "2",
+      "categorizationType": "",
+      "starred": false,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "name": "fghjghdj",
+      "description": "234234",
+      "public": "1",
+      "categorizationType": "",
+      "starred": false,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "name": "gfadfghgjdhgf",
+      "description": "dasfgadfg",
+      "public": "2",
+      "categorizationType": "",
+      "starred": false,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "name": "ghfgshsfgh",
+      "description": "asdfasdf",
+      "public": "2",
+      "categorizationType": "",
+      "starred": false,
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "name": "Big collection name coming",
+      "description": "And the description is pretty long too becasue I have a lot to say",
+      "public": "1",
+      "categorizationType": "",
+      "starred": false,
+      "id": 10
     }
   ],
   "recents": [],

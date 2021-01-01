@@ -58,6 +58,18 @@
   height: 100vh;
 }
 
+.view__container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+}
+
+/* Concise collection column */
+.collection__list {
+  overflow-y: scroll;
+  max-height: 70vh;
+  width: 20vw;
+}
+
 /* Set Defaults */
 
 * {
