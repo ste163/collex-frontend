@@ -6,7 +6,7 @@ import { AuthView } from "./auth/AuthView"
 export const Collex = () => (
     <>
     <Route render={() => {
-        if (localStorage.getItem("userId")) {
+        if (sessionStorage.getItem("userId")) {
             return <ApplicationViews />
         } else {
             return <Redirect to="/login" />

@@ -4,7 +4,9 @@ import { Redirect, Route } from "react-router-dom"
 export const ApplicationViews = () => {
     return (
         <>
-        I'm Collex!
+            <Route exact path="/">
+                <h1>I'm Collex!</h1>
+            </Route>
         </>
     )
 }

@@ -44,29 +44,24 @@ export const AuthView = props => {
             e.preventDefault()
                 // Get the username the person entered. If it matches, then GOOD!
                 // IF IT DOESN"T MAtCH the 1 in the database, fail.
+                const username = e.target[1].value
+                const retrievedUsername = localStorage.getItem("Username")
                 
-                if (true) {
-                    sessionStorage.setItem("userId", "WORKS")
-                    .then(settingsExists => {
-                        if (settingsExists) {
-                            sessionStorage.setItem("defaultView", settingsExists[0].defaultView)
-                            sessionStorage.setItem("defaultProject", settingsExists[0].defaultProject)
-                            sessionStorage.setItem("colorMode", settingsExists[0].colorMode)
-                        }
-                        history.push("/")
-                    })
+                if (retrievedUsername === username) {
+                    sessionStorage.setItem("userId", 1)
+                    sessionStorage.setItem("Username", username)
+                    history.push("/")
                 } else {
-                        existDialog.current.className = "background__modal modal__active"
+                    existDialog.current.className = "background__modal modal__active"
                 }
         }
     
         const handleRegister = (e) => {
             e.preventDefault()
             const username = e.target[1].value
-            console.log(username)
             const retrievedUsername = localStorage.getItem("Username")
 
-            if (retrievedUsername != username) {
+            if (retrievedUsername !== username) {
                 localStorage.setItem("UserId", 1)
                 localStorage.setItem("Username", username)
             } else {
