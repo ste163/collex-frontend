@@ -10,14 +10,16 @@ export const CollectionSearch = () => {
     }, [])
 
     return (
-        <article className="card card__color--white card__collection card__collection--search">
-            Search
-            <input type="text"
-            onKeyUp={
-                (keyEvent) => setSearchTerms(keyEvent.target.value)
-            }
-            placeholder="Search for collection... "
-            />
-        </article>
+            <fieldset className="card card__color--white card__collection card__collection--search">
+                <label htmlFor="collectionSearch">Search collections by name</label>
+                <input type="text"
+                name="collectionSearch"
+                className="search__input"
+                onKeyUp={
+                    (keyEvent) => setSearchTerms(keyEvent.target.value)
+                }
+                placeholder="Search for collection name... "
+                />
+            </fieldset>
     )
 }

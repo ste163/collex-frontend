@@ -1,7 +1,7 @@
 footer {
     display: flex;
     flex-flow: column nowrap;
-    font-size: 0.75em;
+    font-size: 0.7em;
     background-color: var(--offWhite);
     box-shadow: var(--footerDropShadow);
 }
@@ -26,17 +26,17 @@ footer {
 }
 
 .footer__heading {
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: var(--weightHeavier);
 }
 
 .footer__subHeading {
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: var(--weightHeavy);
 }
 
 .summary__p, .about__p {
-    font-size: 0.9em;
+    font-size: 0.75em;
     font-weight: var(--weightThin);
 }
 
@@ -62,5 +62,5 @@ footer {
 .footer__row2 {
     font-weight: var(--weightThin);
     text-align: center;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }

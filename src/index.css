@@ -61,7 +61,7 @@
 
 .view__container {
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-columns: 1fr 2fr 4fr;
 }
 
 /* Concise collection column */
@@ -83,7 +83,7 @@
 }
 
 
-@media screen and (max-width: 1215px) {
+/* @media screen and (max-width: 1215px) {
 
   .view__container {
     grid-template-columns: 1fr 1fr;
@@ -96,7 +96,7 @@
   .collection__selected {
     margin-left: 0;
   }
-}
+} */
 
 
 /* Set Defaults */

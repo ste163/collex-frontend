@@ -6,13 +6,28 @@
 .card__collection {
     display: grid;
     margin: 0.8em;
-    flex-basis: 13em;
     padding: 0.5em;
-    min-width: min-content;
+    width: 85%;
+    text-align: left;
+    border-style: none;
+    font-size: 0.75em;
+    cursor: pointer;
 }
 
 .card__collection--search {
-    margin-bottom: 2em;
+    display: flex;
+    flex-flow: column;  
+    margin: 0.5em;
+    margin-bottom: 1.5em;
+    width: 79%;
+    font-size: 1em;
+    cursor: initial;
+}
+
+.search__input {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    width: 90%
 }
 
 .card__btn {

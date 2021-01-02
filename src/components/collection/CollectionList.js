@@ -23,20 +23,20 @@ export const CollectionList = () => {
     }, [searchTerms, collections])
 
     return (
-    <section className="collection__list">
-    {
-        filteredCollections.length === 0 ? <NoCreatedCollectionCard /> :
-        <>
-        <CollectionSearch />
-        {              
-            filteredCollections.map(collection => {
-                // may need to wrap each in it's own word provider? or recent words provider?
-                // return <ProgressProvider key={project.id}><ProjectCard key={project.id} project={project} /></ProgressProvider>
-                return <CollectionCard key={collection.id} collection={collection} />
-            })               
-        }
-        </>
-    }
-    </section>
+        <section className="collection__list">
+            {
+                filteredCollections.length === 0 ? <NoCreatedCollectionCard /> :
+                <>
+                <CollectionSearch />
+                {              
+                    filteredCollections.map(collection => {
+                        // may need to wrap each in it's own word provider? or recent words provider?
+                        // return <ProgressProvider key={project.id}><ProjectCard key={project.id} project={project} /></ProgressProvider>
+                        return <CollectionCard key={collection.id} collection={collection} />
+                    })               
+                }
+                </>
+            }
+        </section>
     )
 }

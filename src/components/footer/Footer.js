@@ -28,7 +28,7 @@ export const Footer = () => (
 
             <section className="footer__about">
                 <h2 className="footer__heading">About</h2>
-                <div className="about__p">
+                <div>
                     <p className="about__p">
                     Collex was created by Sam Edwards, a creative writer and web development student at <a href="http://nashvillesoftwareschool.com/">Nashville Software School</a>.
                     </p>
