@@ -2,8 +2,7 @@ import React, { useEffect, useContext } from "react"
 import { CollectionContext } from "./CollectionProvider"
 import { CollectionViewHeader } from "./CollectionViewHeader"
 import { CollectionList } from "./CollectionList"
-import { NoSelectedCollectionCard } from "./NoSelectedCollectionCard"
-
+import { CollectionSelected } from "./CollectionSelected"
 
 export const CollectionView = () => {
 
@@ -22,17 +21,8 @@ export const CollectionView = () => {
         <CollectionViewHeader />
 
         <section className="view__container">
-            {/* 
-            Condensed List
-            Should (as with the others) be made into components
-            So I can reuse them on the Community page
-            */}
             <CollectionList />
-
-            {/* Selected Collection */}
-            <section className="collection__selected">
-                Selected Collection
-            </section>
+            <CollectionSelected />
 
             {/* Thesaurus */}
             <section className="collection__thesaurus">
