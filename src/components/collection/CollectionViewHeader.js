@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react"
+import React, { useRef, useContext, useEffect } from "react"
 import { CollectionContext } from "./CollectionProvider"
 import { IconPlus } from "../icons/IconPlus"
 import { IconDivider } from "../icons/IconDivider"

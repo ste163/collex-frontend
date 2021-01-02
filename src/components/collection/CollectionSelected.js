@@ -9,12 +9,12 @@ export const CollectionSelected = () => {
     useEffect(() => {
         // Maybe get all the words for this collection here?
     }, [selectedCollection])
-    
+
     return (
         selectedCollection === undefined ? <NoSelectedCollectionCard /> :
         <>
         <section className="collection__selected">
-            Selected Collection
+            Selected Collection: {selectedCollection.name}
         </section>
         </>
     )

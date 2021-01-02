@@ -25,7 +25,7 @@ export const CollectionList = () => {
     return (
         <section className="collection__list">
             {
-                filteredCollections.length === 0 ? <NoCreatedCollectionCard /> :
+                collections.length === 0 ? <NoCreatedCollectionCard /> :
                 <>
                 <CollectionSearch />
                 {              
