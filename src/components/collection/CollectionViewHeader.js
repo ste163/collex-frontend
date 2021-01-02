@@ -6,7 +6,7 @@ import { Modal } from "../modal/Modal"
 import { CollectionForm } from "./CollectionForm"
 
 export const CollectionViewHeader = () => {
-
+    // Default Selection currently is not being checked. Need a useEffect for this.
     const defaultSelection = +sessionStorage.getItem("defaultCollection")
     const modal = useRef()
 
