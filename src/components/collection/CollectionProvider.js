@@ -6,13 +6,13 @@ export const CollectionProvider = props => {
 
     const [ collections, setCollection ] = useState([])
     const [ searchTerms, setSearchTerms] = useState("")
+    const [ selectedCollection, setSelectedCollection ] = useState(undefined)
 
     const getCollections = userId => {
         return fetch(`http://localhost:8088/collections/?userId=${userId}`)
         .then(response => response.json())
         .then(r => {
             const sorted = r.sort((a, b) => {
-
                 const nameA = a.name.toLowerCase()
                 const nameB = b.name.toLowerCase()
 
@@ -52,7 +52,7 @@ export const CollectionProvider = props => {
 
     return (
         <CollectionContext.Provider value={{
-            collections, getCollections, addCollection, updateCollection, searchTerms, setSearchTerms
+            collections, getCollections, addCollection, updateCollection, searchTerms, setSearchTerms, selectedCollection, setSelectedCollection
         }}>
             {props.children}
         </CollectionContext.Provider>

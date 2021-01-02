@@ -8,8 +8,9 @@ import { CollectionSearch } from "./CollectionSearch"
 
 export const CollectionView = () => {
 
-    const {collections, getCollections, searchTerms } = useContext(CollectionContext)
     const activeUser = +sessionStorage.getItem("userId")
+    
+    const { collections, getCollections, searchTerms } = useContext(CollectionContext)
 
     const [filteredCollections, setFiltered] = useState([])
 
@@ -29,8 +30,6 @@ export const CollectionView = () => {
             setFiltered(collections)
         }
     }, [searchTerms, collections])
-
-    console.log(filteredCollections)
 
     return (
         <>
