@@ -4,13 +4,24 @@ export const CollectionContext = createContext()
 
 export const CollectionProvider = props => {
 
-    const [collections, setCollection] = useState([])
+    const [ collections, setCollection ] = useState([])
     const [ searchTerms, setSearchTerms] = useState("")
 
     const getCollections = userId => {
         return fetch(`http://localhost:8088/collections/?userId=${userId}`)
         .then(response => response.json())
-        .then(setCollection)
+        .then(r => {
+            const sorted = r.sort((a, b) => {
+
+                const nameA = a.name.toLowerCase()
+                const nameB = b.name.toLowerCase()
+
+                if (nameA < nameB) return -1 // nameA is first
+                if (nameA > nameB) return 1 // nameB is first
+                return 0 // names match. Shouldn't happen because I won't be saving matching names
+            })
+            setCollection(sorted)
+        })
     }
 
     const addCollection = collection => {

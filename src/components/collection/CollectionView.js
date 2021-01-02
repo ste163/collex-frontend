@@ -30,6 +30,8 @@ export const CollectionView = () => {
         }
     }, [searchTerms, collections])
 
+    console.log(filteredCollections)
+
     return (
         <>
        
@@ -43,7 +45,7 @@ export const CollectionView = () => {
             */}
             <section className="collection__list">
                 {
-                    collections.length === 0 ? <NoCreatedCollectionCard /> :
+                    filteredCollections.length === 0 ? <NoCreatedCollectionCard /> :
                     <>
                     <CollectionSearch />
                     {              
