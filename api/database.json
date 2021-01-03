@@ -17,24 +17,6 @@
   ],
   "collections": [
     {
-      "id": 2,
-      "userId": 1,
-      "name": "1FirstItem",
-      "description": "Yes!!",
-      "public": "2",
-      "categorizationType": "",
-      "starred": ""
-    },
-    {
-      "userId": 1,
-      "name": "ghfshgsfghfs",
-      "description": "asdfsda",
-      "public": "2",
-      "categorizationType": "",
-      "starred": false,
-      "id": 6
-    },
-    {
       "userId": 1,
       "name": "gfadfghgjdhgf",
       "description": "dasfgadfg",
@@ -42,15 +24,6 @@
       "categorizationType": "",
       "starred": false,
       "id": 8
-    },
-    {
-      "userId": 1,
-      "name": "ghfgshsfgh",
-      "description": "asdfasdf",
-      "public": "2",
-      "categorizationType": "",
-      "starred": false,
-      "id": 9
     },
     {
       "userId": 1,
@@ -71,27 +44,9 @@
       "starred": false
     },
     {
-      "id": 13,
-      "userId": 1,
-      "name": "gafdsafd",
-      "description": "dsfgdagadfsadfadsfgadfgad",
-      "public": "2",
-      "categorizationType": "",
-      "starred": false
-    },
-    {
-      "userId": 1,
-      "name": "tester",
-      "description": "gadfgadf",
-      "public": "1",
-      "categorizationType": "",
-      "starred": false,
-      "id": 14
-    },
-    {
       "id": 15,
       "userId": 1,
-      "name": "2nd Item",
+      "name": "2nd",
       "description": "2354afdgadfgadgadfafsda",
       "public": "1",
       "categorizationType": "",
@@ -108,30 +63,21 @@
     },
     {
       "userId": 1,
-      "name": "testtest",
-      "description": "43241341",
-      "public": "1",
-      "categorizationType": "",
-      "starred": false,
-      "id": 17
-    },
-    {
-      "userId": 1,
-      "name": "testtesttest",
-      "description": "afdgadfhgfsfhghgsf",
-      "public": "2",
-      "categorizationType": "",
-      "starred": false,
-      "id": 18
-    },
-    {
-      "userId": 1,
-      "name": "3rd Item",
+      "name": "1111",
       "description": "",
       "public": "1",
       "categorizationType": "",
       "starred": false,
       "id": 19
+    },
+    {
+      "userId": 1,
+      "name": "wertwer",
+      "description": "gtghfsfg",
+      "public": "2",
+      "categorizationType": "",
+      "starred": false,
+      "id": 21
     }
   ],
   "recents": [],

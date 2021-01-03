@@ -94,8 +94,6 @@ export const CollectionForm = props => {
         </>
     )
 
-    console.log("editable collection: ",editableCollection)
-
     return (
         <>
         <Modal ref={visModal} contentFunction={<VisibilityWarning/>} width={"modal__width--small"}/>

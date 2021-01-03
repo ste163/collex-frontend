@@ -11,7 +11,6 @@ export const CollectionViewHeader = () => {
     const modal = useRef()
 
     const { collections, selectedCollection, setSelectedCollection } = useContext(CollectionContext)
-    console.log(selectedCollection)
 
     // Set currently selected collection state
     const selectCollection = e => {

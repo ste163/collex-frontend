@@ -39,6 +39,7 @@ export const CollectionProvider = props => {
         })
         .then(() => {
             getCollections(collection.userId)
+            // Not able to just setSelectedCollection here, for some reason it doesn't update state in List or Dropdown
         })
     }
 
@@ -52,6 +53,7 @@ export const CollectionProvider = props => {
         })
         .then(() => {
             getCollections(collection.userId)
+            setSelectedCollection(collection)
         })
     }
 

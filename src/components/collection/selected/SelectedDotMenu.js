@@ -7,7 +7,7 @@ import "./SelectedDotMenu.css"
 
 export const SelectedDotMenu = (React.forwardRef((props, ref) => {
 
-    const { selectedCollection, deleteCollection } = useContext(CollectionContext);
+    const { deleteCollection } = useContext(CollectionContext);
 
     const deleteModal = useRef()
     const editModal = useRef()  
