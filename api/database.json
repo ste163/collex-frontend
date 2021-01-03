@@ -17,40 +17,13 @@
   ],
   "collections": [
     {
+      "id": 2,
       "userId": 1,
-      "name": "testCollection",
-      "description": "asdfasd",
+      "name": "1FirstItem",
+      "description": "Yes!!",
       "public": "2",
       "categorizationType": "",
-      "starred": "",
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "name": "123",
-      "description": "gfadgfda",
-      "public": "2",
-      "categorizationType": "",
-      "starred": "",
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "name": "Test4",
-      "description": "fdaadgfgafd",
-      "public": "1",
-      "categorizationType": "",
-      "starred": "",
-      "id": 3
-    },
-    {
-      "userId": 1,
-      "name": "keep 'em coming",
-      "description": "",
-      "public": "2",
-      "categorizationType": "",
-      "starred": false,
-      "id": 4
+      "starred": ""
     },
     {
       "userId": 1,
@@ -89,31 +62,76 @@
       "id": 10
     },
     {
-      "userId": 1,
-      "name": "gafdsafd",
-      "description": "dsfgdagadfsadfadsfgadfgad",
-      "public": "2",
-      "categorizationType": "",
-      "starred": false,
-      "id": 11
-    },
-    {
-      "userId": 1,
-      "name": "Test4324",
-      "description": "adfgadfgadfgadfga",
-      "public": "2",
-      "categorizationType": "",
-      "starred": false,
-      "id": 12
-    },
-    {
+      "id": 11,
       "userId": 1,
       "name": "DId THis WORK??",
       "description": "dfklasjdfklasj dflksajd fl sak;dfjlkasdfj asldkfj aslkdf jasldhfaksjdhf",
       "public": "2",
       "categorizationType": "",
+      "starred": false
+    },
+    {
+      "id": 13,
+      "userId": 1,
+      "name": "gafdsafd",
+      "description": "dsfgdagadfsadfadsfgadfgad",
+      "public": "2",
+      "categorizationType": "",
+      "starred": false
+    },
+    {
+      "userId": 1,
+      "name": "tester",
+      "description": "gadfgadf",
+      "public": "1",
+      "categorizationType": "",
       "starred": false,
-      "id": 13
+      "id": 14
+    },
+    {
+      "id": 15,
+      "userId": 1,
+      "name": "2nd Item",
+      "description": "2354afdgadfgadgadfafsda",
+      "public": "1",
+      "categorizationType": "",
+      "starred": false
+    },
+    {
+      "userId": 1,
+      "name": "dsasdf",
+      "description": "gadfadfgadf",
+      "public": "2",
+      "categorizationType": "",
+      "starred": false,
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "name": "testtest",
+      "description": "43241341",
+      "public": "1",
+      "categorizationType": "",
+      "starred": false,
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "name": "testtesttest",
+      "description": "afdgadfhgfsfhghgsf",
+      "public": "2",
+      "categorizationType": "",
+      "starred": false,
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "name": "3rd Item",
+      "description": "",
+      "public": "1",
+      "categorizationType": "",
+      "starred": false,
+      "id": 19
     }
   ],
   "recents": [],

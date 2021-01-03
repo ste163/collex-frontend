@@ -3,14 +3,16 @@ import { CollectionContext } from "./CollectionProvider"
 import { Modal } from "../modal/Modal"
 import "./CollectionForm.css"
 
-export const CollectionForm = () => {
+export const CollectionForm = props => {
 
+    const editableCollection = props.props
     const userId = +sessionStorage.getItem("userId")
 
     const visModal = useRef()
 
     // Set the default project so the form can reset.
     const defaultCollection = {
+        userId: userId,
         name: "",
         description: "",
         // categorizationType should probably be an int
@@ -21,12 +23,9 @@ export const CollectionForm = () => {
     } 
 
     const { collections, selectedCollection, addCollection, updateCollection } = useContext(CollectionContext)
-    const editableCollection = selectedCollection
- 
     
     // Sets state for creating the project
     const [ collection, setCollection ] = useState(defaultCollection)
-
     const [ isLoading, setIsLoading ] = useState(true)
 
     // Check on load and when collections change, if we have an editable collection or not
@@ -37,7 +36,7 @@ export const CollectionForm = () => {
         } else {
             setIsLoading(false)
         }
-    }, [collections, selectedCollection])
+    }, [selectedCollection, collections])
 
     const handleControlledInputChange = e => {
         const newCollection = { ...collection }
@@ -94,6 +93,8 @@ export const CollectionForm = () => {
             </button>
         </>
     )
+
+    console.log("editable collection: ",editableCollection)
 
     return (
         <>

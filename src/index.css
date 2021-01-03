@@ -68,7 +68,8 @@
 
 /* Concise collection column */
 .collection__list {
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: none;
   max-height: 87vh;
   width: 22vw;
 }

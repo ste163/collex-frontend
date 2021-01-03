@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react"
+import React, { useContext, useRef, useEffect } from "react"
 import { CollectionContext } from "../CollectionProvider"
 import { NoSelectedCollectionCard } from "./NoSelectedCollectionCard"
 import { SelectedDotMenu } from "./SelectedDotMenu"
@@ -8,7 +8,11 @@ export const CollectionSelected = () => {
     
     const dotMenu = useRef()
 
-    const { selectedCollection } = useContext(CollectionContext)
+    const { selectedCollection, collections } = useContext(CollectionContext)
+
+    useEffect(() => {
+
+    }, [collections])
 
     return (
         <section className="collection__selected">
