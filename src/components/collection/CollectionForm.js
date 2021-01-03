@@ -3,10 +3,8 @@ import { CollectionContext } from "./CollectionProvider"
 import { Modal } from "../modal/Modal"
 import "./CollectionForm.css"
 
-export const CollectionForm = props => {
+export const CollectionForm = () => {
 
-    // Store the project we can edit, if we have one
-    const editableCollection = props.props
     const userId = +sessionStorage.getItem("userId")
 
     const visModal = useRef()
@@ -22,7 +20,9 @@ export const CollectionForm = props => {
         starred: false
     } 
 
-    const { collections, addCollection, updateCollection } = useContext(CollectionContext)
+    const { collections, selectedCollection, addCollection, updateCollection } = useContext(CollectionContext)
+    const editableCollection = selectedCollection
+ 
     
     // Sets state for creating the project
     const [ collection, setCollection ] = useState(defaultCollection)
@@ -37,7 +37,7 @@ export const CollectionForm = props => {
         } else {
             setIsLoading(false)
         }
-    }, [collections])
+    }, [collections, selectedCollection])
 
     const handleControlledInputChange = e => {
         const newCollection = { ...collection }
@@ -119,7 +119,9 @@ export const CollectionForm = props => {
 
             <fieldset>
                 <label htmlFor="collectionDescription">Description: </label>
-                <input type="text"
+                <textarea
+                rows={3}
+                cols={3}
                 onChange={handleControlledInputChange}
                 id="collectionDescription"
                 name="description"

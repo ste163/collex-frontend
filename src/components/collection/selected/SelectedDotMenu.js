@@ -31,7 +31,7 @@ export const SelectedDotMenu = (React.forwardRef((props, ref) => {
         }
     }}>
 
-        <Modal ref={editModal} contentFunction={<CollectionForm props={props.collection}/>} width={"modal__width--wide"}/> 
+        <Modal ref={editModal} contentFunction={<CollectionForm />} width={"modal__width--wide"}/> 
        
         <Modal ref={deleteModal} contentFunction={<DeleteWarning/>} width={"modal__width--small"}/>
         

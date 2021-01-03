@@ -28,7 +28,7 @@
     font-weight: var(--weightThin);
   }
   
-  input, select{
+  input, textarea, select{
     background-color: var(--mediumGray);
     border-style: none;
     border-radius: var(--formFieldRadius);
@@ -36,6 +36,10 @@
     font-size: 0.7em;
     width: min-content;
     letter-spacing: 0.03em;
+  }
+
+  textarea {
+    width: 100%;
   }
   
   .input__radio {
