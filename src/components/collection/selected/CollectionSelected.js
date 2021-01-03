@@ -1,10 +1,13 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useRef } from "react"
 import { CollectionContext } from "../CollectionProvider"
 import { NoSelectedCollectionCard } from "../NoSelectedCollectionCard"
+import { SelectedDotMenu } from "./SelectedDotMenu"
 import "./CollectionSelected.css"
 
 export const CollectionSelected = () => {
     
+    const dotMenu = useRef()
+
     const { selectedCollection } = useContext(CollectionContext)
 
     return (
@@ -12,8 +15,10 @@ export const CollectionSelected = () => {
             {
                 selectedCollection === undefined ? <NoSelectedCollectionCard /> :
                 <article className="card card__color--white card__selected">
+                    <SelectedDotMenu ref={dotMenu} collection={selectedCollection} />
+
                     <div className="selected__type">
-                        Collection
+                       {selectedCollection.public === "2" ? "Public" : "Private"} Collection
                     </div>
                     <h1>
                         {selectedCollection.name}

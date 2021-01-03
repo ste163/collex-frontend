@@ -102,7 +102,7 @@ export const CollectionForm = props => {
         <form className="form__collection" onSubmit={createCollection}>
 
             <h3 className="form__h3">
-                {editableCollection ? (<>Update {editableCollection.name}</>) : "Create New Collection"}
+                {editableCollection ? (<>Edit {editableCollection.name}</>) : "Create New Collection"}
             </h3>
 
             <fieldset>
@@ -149,7 +149,7 @@ export const CollectionForm = props => {
                 className="btn"
                 type="submit"
                 disabled={isLoading}>
-                    {editableCollection ? "Update" : "Create"}
+                    {editableCollection ? "Edit" : "Create"}
                 </button>
             </div>
 
