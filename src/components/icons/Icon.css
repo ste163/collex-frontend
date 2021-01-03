@@ -18,6 +18,11 @@
     transition: var(--btnHover);
 }
 
+.icon__close {
+    width: 1em;
+    height: 1em;
+}
+
 .icon__black {
     fill: var(--lightBlack);
     transition: var(--btnHover);

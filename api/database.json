@@ -54,30 +54,12 @@
     },
     {
       "userId": 1,
-      "name": "adgfafdg",
-      "description": "sadf",
-      "public": "1",
-      "categorizationType": "",
-      "starred": false,
-      "id": 5
-    },
-    {
-      "userId": 1,
       "name": "ghfshgsfghfs",
       "description": "asdfsda",
       "public": "2",
       "categorizationType": "",
       "starred": false,
       "id": 6
-    },
-    {
-      "userId": 1,
-      "name": "fghjghdj",
-      "description": "234234",
-      "public": "1",
-      "categorizationType": "",
-      "starred": false,
-      "id": 7
     },
     {
       "userId": 1,
@@ -132,15 +114,6 @@
       "categorizationType": "",
       "starred": false,
       "id": 13
-    },
-    {
-      "userId": 1,
-      "name": "ABC",
-      "description": "Am I up at the to?",
-      "public": "1",
-      "categorizationType": "",
-      "starred": false,
-      "id": 14
     }
   ],
   "recents": [],

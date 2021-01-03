@@ -55,9 +55,19 @@ export const CollectionProvider = props => {
         })
     }
 
+    const deleteCollection = (userId, collectionId) => {
+        return fetch(`http://localhost:8088/collections/${collectionId}`, {
+            method: "DELETE"
+        })
+        .then(() => {
+            getCollections(userId)
+            setSelectedCollection(defaultCollection)
+        })
+    }
+
     return (
         <CollectionContext.Provider value={{
-            collections, getCollections, addCollection, updateCollection, searchTerms, setSearchTerms, selectedCollection, setSelectedCollection
+            collections, getCollections, addCollection, updateCollection, deleteCollection, searchTerms, setSearchTerms, selectedCollection, setSelectedCollection
         }}>
             {props.children}
         </CollectionContext.Provider>
