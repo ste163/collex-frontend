@@ -3,7 +3,7 @@
     position: relative;
     grid-column: 2;
     grid-row: 1;
-    margin: 0.7em 0.9em 0.3em 0;
+    margin: 0em 0.3em 0.3em 0;
     justify-self: end;
     align-self: start;
 }

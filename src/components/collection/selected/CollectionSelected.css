@@ -7,13 +7,18 @@
 }
 
 .selected__type {
+    grid-column: 1;
+    grid-row: 1;
     font-size: 0.6em;
 }
 
 .selected__h1 {
-
+    grid-column: 1 / 2;
+    grid-row: 2;
 }
 
 .selected__description {
-    font-size: 0.7em;
+    grid-column: 1 / 2;
+    grid-row: 3;
+    font-size: 0.6em;
 }

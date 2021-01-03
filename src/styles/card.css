@@ -3,10 +3,6 @@
     box-shadow: var(--cardDropShadow);
 }
 
-.card__type {
-
-}
-
 .card__noDefault {
     display: flex;
     flex-flow: column nowrap;
