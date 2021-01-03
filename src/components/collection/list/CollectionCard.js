@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { CollectionContext } from "../CollectionProvider"
 import { IconArrow } from "../../icons/IconArrow"
+import { NoSelectedCollectionCard } from "../selected/NoSelectedCollectionCard"
 import "./CollectionCard.css"
 
 export const CollectionCard = ({collection}) => {
@@ -16,7 +17,10 @@ export const CollectionCard = ({collection}) => {
     return (
         <button
         id={collection.id}
-        className={collection.id !== selectedCollection.id ? "card card__color--white card__collection" : "card card__color--yellow card__collection"}
+        className={
+            selectedCollection === undefined ? "card card__color--white card__collection" :
+            collection.id !== selectedCollection.id ? "card card__color--white card__collection" : "card card__color--yellow card__collection"
+        }
         onClick={e => {
             const matchingCollection = collections.find(collection => collection.id === +e.target.id)
             setSelectedCollection(matchingCollection)
