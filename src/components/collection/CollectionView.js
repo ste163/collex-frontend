@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from "react"
 import { CollectionContext } from "./CollectionProvider"
 import { CollectionViewHeader } from "./CollectionViewHeader"
-import { CollectionList } from "./CollectionList"
-import { CollectionSelected } from "./CollectionSelected"
+import { CollectionList } from "./list/CollectionList"
+import { CollectionSelected } from "./selected/CollectionSelected"
 
 export const CollectionView = () => {
 

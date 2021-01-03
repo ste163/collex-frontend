@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
-import { CollectionContext } from "./CollectionProvider"
-import { IconArrow } from "../icons/IconArrow"
+import { CollectionContext } from "../CollectionProvider"
+import { IconArrow } from "../../icons/IconArrow"
 import "./CollectionCard.css"
 
 export const CollectionCard = ({collection}) => {
@@ -19,7 +19,6 @@ export const CollectionCard = ({collection}) => {
         className="card card__color--white card__collection"
         onClick={e => {
             const matchingCollection = collections.find(collection => collection.id === +e.target.id)
-            console.log(matchingCollection)
             setSelectedCollection(matchingCollection)
         }}>
             <h2 id={collection.id} className="collection__h2--card">{collection.name}</h2>

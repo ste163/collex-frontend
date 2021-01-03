@@ -1,0 +1,15 @@
+.card__selected {
+    display: grid;
+    margin: 0.8em;
+    padding: 0.5em;
+    width: 85%;
+    font-size: 1em;
+}
+
+.selected__type {
+    font-size: 0.6em;
+}
+
+.selected__description {
+    font-size: 0.7em;
+}

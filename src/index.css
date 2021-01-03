@@ -86,7 +86,7 @@
 /* @media screen and (max-width: 1215px) {
 
   .view__container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
   }
   
   .collection__list {
@@ -113,7 +113,8 @@ body {
 }
 
 h1 {
-  font-weight: var(--weightHeaviest)
+  font-weight: var(--weightHeavy);
+  margin: 0.2em 0 0.1em;
 }
 
 h2 {

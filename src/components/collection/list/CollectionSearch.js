@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react"
-import { CollectionContext } from "./CollectionProvider"
+import { CollectionContext } from "../CollectionProvider"
 
 export const CollectionSearch = () => {
     const { setSearchTerms } = useContext(CollectionContext)

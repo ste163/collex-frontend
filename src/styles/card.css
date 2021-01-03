@@ -3,14 +3,8 @@
     box-shadow: var(--cardDropShadow);
 }
 
-.card__link {
-    display: flex;
-    flex-flow: column nowrap;
-    max-width: max-content;
-    width: 5em;
-    padding: 0.8em;
-    margin: 1em;
-    height: min-content;
+.card__type {
+
 }
 
 .card__noDefault {
