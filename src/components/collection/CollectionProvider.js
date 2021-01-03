@@ -4,9 +4,14 @@ export const CollectionContext = createContext()
 
 export const CollectionProvider = props => {
 
+    const defaultCollection = {
+        id: 0,
+        name: "defaultCollection"
+    }
+
     const [ collections, setCollection ] = useState([])
     const [ searchTerms, setSearchTerms] = useState("")
-    const [ selectedCollection, setSelectedCollection ] = useState(undefined)
+    const [ selectedCollection, setSelectedCollection ] = useState(defaultCollection)
 
     const getCollections = userId => {
         return fetch(`http://localhost:8088/collections/?userId=${userId}`)

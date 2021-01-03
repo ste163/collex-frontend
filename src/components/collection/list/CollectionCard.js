@@ -16,7 +16,7 @@ export const CollectionCard = ({collection}) => {
     return (
         <button
         id={collection.id}
-        className="card card__color--white card__collection"
+        className={collection.id !== selectedCollection.id ? "card card__color--white card__collection" : "card card__color--yellow card__collection"}
         onClick={e => {
             const matchingCollection = collections.find(collection => collection.id === +e.target.id)
             setSelectedCollection(matchingCollection)
