@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useState, useContext, useEffect } from "react"
+import { WordButton } from "../word/WordButton"
+import { RecentContext } from "../recent/RecentProvider"
 import "./ThesaurusRecent.css"
 // Store most recent searches in a card beneath the search card
 
@@ -18,14 +20,23 @@ import "./ThesaurusRecent.css"
 
 export const ThesaurusRecent = () => {
 
+    const { recents } = useContext(RecentContext)
+
     return (
         <article className="card card__color--white card__thesaurus--recent">
             {/* make a more consistent className */}
             <h2 className="label__search">
                 Most recent searches
             </h2>
-            <ul>
-                {/* Word Buttons go here, as an <li> */}
+            <ul className="recent__list">
+                {
+                    recents === undefined ? null : 
+                    <>
+                    {recents.map(recent => {
+                        return <WordButton props={recent} />
+                    })}
+                    </>
+                }
             </ul>
         </article>
     )
