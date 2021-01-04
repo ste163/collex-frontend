@@ -10,7 +10,7 @@ export const ThesaurusProvider = props => {
     const [word, setWord] = useState([])
 
     const getWord = word => {
-        return fetch(`https://dictionaryapi.com/api/v3/references/${word}/json/program?key=${key}`)
+        return fetch(`https://dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${key}`)
         .then(response => response.json())
         .then(setWord)
         }
