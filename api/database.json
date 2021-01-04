@@ -17,67 +17,58 @@
   ],
   "collections": [
     {
+      "id": 8,
       "userId": 1,
-      "name": "gfadfghgjdhgf",
-      "description": "dasfgadfg",
+      "name": "Ghosts",
+      "description": "Words about ghosts and spooky things",
       "public": "2",
       "categorizationType": "",
-      "starred": false,
-      "id": 8
+      "starred": false
     },
     {
+      "id": 10,
       "userId": 1,
-      "name": "Big collection name coming",
-      "description": "And the description is pretty long too becasue I have a lot to say",
+      "name": "Noir",
+      "description": "Noir-themed words or having noir connotations",
       "public": "1",
       "categorizationType": "",
-      "starred": false,
-      "id": 10
+      "starred": false
     },
     {
       "id": 11,
       "userId": 1,
-      "name": "DId THis WORK??",
-      "description": "dfklasjdfklasj dflksajd fl sak;dfjlkasdfj asldkfj aslkdf jasldhfaksjdhf",
-      "public": "2",
+      "name": "Haunted houses",
+      "description": "Related to haunted houses and spooky locations",
+      "public": "1",
       "categorizationType": "",
       "starred": false
     },
     {
       "id": 15,
       "userId": 1,
-      "name": "2nd",
-      "description": "2354afdgadfgadgadfafsda",
+      "name": "Summer",
+      "description": "Word about summer",
       "public": "1",
       "categorizationType": "",
       "starred": false
     },
     {
+      "id": 16,
       "userId": 1,
-      "name": "dsasdf",
-      "description": "gadfadfgadf",
-      "public": "2",
-      "categorizationType": "",
-      "starred": false,
-      "id": 16
-    },
-    {
-      "userId": 1,
-      "name": "1111",
-      "description": "",
+      "name": "Water",
+      "description": "Words relating to water",
       "public": "1",
       "categorizationType": "",
-      "starred": false,
-      "id": 19
+      "starred": false
     },
     {
+      "id": 19,
       "userId": 1,
-      "name": "wertwer",
-      "description": "gtghfsfg",
-      "public": "2",
+      "name": "Winter",
+      "description": "Word about winter",
+      "public": "1",
       "categorizationType": "",
-      "starred": false,
-      "id": 21
+      "starred": false
     }
   ],
   "recents": [],

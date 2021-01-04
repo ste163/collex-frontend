@@ -150,7 +150,7 @@ export const CollectionForm = props => {
                 className="btn"
                 type="submit"
                 disabled={isLoading}>
-                    {editableCollection ? "Edit" : "Create"}
+                    {editableCollection ? "Save" : "Create"}
                 </button>
             </div>
 
