@@ -27,6 +27,12 @@
     letter-spacing: 0.03em;
     font-weight: var(--weightThin);
   }
+
+  .label__search {
+    font-size: 0.65em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
   
   input, textarea, select{
     background-color: var(--mediumGray);
@@ -36,6 +42,10 @@
     font-size: 0.7em;
     width: min-content;
     letter-spacing: 0.03em;
+  }
+
+  .input__search {
+    width: 94%
   }
 
   textarea {

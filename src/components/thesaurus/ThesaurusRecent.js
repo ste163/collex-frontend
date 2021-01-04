@@ -1,0 +1,1 @@
+// Store most recent searches in a card beneath the search card

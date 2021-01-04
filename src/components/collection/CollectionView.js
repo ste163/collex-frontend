@@ -3,6 +3,7 @@ import { CollectionContext } from "./CollectionProvider"
 import { CollectionViewHeader } from "./CollectionViewHeader"
 import { CollectionList } from "./list/CollectionList"
 import { CollectionSelected } from "./selected/CollectionSelected"
+import { ThesaurusList } from "../thesaurus/ThesaurusList"
 
 export const CollectionView = () => {
 
@@ -23,11 +24,7 @@ export const CollectionView = () => {
         <section className="view__container">
             <CollectionList />
             <CollectionSelected />
-
-            {/* Thesaurus */}
-            <section className="collection__thesaurus">
-                Thesaurus
-            </section>
+            <ThesaurusList />
         </section>
         </>
     )

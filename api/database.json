@@ -69,6 +69,33 @@
       "public": "1",
       "categorizationType": "",
       "starred": false
+    },
+    {
+      "id": 20,
+      "userId": 1,
+      "name": "Aromas",
+      "description": "Smelly words",
+      "public": "2",
+      "categorizationType": "",
+      "starred": false
+    },
+    {
+      "userId": 1,
+      "name": "Sounds",
+      "description": "Sound-related words",
+      "public": "1",
+      "categorizationType": "",
+      "starred": false,
+      "id": 21
+    },
+    {
+      "userId": 1,
+      "name": "Autumn",
+      "description": "Fall-related words, excluding Halloween",
+      "public": "1",
+      "categorizationType": "",
+      "starred": false,
+      "id": 22
     }
   ],
   "recents": [],

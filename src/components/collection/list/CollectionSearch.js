@@ -11,10 +11,10 @@ export const CollectionSearch = () => {
 
     return (
             <fieldset className="card card__color--white card__collection card__collection--search">
-                <label htmlFor="collectionSearch">Search collections by name</label>
+                <label className="label__search" htmlFor="collectionSearch">Search collections by name</label>
                 <input type="text"
                 name="collectionSearch"
-                className="search__input"
+                className="input__search"
                 onKeyUp={
                     (keyEvent) => setSearchTerms(keyEvent.target.value)
                 }
