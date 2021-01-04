@@ -1,0 +1,9 @@
+.card__thesaurus--recent {
+    display: flex;
+    margin: 0.5em;
+    margin-bottom: 1.5em;
+    padding: .5em;
+    flex-flow: column;
+    align-items: left;
+    max-width: 15em;
+}
