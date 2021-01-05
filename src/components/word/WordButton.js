@@ -11,7 +11,7 @@ export const WordButton = props => {
         <>
         <li className="word__button">
             <button className="btn">
-                Weather
+                {props.props.word}
             </button>
         </li>
         </>

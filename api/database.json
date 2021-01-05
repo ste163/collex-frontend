@@ -98,6 +98,37 @@
       "id": 22
     }
   ],
-  "recents": [],
+  "recents": [
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "test",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "test2",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "crazy",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "recent",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "recent",
+      "id": 5
+    }
+  ],
   "words": []
 }

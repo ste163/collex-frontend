@@ -6,6 +6,8 @@ export const RecentProvider = props => {
 
     const [ recents, setRecents ] = useState([])
 
+    // Should be by collectionId, if no collection selected, get all recents will a NULL selection.
+    // Leave userId for testing.
     const getRecents = userId => {
         return fetch(`http://localhost:8088/recents/?userId=${userId}`)
         .then(response => response.json())
