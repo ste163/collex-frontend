@@ -10,7 +10,11 @@ export const WordButton = props => {
     return (
         <>
         <li className="word__button">
-            <button className="btn">
+            <button className="btn"
+            onClick={e => {
+                console.log(e)
+            }}>
+                
                 {props.props.word}
             </button>
         </li>

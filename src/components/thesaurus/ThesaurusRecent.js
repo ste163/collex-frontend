@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react"
 import { WordButton } from "../word/WordButton"
 import { RecentContext } from "../recent/RecentProvider"
+import { CollectionContext } from "../collection/CollectionProvider"
 import "./ThesaurusRecent.css"
 // Store most recent searches in a card beneath the search card
 
@@ -15,25 +16,23 @@ import "./ThesaurusRecent.css"
 // And if the array.length is greater than the max from settings,
 // delete the item from list
 
-// IF user clicks on one of the words, which are displayed as buttons (by looping through the Recents array)
-// Then put that value in the Thesaurus Search box, which means the Thesaurus Search will need to have GLOBAL state
-
 export const ThesaurusRecent = () => {
 
     const { recents } = useContext(RecentContext)
+    const { selectedCollection } = useContext(CollectionContext)
 
     return (
         <article className="card card__color--white card__thesaurus--recent">
             {/* make a more consistent className */}
             <h2 className="label__search">
-                Most recent searches
+                Most recent searches {selectedCollection.name === "defaultCollection" ? '' : `for ${selectedCollection.name}`}
             </h2>
             <ul className="recent__list">
                 {
                     recents === undefined ? null : 
                     <>
                     {recents.map(recent => {
-                        return <WordButton props={recent} />
+                        return <WordButton key={recent.id} props={recent} />
                     })}
                     </>
                 }
