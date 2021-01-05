@@ -23,20 +23,25 @@ export const ThesaurusRecent = () => {
 
     return (
         <article className="card card__color--white card__thesaurus--recent">
-            {/* make a more consistent className */}
-            <h2 className="label__search">
-                Most recent searches {selectedCollection.name === "defaultCollection" ? '' : `for ${selectedCollection.name}`}
-            </h2>
-            <ul className="recent__list">
-                {
-                    recents === undefined ? null : 
-                    <>
-                    {recents.map(recent => {
-                        return <WordButton key={recent.id} props={recent} />
-                    })}
-                    </>
-                }
-            </ul>
+            {
+            selectedCollection === undefined ? null :
+                <>    
+                {/* make a more consistent className */}
+                <h2 className="label__search">
+                    Most recent searches {selectedCollection.id === 0 ? '' : `for ${selectedCollection.name}`}
+                </h2>
+                <ul className="recent__list">
+                    {
+                        recents === undefined ? null : 
+                        <>
+                        {recents.map(recent => {
+                            return <WordButton key={recent.id} props={recent} />
+                        })}
+                        </>
+                    }
+                </ul>
+                </>
+            }
         </article>
     )
 }

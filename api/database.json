@@ -128,6 +128,12 @@
       "collectionId": 0,
       "word": "recent",
       "id": 5
+    },
+    {
+      "userId": 1,
+      "collectionId": 11,
+      "word": "mansion",
+      "id": 6
     }
   ],
   "words": []
