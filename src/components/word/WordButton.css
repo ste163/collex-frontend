@@ -2,3 +2,7 @@
     margin: 0 0.5em 0.5em 0;
     text-decoration: none;
 }
+
+.btn--word {
+    border-radius: var(--wordBtnRadius) !important
+}

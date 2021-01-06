@@ -10,13 +10,12 @@ export const WordButton = props => {
     return (
         <>
         <li className="word__button">
-            <button className="btn"
+            <button className="btn btn--word"
             onClick={e => {
                 console.log("FETCH: ", e.target.innerHTML)
                 // FETCH word from MW API
                     // Then pass result into definition card
             }}>
-                
                 {props.props.word}
             </button>
         </li>

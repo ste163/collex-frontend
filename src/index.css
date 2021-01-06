@@ -44,6 +44,7 @@
   /* Border Radius */
   --cardRadius: 15px;
   --formFieldRadius: 0.5em;
+  --wordBtnRadius: 2em;
 
   /* Drop Shadow */
   --cardDropShadow: -0.1em 0.1em 0.3em var(--shadowGray);

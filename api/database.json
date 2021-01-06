@@ -245,6 +245,42 @@
       "collectionId": 15,
       "word": "humid",
       "id": 104
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "filthy",
+      "id": 109
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "warm",
+      "id": 110
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "odor",
+      "id": 111
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "aromatic goodness",
+      "id": 112
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "short",
+      "id": 113
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "another wrod",
+      "id": 114
     }
   ],
   "words": []
