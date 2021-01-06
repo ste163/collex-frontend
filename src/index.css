@@ -3,6 +3,7 @@
 @import "./styles/viewHeader.css";
 @import "./styles/card.css";
 @import "./styles/scrollbar.css";
+@import "./styles/dotMenu.css";
 
 :root {
   /* Colors */

@@ -1,23 +1,21 @@
 import React, { useRef, forwardRef, useContext } from "react"
-import { IconDots } from "../../icons/IconDots"
-import { Modal } from "../../modal/Modal"
-import { CollectionForm } from "../CollectionForm"
-import { CollectionContext } from "../CollectionProvider"
+import { IconDots } from "../icons/IconDots"
+import { Modal } from "../modal/Modal"
+import { RecentContext } from "./RecentProvider"
 
-export const SelectedDotMenu = (React.forwardRef((props, ref) => {
+export const RecentDotMenu = (React.forwardRef((props, ref) => {
 
-    const { deleteCollection } = useContext(CollectionContext);
+    const { deleteAllForCollection } = useContext(RecentContext);
 
-    const deleteModal = useRef()
-    const editModal = useRef()  
+    const clearModal = useRef()
 
-    const DeleteWarning = () => (
+    const ClearWarning = () => (
         <>
             <h2 className="modal__warning">Warning</h2>
-            <p className="warning__p">Deleting {props.collection.name} is permanent.</p>
+            <p className="warning__p">Clearing {props.collection.name} is permanent.</p>
             <button className="btn btn--red"
-            onClick={e => deleteCollection(props.collection.userId, props.collection.id)}>
-                Delete
+            onClick={e => deleteAllForCollection(props.collection.userId, props.collection.id)}>
+                Clear
             </button>
         </>
     )
@@ -30,9 +28,7 @@ export const SelectedDotMenu = (React.forwardRef((props, ref) => {
         }
     }}>
 
-        <Modal ref={editModal} contentFunction={<CollectionForm props={props.collection} />} width={"modal__width--wide"}/> 
-       
-        <Modal ref={deleteModal} contentFunction={<DeleteWarning/>} width={"modal__width--small"}/>
+        <Modal ref={clearModal} contentFunction={<ClearWarning/>} width={"modal__width--small"}/>
         
         <button 
         className="card__btn"
@@ -56,13 +52,8 @@ export const SelectedDotMenu = (React.forwardRef((props, ref) => {
         onMouseLeave={e => ref.current.className = "dot__btns--inactive"}>
             
             <button className="dot__btn"
-            onClick={e => editModal.current.className = "background__modal modal__active"}>
-                Edit
-            </button>
-            
-            <button className="dot__btn"
-            onClick={e => deleteModal.current.className = "background__modal modal__active"}>
-                Delete
+            onClick={e => clearModal.current.className = "background__modal modal__active"}>
+                Clear
             </button>
         
         </div>

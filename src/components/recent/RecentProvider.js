@@ -41,9 +41,13 @@ export const RecentProvider = props => {
         })
     }
 
+    const deleteAllForCollection = (userId, collectionId) => {
+        console.log("DELETE", collectionId);
+    }
+
     return (
         <RecentContext.Provider value={{
-            recents, getRecents, addRecent, deleteRecent
+            recents, getRecents, addRecent, deleteRecent, deleteAllForCollection
         }}>
             {props.children}
         </RecentContext.Provider>

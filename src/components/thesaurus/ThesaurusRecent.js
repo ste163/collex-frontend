@@ -1,8 +1,9 @@
-import React, { useState, useContext, useEffect } from "react"
+import React, { useState, useContext, useEffect, useRef } from "react"
 import { WordButton } from "../word/WordButton"
 import { RecentContext } from "../recent/RecentProvider"
 import { CollectionContext } from "../collection/CollectionProvider"
 import { SettingsContext } from "../settings/SettingsProvider"
+import { RecentDotMenu } from "../recent/RecentDotMenu"
 import "./ThesaurusRecent.css"
 // Store most recent searches in a card beneath the search card
 
@@ -13,6 +14,7 @@ import "./ThesaurusRecent.css"
 export const ThesaurusRecent = () => {
     const totalRecents = +sessionStorage.getItem("TotalRecentsToStore")
     const userId = +sessionStorage.getItem("userId")
+    const dotMenu = useRef()
 
     const { recents, deleteRecent } = useContext(RecentContext)
     const { selectedCollection } = useContext(CollectionContext)
@@ -44,6 +46,7 @@ export const ThesaurusRecent = () => {
 
     return (
         <article className="card card__color--white card__thesaurus--recent">
+            <RecentDotMenu ref={dotMenu} collection={selectedCollection} />
             {
             selectedCollection === undefined ? null :
                 <>    
