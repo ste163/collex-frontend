@@ -10,7 +10,7 @@
       "id": 1,
       "userId": 1,
       "defaultCollection": 22,
-      "TotalRecentsToStore": 5,
+      "TotalRecentsToStore": 6,
       "addToMultiple": "true",
       "colorMode": "dark"
     }
@@ -134,18 +134,6 @@
     },
     {
       "userId": 1,
-      "collectionId": 0,
-      "word": "crazy",
-      "id": 64
-    },
-    {
-      "userId": 1,
-      "collectionId": 0,
-      "word": "crazy",
-      "id": 65
-    },
-    {
-      "userId": 1,
       "collectionId": 19,
       "word": "blizzard",
       "id": 68
@@ -177,20 +165,32 @@
     {
       "userId": 1,
       "collectionId": 0,
-      "word": "adwa",
-      "id": 73
+      "word": "yes it works",
+      "id": 82
     },
     {
       "userId": 1,
       "collectionId": 0,
-      "word": "color",
-      "id": 74
+      "word": "select",
+      "id": 83
     },
     {
       "userId": 1,
-      "collectionId": 0,
-      "word": "color",
-      "id": 75
+      "collectionId": 16,
+      "word": "ocean",
+      "id": 86
+    },
+    {
+      "userId": 1,
+      "collectionId": 16,
+      "word": "swim",
+      "id": 87
+    },
+    {
+      "userId": 1,
+      "collectionId": 19,
+      "word": "snow",
+      "id": 88
     }
   ],
   "words": []

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect, useState, useRef } from "react"
 import { ThesaurusContext } from "./ThesaurusProvider"
 import { RecentContext } from "../recent/RecentProvider"
 import { CollectionContext } from "../collection/CollectionProvider"
@@ -7,6 +7,7 @@ import "./ThesaurusSearch.css"
 export const ThesaurusSearch = () => {
     
     const userId = parseInt(sessionStorage.getItem("userId"))
+    const searchInput = useRef()
 
     const { word, getWord } = useContext(ThesaurusContext)
     const { selectedCollection } = useContext(CollectionContext)
@@ -30,6 +31,7 @@ export const ThesaurusSearch = () => {
                 const lowered = trimmed.toLowerCase()
                 createRecentWord(lowered)
                 getWord(lowered)
+                searchInput.current.value = ""
             }    
         }
     }
@@ -57,6 +59,7 @@ export const ThesaurusSearch = () => {
             <fieldset className="">
                 <label className="label__search" htmlFor="search">Search Merriam-Webster's Collegiate<sup>&#174;</sup> Thesaurus</label>
                 <input type="text"
+                ref={searchInput}
                 onChange={handleControlledInputChange}
                 defaultValue=""
                 name="search"
