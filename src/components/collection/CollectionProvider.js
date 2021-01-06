@@ -4,8 +4,11 @@ export const CollectionContext = createContext()
 
 export const CollectionProvider = props => {
 
+    const userId = parseInt(sessionStorage.getItem("userId"))
+
     const defaultCollection = {
         id: 0,
+        userId,
         name: "defaultCollection"
     }
 

@@ -5,7 +5,7 @@ import { RecentContext } from "./RecentProvider"
 
 export const RecentDotMenu = (React.forwardRef((props, ref) => {
 
-    const { deleteAllForCollection } = useContext(RecentContext);
+    const { recents, deleteRecent } = useContext(RecentContext);
 
     const clearModal = useRef()
 
@@ -14,7 +14,14 @@ export const RecentDotMenu = (React.forwardRef((props, ref) => {
             <h2 className="modal__warning">Warning</h2>
             <p className="warning__p">Clearing recents for {props.collection.name} is permanent.</p>
             <button className="btn btn--red"
-            onClick={e => deleteAllForCollection(props.collection.userId, props.collection.id)}>
+            onClick={e => {
+                // Would be better if I could have ONE method to delete all instead of however many words there are
+                const selected = recents.filter(r => r.collectionId === props.collection.id)
+                if (selected.length > 0) {
+                    selected.forEach(r => deleteRecent(props.collection.userId, r.id))
+                }
+                clearModal.current.className = "background__modal"
+            }}>
                 Clear
             </button>
         </>
@@ -28,7 +35,7 @@ export const RecentDotMenu = (React.forwardRef((props, ref) => {
         }
     }}>
 
-        <Modal ref={clearModal} contentFunction={<ClearWarning/>} width={"modal__width--small"}/>
+        <Modal ref={clearModal} contentFunction={<ClearWarning />} width={"modal__width--small"}/>
         
         <button 
         className="card__btn"

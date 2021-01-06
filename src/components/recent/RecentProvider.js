@@ -31,23 +31,27 @@ export const RecentProvider = props => {
         })
     }
 
-    const deleteRecent = (userId, recentId) => {
-        return fetch(`http://localhost:8088/recents/${recentId}`, {
+    // Had to convert to async if using this in a foreach loop. Otherwise, running it so quickly crashes
+    const deleteRecent = async (userId, recentId) => {
+        await fetch(`http://localhost:8088/recents/${recentId}`, {
             method: "DELETE"
         })
-        .then(() => {
-            // MUST have a 'defaultCollection' with an Id of 0 or else all recents with Id 0 get deleted
-            getRecents(userId)
-        })
+        // MUST have a 'defaultCollection' with an Id of 0 or else all recents with Id 0 get deleted
+        getRecents(userId)
     }
 
-    const deleteAllForCollection = (userId, collectionId) => {
-        console.log("DELETE", collectionId);
-    }
+    // Currently unable to get a delete all working
+    // const deleteAllForCollection = (userId, collectionId) => {
+    //     debugger
+    //     return fetch(`http://localhost:8088/recents/?collectionId=${collectionId}`, {
+    //         method: "DELETE"
+    //     })
+    //     .then(getRecents(userId))
+    // }
 
     return (
         <RecentContext.Provider value={{
-            recents, getRecents, addRecent, deleteRecent, deleteAllForCollection
+            recents, getRecents, addRecent, deleteRecent
         }}>
             {props.children}
         </RecentContext.Provider>

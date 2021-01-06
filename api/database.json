@@ -110,30 +110,6 @@
   "recents": [
     {
       "userId": 1,
-      "collectionId": 22,
-      "word": "Leaves",
-      "id": 59
-    },
-    {
-      "userId": 1,
-      "collectionId": 22,
-      "word": "Colors",
-      "id": 60
-    },
-    {
-      "userId": 1,
-      "collectionId": 22,
-      "word": "ColORz",
-      "id": 61
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "smell",
-      "id": 63
-    },
-    {
-      "userId": 1,
       "collectionId": 19,
       "word": "blizzard",
       "id": 68
@@ -164,18 +140,6 @@
     },
     {
       "userId": 1,
-      "collectionId": 0,
-      "word": "yes it works",
-      "id": 82
-    },
-    {
-      "userId": 1,
-      "collectionId": 0,
-      "word": "select",
-      "id": 83
-    },
-    {
-      "userId": 1,
       "collectionId": 16,
       "word": "ocean",
       "id": 86
@@ -191,12 +155,6 @@
       "collectionId": 19,
       "word": "snow",
       "id": 88
-    },
-    {
-      "userId": 1,
-      "collectionId": 0,
-      "word": "test",
-      "id": 89
     },
     {
       "userId": 1,
