@@ -8,14 +8,7 @@ import "./ThesaurusRecent.css"
 
 // WILL NEED:
     // Recents Provider
-        // that has a GET, ADD, and a DELETE. No Update needed.
-
-// Only store most recent words based on the max from User Settings
-// if there are any more than that, delete them.
-// This will need to be an Array of Words/Strings
-// where each new one is shifted to the front of the list
-// And if the array.length is greater than the max from settings,
-// delete the item from list
+        // that has a GET, and a DELETE. No Update needed.
 
 export const ThesaurusRecent = () => {
     const totalRecents = +sessionStorage.getItem("TotalRecentsToStore")
@@ -25,11 +18,16 @@ export const ThesaurusRecent = () => {
     const { selectedCollection } = useContext(CollectionContext)
     const { settings } = useContext(SettingsContext)
 
+    const [ selectedRecents, setSelectedRecents ] = useState(recents)
+
     useEffect(() => {
         if (recents !== undefined) {
-            if (recents.length >= totalRecents) {
+            // Only get recents for the selected collection
+            const selected = recents.filter(r => r.collectionId === selectedCollection.id)
+
+            if (selected.length >= totalRecents) {
                 // To get the full list, need to add 1 to length
-                const recentsToDelete = recents.slice(totalRecents, (recents.length + 1))           
+                const recentsToDelete = selected.slice(totalRecents, (selected.length + 1))           
                 // If there are words to delete, delete them.
                 // Thesaurus Search contains checks for empty strings
                 if (recentsToDelete.length > 0)
@@ -39,8 +37,10 @@ export const ThesaurusRecent = () => {
                     });
                 }
             }
+            // To use the selected recents and have it update properly, set the state
+            setSelectedRecents(selected)
         }
-    }, [recents, settings])
+    }, [selectedCollection, recents, settings])
 
     return (
         <article className="card card__color--white card__thesaurus--recent">
@@ -53,9 +53,9 @@ export const ThesaurusRecent = () => {
                 </h2>
                 <ul className="recent__list">
                     {
-                        recents === undefined ? null : 
+                        selectedRecents === undefined ? null : 
                         <>
-                        {recents.map(recent => {
+                        {selectedRecents.map(recent => {
                             return <WordButton key={recent.id} props={recent} />
                         })}
                         </>
