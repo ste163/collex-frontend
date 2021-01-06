@@ -128,12 +128,6 @@
     },
     {
       "userId": 1,
-      "collectionId": 0,
-      "word": "test3",
-      "id": 62
-    },
-    {
-      "userId": 1,
       "collectionId": 20,
       "word": "smell",
       "id": 63
@@ -179,6 +173,24 @@
       "collectionId": 19,
       "word": "blizzard",
       "id": 72
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "adwa",
+      "id": 73
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "color",
+      "id": 74
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "color",
+      "id": 75
     }
   ],
   "words": []

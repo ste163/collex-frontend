@@ -27,8 +27,9 @@ export const ThesaurusSearch = () => {
             const trimmed = search.search.trim()
             // On the off chance there is just a bunch of spaces, do not add the word
             if (trimmed.length !== 0) {
-                createRecentWord(trimmed)
-                getWord(trimmed)
+                const lowered = trimmed.toLowerCase()
+                createRecentWord(lowered)
+                getWord(lowered)
             }    
         }
     }
