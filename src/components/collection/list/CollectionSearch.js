@@ -11,7 +11,7 @@ export const CollectionSearch = () => {
 
     return (
             <fieldset className="card card__color--white card__collection card__collection--search">
-                <label className="label__search" htmlFor="collectionSearch">Search collections by name</label>
+                <label className="card__h2" htmlFor="collectionSearch">Search collections by name</label>
                 <input type="text"
                 name="collectionSearch"
                 className="input__search"

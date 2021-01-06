@@ -197,6 +197,96 @@
       "collectionId": 0,
       "word": "test",
       "id": 89
+    },
+    {
+      "userId": 1,
+      "collectionId": 10,
+      "word": "city",
+      "id": 90
+    },
+    {
+      "userId": 1,
+      "collectionId": 10,
+      "word": "dark",
+      "id": 91
+    },
+    {
+      "userId": 1,
+      "collectionId": 10,
+      "word": "night",
+      "id": 92
+    },
+    {
+      "userId": 1,
+      "collectionId": 11,
+      "word": "mansion",
+      "id": 93
+    },
+    {
+      "userId": 1,
+      "collectionId": 11,
+      "word": "horror",
+      "id": 94
+    },
+    {
+      "userId": 1,
+      "collectionId": 11,
+      "word": "dusty",
+      "id": 95
+    },
+    {
+      "userId": 1,
+      "collectionId": 11,
+      "word": "spooky",
+      "id": 96
+    },
+    {
+      "userId": 1,
+      "collectionId": 21,
+      "word": "bang",
+      "id": 97
+    },
+    {
+      "userId": 1,
+      "collectionId": 21,
+      "word": "loud",
+      "id": 98
+    },
+    {
+      "userId": 1,
+      "collectionId": 21,
+      "word": "snappy",
+      "id": 99
+    },
+    {
+      "userId": 1,
+      "collectionId": 8,
+      "word": "apparition",
+      "id": 100
+    },
+    {
+      "userId": 1,
+      "collectionId": 8,
+      "word": "paranormal",
+      "id": 101
+    },
+    {
+      "userId": 1,
+      "collectionId": 15,
+      "word": "hot",
+      "id": 102
+    },
+    {
+      "userId": 1,
+      "collectionId": 15,
+      "word": "muggy",
+      "id": 103
+    },
+    {
+      "userId": 1,
+      "collectionId": 15,
+      "word": "humid",
+      "id": 104
     }
   ],
   "words": []

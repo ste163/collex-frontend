@@ -3,6 +3,27 @@
     box-shadow: var(--cardDropShadow);
 }
 
+.card__h2 {
+    grid-row: 1;
+    grid-column: 1;
+    font-size: 0.65em;
+    margin: 0 0 0.5em;
+  }
+
+
+/* Colors */
+
+.card__color--white {
+    background-color: var(--offWhite);
+}
+
+.card__color--yellow {
+    background-color: var(--yellow);
+}
+
+
+/* no default cards */
+
 .card__noDefault {
     display: flex;
     flex-flow: column nowrap;
@@ -22,12 +43,4 @@
 .btn__noDefault {
     margin-top: 0.8em;
     align-self: center;
-}
-
-.card__color--white {
-    background-color: var(--offWhite);
-}
-
-.card__color--yellow {
-    background-color: var(--yellow);
 }

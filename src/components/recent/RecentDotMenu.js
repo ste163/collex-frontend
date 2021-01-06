@@ -12,7 +12,7 @@ export const RecentDotMenu = (React.forwardRef((props, ref) => {
     const ClearWarning = () => (
         <>
             <h2 className="modal__warning">Warning</h2>
-            <p className="warning__p">Clearing {props.collection.name} is permanent.</p>
+            <p className="warning__p">Clearing recents for {props.collection.name} is permanent.</p>
             <button className="btn btn--red"
             onClick={e => deleteAllForCollection(props.collection.userId, props.collection.id)}>
                 Clear

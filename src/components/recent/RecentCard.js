@@ -45,13 +45,12 @@ export const RecentCard = () => {
     }, [selectedCollection, recents, settings])
 
     return (
-        <article className="card card__color--white card__thesaurus--recent">
+        <article className="card card__color--white card__recent">
             <RecentDotMenu ref={dotMenu} collection={selectedCollection} />
             {
             selectedCollection === undefined ? null :
                 <>    
-                {/* make a more consistent className */}
-                <h2 className="label__search">
+                <h2 className="card__h2">
                     Most recent searches {selectedCollection.id === 0 ? '' : `for ${selectedCollection.name}`}
                 </h2>
                 <ul className="recent__list">

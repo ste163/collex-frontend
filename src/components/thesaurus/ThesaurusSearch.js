@@ -57,7 +57,7 @@ export const ThesaurusSearch = () => {
     return (
         <form className="card card__color--white card__thesaurus--search" onSubmit={searchThesaurus}>
             <fieldset className="">
-                <label className="label__search" htmlFor="search">Search Merriam-Webster's Collegiate<sup>&#174;</sup> Thesaurus</label>
+                <label className="card__h2" htmlFor="search">Search Merriam-Webster's Collegiate<sup>&#174;</sup> Thesaurus</label>
                 <input type="text"
                 ref={searchInput}
                 onChange={handleControlledInputChange}
