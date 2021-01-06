@@ -9,13 +9,22 @@
     {
       "id": 1,
       "userId": 1,
-      "defaultCollection": 0,
-      "TotalRecentsToStore": 6,
+      "defaultCollection": 22,
+      "TotalRecentsToStore": 5,
       "addToMultiple": "true",
       "colorMode": "dark"
     }
   ],
   "collections": [
+    {
+      "id": 0,
+      "userId": 1,
+      "name": "defaultCollection",
+      "description": "",
+      "public": "2",
+      "categorizationType": "",
+      "starred": false
+    },
     {
       "id": 8,
       "userId": 1,
@@ -102,38 +111,32 @@
     {
       "userId": 1,
       "collectionId": 0,
-      "word": "test",
-      "id": 1
+      "word": "tacos",
+      "id": 7
     },
     {
       "userId": 1,
       "collectionId": 0,
-      "word": "test2",
-      "id": 2
+      "word": "tacos and stuff",
+      "id": 8
     },
     {
       "userId": 1,
       "collectionId": 0,
-      "word": "crazy",
-      "id": 3
+      "word": "jerry",
+      "id": 9
     },
     {
       "userId": 1,
       "collectionId": 0,
-      "word": "recent",
-      "id": 4
+      "word": "names",
+      "id": 10
     },
     {
       "userId": 1,
       "collectionId": 0,
-      "word": "recent",
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "collectionId": 11,
-      "word": "mansion",
-      "id": 6
+      "word": "time",
+      "id": 11
     }
   ],
   "words": []

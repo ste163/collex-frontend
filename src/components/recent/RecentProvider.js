@@ -11,7 +11,11 @@ export const RecentProvider = props => {
     const getRecents = userId => {
         return fetch(`http://localhost:8088/recents/?userId=${userId}`)
         .then(response => response.json())
-        .then(setRecents)
+        .then(recents => {
+            // Must invert list of recents so most recent comes first. Recents get added at right spot, older ones get deleted   
+            recents.reverse()
+            setRecents(recents)
+        })
     }
 
     const addRecent = recent => {
@@ -27,9 +31,18 @@ export const RecentProvider = props => {
         })
     }
 
+    const deleteRecent = (userId, recentId) => {
+        return fetch(`http://localhost:8088/recents/${recentId}`, {
+            method: "DELETE"
+        })
+        .then(() => {
+            getRecents(userId)
+        })
+    }
+
     return (
         <RecentContext.Provider value={{
-            recents, getRecents, addRecent
+            recents, getRecents, addRecent, deleteRecent
         }}>
             {props.children}
         </RecentContext.Provider>
