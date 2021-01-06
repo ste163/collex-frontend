@@ -191,6 +191,12 @@
       "collectionId": 19,
       "word": "snow",
       "id": 88
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "test",
+      "id": 89
     }
   ],
   "words": []

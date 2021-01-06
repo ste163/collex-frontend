@@ -1,6 +1,6 @@
 import React from "react"
 import { ThesaurusSearch } from "./ThesaurusSearch"
-import { ThesaurusRecent } from "./ThesaurusRecent"
+import { RecentCard } from "../recent/RecentCard"
 
 export const ThesaurusList = () => {
 
@@ -8,7 +8,7 @@ export const ThesaurusList = () => {
         <section className="collection__thesaurus">
             {/* Card labels and sizes need to be more consistent. They use too many different styles */}
             <ThesaurusSearch />
-            <ThesaurusRecent />
+            <RecentCard />
             {/*
                 Word cards with definitions and related words. These are created dynamically.
             */}
