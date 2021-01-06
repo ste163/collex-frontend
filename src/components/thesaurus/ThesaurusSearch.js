@@ -21,8 +21,16 @@ export const ThesaurusSearch = () => {
 
     const searchThesaurus = e => {
         e.preventDefault()
-        createRecentWord(search.search)
-        getWord(search.search)
+        // Checks for if there is just an empty string
+        if (search.length !== 0) {
+            // If there is more than an empty string, remove all spaces
+            const trimmed = search.search.trim()
+            // On the off chance there is just a bunch of spaces, do not add the word
+            if (trimmed.length !== 0) {
+                createRecentWord(trimmed)
+                getWord(trimmed)
+            }    
+        }
     }
 
     const createRecentWord = word => {
@@ -49,6 +57,7 @@ export const ThesaurusSearch = () => {
                 <label className="label__search" htmlFor="search">Search Merriam-Webster's Collegiate<sup>&#174;</sup> Thesaurus</label>
                 <input type="text"
                 onChange={handleControlledInputChange}
+                defaultValue=""
                 name="search"
                 className="input__search"
                 placeholder="Search thesaurus... "

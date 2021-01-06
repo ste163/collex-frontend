@@ -28,13 +28,10 @@ export const ThesaurusRecent = () => {
     useEffect(() => {
         if (recents !== undefined) {
             if (recents.length >= totalRecents) {
-                console.log("TOTAL RECENTS: ", recents.length);
-                console.log("TOTAL TO KEEP: ", totalRecents)
-                // Get ALL the items AFTER the total recents. so if max is 6 but there are 12 in the recents array (so 11),
-                // get items 5 - end of array, Loop through sliced array, deleting each item
                 // To get the full list, need to add 1 to length
-                const recentsToDelete = recents.slice(totalRecents, (recents.length + 1))
-                console.log("WE DELETE: ", recentsToDelete)               
+                const recentsToDelete = recents.slice(totalRecents, (recents.length + 1))           
+                // If there are words to delete, delete them.
+                // Thesaurus Search contains checks for empty strings
                 if (recentsToDelete.length > 0)
                 {
                     recentsToDelete.forEach(r => {

@@ -36,6 +36,7 @@ export const RecentProvider = props => {
             method: "DELETE"
         })
         .then(() => {
+            // MUST have a 'defaultCollection' with an Id of 0 or else all recents with Id 0 get deleted
             getRecents(userId)
         })
     }
