@@ -55,7 +55,6 @@ export const CollectionViewHeader = () => {
                             <option key={c.id} value={c.id}>
                                 {c.name}
                             </option>
-
                         ))
                     }
                 </select>

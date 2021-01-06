@@ -10,7 +10,7 @@ export const HeaderSettings = () => {
     // Default settings from session storage
     const userId = parseInt(sessionStorage.getItem("userId"))
     const defaultCollection = sessionStorage.getItem("defaultCollection")
-    const TotalRecentsToStore = sessionStorage.getItem("TotalRecentsToStore")
+    const TotalRecentsToStore = +sessionStorage.getItem("TotalRecentsToStore")
     const addToMultiple = sessionStorage.getItem("addToMultiple")
     const colorMode = sessionStorage.getItem("colorMode")
 
@@ -47,12 +47,12 @@ export const HeaderSettings = () => {
                 id: settings[0].id,
                 userId: userId,
                 defaultCollection: +currentSettings.defaultCollection,
-                TotalRecentsToStore: currentSettings.TotalRecentsToStore,
+                TotalRecentsToStore: +currentSettings.TotalRecentsToStore,
                 addToMultiple: currentSettings.addToMultiple,
                 colorMode: currentSettings.colorMode
             })
-            sessionStorage.setItem("defaultView", currentSettings.defaultView)
             sessionStorage.setItem("defaultCollection", +currentSettings.defaultCollection) 
+            sessionStorage.setItem("TotalRecentsToStore", +currentSettings.TotalRecentsToStore) 
             sessionStorage.setItem("colorMode", currentSettings.colorMode)
             HeaderColorMode()
         }
@@ -64,6 +64,7 @@ export const HeaderSettings = () => {
             <>
             <div className="container__settings">
                 <h2 className="modal__h2">Settings</h2>
+                <p className="form__subtitle">(settings autosave)</p>
                 <form className="form__settings">
                         
                     <fieldset className="settings__fieldset">
@@ -81,6 +82,19 @@ export const HeaderSettings = () => {
                             ))}
                         </select>
                     </fieldset>
+                    
+                    <fieldset className="settings__fieldset">
+                        <label htmlFor="recents">Total recent searches to keep (12 max): </label>
+                        <input type="number" 
+                        name="TotalRecentsToStore"
+                        onChange={handleControlledInputChange}
+                        id="recents"
+                        defaultValue={+settings[0].TotalRecentsToStore}
+                        min="1"
+                        max="12"
+                        />
+                    </fieldset>
+
                     <fieldset className="settings__fieldset">
                         <label htmlFor="darkMode">Color mode:</label>
                         <div className="radios">

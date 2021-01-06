@@ -1,58 +1,65 @@
 .form__h3 {
     font-size: 1em;
   }
-  
-  .form__h4 {
-    font-size: 0.9em;
-    font-weight: var(--weightThin);
-    letter-spacing: 0.04em;
-    margin: 0.5em 0 0.1em;
-  }
-  
-  fieldset {
-    display: flex;
-    flex-flow: column nowrap;
-    border: none;
-    margin: 0.4em 0 0.9em 0;
-    padding: 0;
-  }
-  
-  .fieldset__btn {
-    display: grid;
-    justify-content: center;
-  }
-  
-  label {
-    font-size: 0.75em;
-    letter-spacing: 0.03em;
-    font-weight: var(--weightThin);
-  }
 
-  .label__search {
-    font-size: 0.65em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-  }
-  
-  input, textarea, select{
-    background-color: var(--mediumGray);
-    border-style: none;
-    border-radius: var(--formFieldRadius);
-    padding: 0.5em;
-    font-size: 0.7em;
-    width: min-content;
-    letter-spacing: 0.03em;
-  }
+.form__h4 {
+  font-size: 0.9em;
+  font-weight: var(--weightThin);
+  letter-spacing: 0.04em;
+  margin: 0.5em 0 0.1em;
+}
 
-  .input__search {
-    width: 94%
-  }
+.form__subtitle {
+  font-weight: var(--weightThin);
+  font-size: 0.7em;
+  margin: 0 0 1.5em;
+  padding: 0;
+}
 
-  textarea {
-    width: 100%;
-  }
-  
-  .input__radio {
-    margin: 0 0.2em 0 0.7em;
-    padding: 0;
-  }
+fieldset {
+  display: flex;
+  flex-flow: column nowrap;
+  border: none;
+  margin: 0.4em 0 0.9em 0;
+  padding: 0;
+}
+
+.fieldset__btn {
+  display: grid;
+  justify-content: center;
+}
+
+label {
+  font-size: 0.75em;
+  letter-spacing: 0.03em;
+  font-weight: var(--weightThin);
+}
+
+.label__search {
+  font-size: 0.65em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+input, textarea, select{
+  background-color: var(--mediumGray);
+  border-style: none;
+  border-radius: var(--formFieldRadius);
+  padding: 0.5em;
+  font-size: 0.7em;
+  width: min-content;
+  letter-spacing: 0.03em;
+}
+
+.input__search {
+  width: 94%
+}
+
+textarea {
+  width: 100%;
+}
+
+.input__radio {
+  margin: 0 0.2em 0 0.7em;
+  padding: 0;
+}
