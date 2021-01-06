@@ -51,11 +51,14 @@ export const CollectionViewHeader = () => {
                 onChange={e => selectCollection(e)}>
                     <option value="0">Select collection</option>
                     {
-                        collections.map(c => (
-                            <option key={c.id} value={c.id}>
-                                {c.name}
-                            </option>
-                        ))
+                        collections.map(c => {
+                            if (c.name !== "defaultCollection") {
+                                return (
+                                <option key={c.id} value={c.id}>
+                                    {c.name}
+                                </option>
+                            )}
+                        })
                     }
                 </select>
             </fieldset>

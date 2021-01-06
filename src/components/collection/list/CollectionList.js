@@ -30,9 +30,12 @@ export const CollectionList = () => {
                 <CollectionSearch />
                 {              
                     filteredCollections.map(collection => {
-                        // may need to wrap each in it's own word provider? or recent words provider?
-                        // return <ProgressProvider key={project.id}><ProjectCard key={project.id} project={project} /></ProgressProvider>
-                        return <CollectionCard key={collection.id} collection={collection} />
+                        // Need "defaultCollection" check to remove it from selected list
+                        if (collection.name !== "defaultCollection") {
+                            // may need to wrap each in it's own word provider? or recent words provider?
+                            // return <ProgressProvider key={project.id}><ProjectCard key={project.id} project={project} /></ProgressProvider>
+                            return <CollectionCard key={collection.id} collection={collection} />
+                        }
                     })               
                 }
                 </>
