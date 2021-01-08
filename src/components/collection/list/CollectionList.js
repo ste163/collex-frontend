@@ -36,31 +36,21 @@ export const CollectionList = () => {
     return (
         <section className="collection__list">
             {
-                // If there are no collections, show now collection card
-                !collections.length ? <NoCreatedCollectionCard /> :
+                !collections.length ? <NoCreatedCollectionCard /> : 
                 <>
                     <CollectionSearch />
-                    {   
-                        // If there are items in unfiltered, show all
-                        !unfiltered ? null : <CollectionCreateList props={unfiltered}/>
-                    }
+
+                    <CollectionCreateList props={unfiltered}/>
                     {
-                        // If there are matching names, show
-                        !filteredByName ? null :
-                            <>
-                                <h2 className="card__h2 card__h2--list">Matching collection names</h2>
-                                <CollectionCreateList props={filteredByName}/>
-                            </>               
+                        // Heading must have a separate check or it will not render properly
+                        !filteredByName.length ? null : <h2 className="card__h2 card__h2--list">Matching collection names</h2>
                     }
+                    <CollectionCreateList props={filteredByName}/>        
                     {
-                        // If there are matching descriptions, show
-                        !filteredByDescription ? null :
-                            <>
-                                <h2 className="card__h2 card__h2--list">Matching collection descriptions</h2>
-                                <CollectionCreateList props={filteredByDescription}/>
-                            </>
+                        !filteredByDescription.length ? null : <h2 className="card__h2 card__h2--list">Matching collection descriptions</h2>
                     }
-                </>
+                    <CollectionCreateList props={filteredByDescription}/>
+                </>                  
             }
         </section>
     )
