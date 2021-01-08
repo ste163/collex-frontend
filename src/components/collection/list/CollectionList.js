@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from "react"
 import { CollectionCreateList } from "./CollectionCreateList"
 import { CollectionContext } from "../CollectionProvider"
 import { NoCreatedCollectionCard } from "../NoCreatedCollectionCard"
-import { CollectionCard } from "./CollectionCard"
 import { CollectionSearch } from "./CollectionSearch"
 
 export const CollectionList = () => {
