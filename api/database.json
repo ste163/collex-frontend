@@ -3,6 +3,10 @@
     {
       "username": "test",
       "id": 1
+    },
+    {
+      "username": "test1",
+      "id": 2
     }
   ],
   "settings": [
@@ -13,6 +17,14 @@
       "TotalRecentsToStore": 6,
       "addToMultiple": "true",
       "colorMode": "dark"
+    },
+    {
+      "userId": 2,
+      "defaultCollection": 0,
+      "TotalRecentsToStore": 6,
+      "addToMultiple": true,
+      "colorMode": "light",
+      "id": 2
     }
   ],
   "collections": [
