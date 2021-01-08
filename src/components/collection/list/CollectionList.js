@@ -10,20 +10,22 @@ export const CollectionList = () => {
 
     const [ unfiltered, setUnfiltered ] = useState([])
     const [ filteredByName, setFilteredByName ] = useState([])
+    const [ filteredByDescription, setFilteredByDescription] = useState([])
 
 
     // Run whenever we enter into the search box
     useEffect(() => {
         if (searchTerms !== "") {
-            const subset = collections.filter(collection => collection.name.toLowerCase().includes(searchTerms.toLowerCase().trim()))
-            // May need a setFilteredNames
-            // setFilteredDescriptions
-            // That way, if there are any, the proper headings/containers could be made
-            setFilteredByName(subset)
+            // Get matching names and descriptions
+            const subsetNames = collections.filter(collection => collection.name.toLowerCase().includes(searchTerms.toLowerCase().trim()))
+            const subsetDescriptions = collections.filter(collection => collection.description.toLowerCase().includes(searchTerms.toLowerCase().trim()))
+            setFilteredByName(subsetNames)
+            setFilteredByDescription(subsetDescriptions)
         } else {
-            // no terms in search, so display all collections
+            // no terms in search, so display all collections, reset filtered items
             setUnfiltered(collections)
             setFilteredByName([])
+            setFilteredByDescription([])
         }
     }, [searchTerms, collections])
 
@@ -34,6 +36,7 @@ export const CollectionList = () => {
                 <>
                 <CollectionSearch />
                 {   
+                    // If there are items in unfiltered, show all
                     filteredByName.length === 0 ?
 
                     unfiltered.map(collection => {
