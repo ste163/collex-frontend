@@ -84,7 +84,7 @@
 
 /* Thesaurus column */
 .collection__thesaurus {
-
+  display: grid;
 }
 
 

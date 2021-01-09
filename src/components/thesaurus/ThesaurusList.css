@@ -1,0 +1,11 @@
+.thesaurus__container--search {
+    grid-row: 1;
+    grid-column: 1 / 3;
+}
+
+.thesaurus__container--definitions {
+    /* grid-row: 1; */
+    grid-column: auto;
+    display: flex;
+    flex-flow: row wrap;
+}

@@ -24,6 +24,12 @@
     background-color: var(--black);
     border-color: var(--black);
   }
+
+  .btn__close {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
   
   .btn--red {
     border-color: var(--red);

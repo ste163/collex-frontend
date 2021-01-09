@@ -51,7 +51,7 @@ export const RecentCard = () => {
                 <h2 className="card__h2">
                     Most recent searches {selectedCollection.id === 0 ? 'for no selection' : `for ${selectedCollection.name}`}
                 </h2>
-                <ul className="recent__list">
+                <ul className="word__list">
                     {
                         selectedRecents.map(recent => {
                             return <WordButton key={recent.id} props={recent} />

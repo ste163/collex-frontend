@@ -293,6 +293,42 @@
       "collectionId": 20,
       "word": "another wrod",
       "id": 114
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "autumnal",
+      "id": 118
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "summer",
+      "id": 119
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "leaves",
+      "id": 120
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "test",
+      "id": 121
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "fall",
+      "id": 122
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "autumn",
+      "id": 123
     }
   ],
   "words": []
