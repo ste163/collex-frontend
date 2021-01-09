@@ -4,6 +4,7 @@
     grid-column: 2;
     grid-row: 1;
     margin-right: 0.2em;
+    margin-left: 0.2em;
     justify-self: end;
     align-self: start;
 }

@@ -30,6 +30,18 @@
     border: none;
     cursor: pointer;
   }
+
+  .btn__collection {
+    transition: .1s;
+  }
+
+  .btn__collection:hover {
+    background-color: var(--lightYellow);
+  }
+
+  .btn__collection:active {
+    background-color: var(--darkYellow);
+  }
   
   .btn--red {
     border-color: var(--red);

@@ -14,7 +14,8 @@ export const ThesaurusList = () => {
             </div>
             <div className="thesaurus__container--definitions">
                 {/*
-                    Definition Cards here---created dynamically. Need ref?q
+                    Definition Cards created by a definitionList state. Word buttons that get a word response create these cards.
+                    Hitting the X on any card would remove it from definitionList state.
                 */}
                 <DefinitionCard />
                 <DefinitionCard />
