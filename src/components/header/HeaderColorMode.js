@@ -5,6 +5,8 @@ export const HeaderColorMode = () => {
 
     if (colorMode !== 'dark') {
         root.setProperty('--yellow', '#fbfbbe')
+        root.setProperty('--lightYellow', '#ffffdb')
+        root.setProperty('--darkYellow', '#f5f5b6')
         root.setProperty('--fontColor', '#333333')
         root.setProperty('--offWhite', '#FCFCFC')
         root.setProperty('--black', 'rgb(7, 7, 7)')
@@ -18,6 +20,8 @@ export const HeaderColorMode = () => {
         root.setProperty('--progressBarBackground', '#FCFCFC')
     } else if (colorMode === 'dark') {
         root.setProperty('--yellow', '#5e5e2c')
+        root.setProperty('--lightYellow', '#6a6c36')
+        root.setProperty('--darkYellow', '#53532d')
         root.setProperty('--fontColor', 'white')
         root.setProperty('--offWhite', '#1e1e1e')
         root.setProperty('--black', 'rgb(195, 195, 195)')

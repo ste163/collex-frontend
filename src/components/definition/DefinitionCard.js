@@ -1,6 +1,7 @@
 import React from "react"
 import { IconClose } from "../icons/IconClose"
 import { WordButton } from "../word/WordButton"
+import "./DefinitionCard.css"
 
 // Created dynamically
     // May need a reference to the Thesaurus column to ensure it reaches the correct location
@@ -26,8 +27,7 @@ export const DefinitionCard = props => (
     <article className="card card__color--white card__definition">
 
         <button className="btn__close card__definition--close"
-        // onClick={e => ref.current.className = "background__modal"}>
-        >
+        onClick={e => console.log("DELETE MY STATE")}>
             <IconClose color="icon__gray" />
         </button>
 
@@ -47,13 +47,20 @@ export const DefinitionCard = props => (
         <h4 className="card__h4 definition__h4--synonym">
             synonyms
         </h4>
-        {/* list of buttons */}
+
+        {/* word button list */}
         <ul className="word__list definition__words">
             <WordButton props={afterlife} />
             <WordButton props={afternoon} />
             <WordButton props={age} />
         </ul>
         {/* stems array of: 'autumn, autumnal, autumnally, autumns, fall' */}
+
+        {/* IF word is already in the user's collection, change this to REMOVE */}
+        <button className="btn definition__submit"
+        onClick={e => console.log("ADD ME TO COLLECTION")}>
+            Add to SELECTED collection
+        </button>
 
     </article>
 )

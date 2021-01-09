@@ -8,6 +8,7 @@ export const ThesaurusProvider = props => {
     const key = APIKey.thesaurus
 
     const [word, setWord] = useState([])
+    const [definitionCards, setDefinitionCards] = useState([])
 
     const getWord = word => {
         return fetch(`https://dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${key}`)
@@ -17,7 +18,7 @@ export const ThesaurusProvider = props => {
 
     return (
         <ThesaurusContext.Provider value={{
-            word, getWord
+            word, definitionCards, getWord
         }}>
             {props.children}
         </ThesaurusContext.Provider>
