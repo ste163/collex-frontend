@@ -1,4 +1,6 @@
 .thesaurus__container--search {
+    display: flex;
+    flex-flow: row wrap;
     grid-row: 1;
     grid-column: 1 / 3;
 }

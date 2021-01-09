@@ -261,12 +261,6 @@
     {
       "userId": 1,
       "collectionId": 20,
-      "word": "filthy",
-      "id": 109
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
       "word": "warm",
       "id": 110
     },
@@ -297,12 +291,6 @@
     {
       "userId": 1,
       "collectionId": 0,
-      "word": "autumnal",
-      "id": 118
-    },
-    {
-      "userId": 1,
-      "collectionId": 0,
       "word": "summer",
       "id": 119
     },
@@ -329,6 +317,18 @@
       "collectionId": 0,
       "word": "autumn",
       "id": 123
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "roar",
+      "id": 124
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "test",
+      "id": 125
     }
   ],
   "words": []
