@@ -309,12 +309,6 @@
     {
       "userId": 1,
       "collectionId": 0,
-      "word": "winter",
-      "id": 133
-    },
-    {
-      "userId": 1,
-      "collectionId": 0,
       "word": "test",
       "id": 134
     },
@@ -341,6 +335,12 @@
       "collectionId": 0,
       "word": "winter",
       "id": 138
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "afternoon",
+      "id": 139
     }
   ],
   "words": []

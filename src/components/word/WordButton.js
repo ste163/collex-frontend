@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react"
+import React, { useContext } from "react"
 import { ThesaurusContext } from "../thesaurus/ThesaurusProvider"
 import "./WordButton.css"
 
@@ -8,18 +8,14 @@ import "./WordButton.css"
 
 export const WordButton = props => {
 
-    const { definitionCards } = useContext(ThesaurusContext)
+    const { getWord } = useContext(ThesaurusContext)
 
     return (
         <>
         <li className="word__button">
             <button className="btn btn--word"
-            onClick={e => {
-                console.log("FETCH: ", e.target.innerHTML)
-                // FETCH word from MW API
-                    // Then PASS the returned object
-                    // Into definitionCards state
-            }}>
+            // getWord fetch and update state
+            onClick={e => getWord(e.target.innerHTML)}>
                 {props.props.word}
             </button>
         </li>
