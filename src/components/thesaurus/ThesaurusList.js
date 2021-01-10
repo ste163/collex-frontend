@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import { RecentCard } from "../recent/RecentCard"
 import { DefinitionCard } from "../definition/DefinitionCard"
 import { ThesaurusSearch } from "./ThesaurusSearch"
@@ -6,12 +6,11 @@ import { ThesaurusContext } from "./ThesaurusProvider"
 import "./ThesaurusList.css"
 
 export const ThesaurusList = () => {
-    // PROBLEM: DOESN'T CREATE THE FIRST CARD. IT'S DELAYED BY 1. PROBABLY NEED A USEEFFECT
     const { definitionCards } = useContext(ThesaurusContext)
-
-    let id = 0;
-
     console.log("Definition cards: ", definitionCards)
+
+    // Generating my own unique IDs for definition cards because they do not have their own
+    let id = 0;
 
     return (
         <section className="collection__thesaurus">
@@ -21,12 +20,11 @@ export const ThesaurusList = () => {
             </div>
             <div className="thesaurus__container--definitions">
                 {
-                    // Definition Cards created by a definitionList state. Word buttons that get a word response create these cards.
+                    // Definition Cards created by state. Word buttons & search bar update state.
                     // Hitting the X on any card would remove it from definitionList state.
                     definitionCards.map(def => {
-                        debugger
                         id++
-                        return <DefinitionCard id={id} props={def} />
+                        return <DefinitionCard key={id} props={def} />
                     })
                 }
             </div>

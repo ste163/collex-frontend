@@ -3,12 +3,6 @@ import { IconClose } from "../icons/IconClose"
 import { WordButton } from "../word/WordButton"
 import "./DefinitionCard.css"
 
-// Created dynamically
-    // May need a reference to the Thesaurus column to ensure it reaches the correct location
-    // Or does each location that can create a definition card need the location (thesaurus search & word cards need the ref)?
-    // Will need the Thesaurus definition returned valued passed in as props
-
-
     const afterlife = {
         word: "afterlife"
     } 
@@ -50,9 +44,9 @@ export const DefinitionCard = props => (
 
         {/* word button list */}
         <ul className="word__list definition__words">
-            <WordButton props={afterlife} />
-            <WordButton props={afternoon} />
-            <WordButton props={age} />
+            <WordButton key={1} props={afterlife} />
+            <WordButton key={2} props={afternoon} />
+            <WordButton key={3} props={age} />
         </ul>
         {/* stems array of: 'autumn, autumnal, autumnally, autumns, fall' */}
 

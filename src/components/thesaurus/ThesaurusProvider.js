@@ -17,11 +17,11 @@ export const ThesaurusProvider = props => {
             // Set word state and definition cards' state
             // If I want to set a max card amount from user settings, will need to add that check here
             setWord(response)
-            const updatedList = definitionCards
-            updatedList.push(response)
-            setDefinitionCards(updatedList)
+            // Must use spread operator to add the array of responses to state. Cannot use push as that mutates the data.
+            // State is immutable, but the spread operator returns a copy, so it doesn't mutate the data.
+            setDefinitionCards(definitionCards => [...definitionCards, response])
         })
-        }
+    }
 
     return (
         <ThesaurusContext.Provider value={{
