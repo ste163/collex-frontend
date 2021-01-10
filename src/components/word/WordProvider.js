@@ -6,7 +6,9 @@ export const WordContext = createContext()
 
 export const WordProvider = props => {
 
-    const [ words, setWords ]
+    // Words are ALL the words in the database. Different from ThesaurusProvider's word state.
+    // That state is for the single word
+    const [ words, setWords ] =  useState([])
 
     // Need getWords and deleteWord
 
