@@ -10,15 +10,17 @@ export const ThesaurusProvider = props => {
     const [ word, setWord ] = useState([])
     const [ definitionCards, setDefinitionCards ] = useState([])
 
-    const getWord = word => {
-        return fetch(`https://dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${key}`)
+    const getWord = term => {
+        return fetch(`https://dictionaryapi.com/api/v3/references/thesaurus/json/${term}?key=${key}`)
         .then(response => response.json())
-        .then(setWord)
-        // When we get a word, grab the current definitionCards list,
-        // then ADD the word object we just retrieved to the front of the array
-        // OR the back and i just reverse it later. Doesn't matter yet.
-        // Just need to ensure definitionCards always updates correctly
-        // Whenever we getWord
+        .then(response => {
+            // Set word state and definition cards' state
+            // If I want to set a max card amount from user settings, will need to add that check here
+            setWord(response)
+            const updatedList = definitionCards
+            updatedList.push(response)
+            setDefinitionCards(updatedList)
+        })
         }
 
     return (
