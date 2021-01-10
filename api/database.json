@@ -309,24 +309,6 @@
     {
       "userId": 1,
       "collectionId": 0,
-      "word": "test",
-      "id": 134
-    },
-    {
-      "userId": 1,
-      "collectionId": 0,
-      "word": "magic",
-      "id": 135
-    },
-    {
-      "userId": 1,
-      "collectionId": 0,
-      "word": "july",
-      "id": 136
-    },
-    {
-      "userId": 1,
-      "collectionId": 0,
       "word": "summer",
       "id": 137
     },
@@ -341,6 +323,24 @@
       "collectionId": 0,
       "word": "afternoon",
       "id": 139
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "july",
+      "id": 140
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "sunday",
+      "id": 141
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "sunday",
+      "id": 142
     }
   ],
   "words": []

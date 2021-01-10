@@ -6,8 +6,12 @@ import { ThesaurusContext } from "./ThesaurusProvider"
 import "./ThesaurusList.css"
 
 export const ThesaurusList = () => {
-
+    // PROBLEM: DOESN'T CREATE THE FIRST CARD. IT'S DELAYED BY 1. PROBABLY NEED A USEEFFECT
     const { definitionCards } = useContext(ThesaurusContext)
+
+    let id = 0;
+
+    console.log("Definition cards: ", definitionCards)
 
     return (
         <section className="collection__thesaurus">
@@ -16,19 +20,15 @@ export const ThesaurusList = () => {
                 <RecentCard />
             </div>
             <div className="thesaurus__container--definitions">
-                {/*
-                    Definition Cards created by a definitionList state. Word buttons that get a word response create these cards.
-                    Hitting the X on any card would remove it from definitionList state.
-                */}
                 {
+                    // Definition Cards created by a definitionList state. Word buttons that get a word response create these cards.
+                    // Hitting the X on any card would remove it from definitionList state.
                     definitionCards.map(def => {
-                        return <DefinitionCard id={def.id} props={def} />
+                        debugger
+                        id++
+                        return <DefinitionCard id={id} props={def} />
                     })
                 }
-                <DefinitionCard />
-                <DefinitionCard />
-                <DefinitionCard />
-                <DefinitionCard />
             </div>
         </section>
     )
