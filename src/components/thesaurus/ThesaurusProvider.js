@@ -19,7 +19,7 @@ export const ThesaurusProvider = props => {
             setWord(response)
             // Must use spread operator to add the array of responses to state. Cannot use push as that mutates the data.
             // State is immutable, but the spread operator returns a copy, so it doesn't mutate the data.
-            setDefinitionCards(definitionCards => [...definitionCards, response])
+            setDefinitionCards(definitionCards => [ response, ...definitionCards ])
         })
     }
 
