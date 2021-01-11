@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import { ThesaurusContext } from "../thesaurus/ThesaurusProvider"
+import { CollectionContext } from "../collection/CollectionProvider"
 import { IconClose } from "../icons/IconClose"
 import { WordButton } from "../word/WordButton"
 import "./DefinitionCard.css"
@@ -7,6 +8,8 @@ import "./DefinitionCard.css"
 
 // IF there is more than one definition in the array, show the back and next buttons 
 export const DefinitionCard = props => {
+
+    console.log(props.props)
 
     const afterlife = {
         word: "afterlife"
@@ -21,12 +24,10 @@ export const DefinitionCard = props => {
     } 
 
     const { definitionCards, setDefinitionCards } = useContext(ThesaurusContext)
+    const { selectedCollection } = useContext(CollectionContext)
 
     return (
         <article className="card card__color--white card__definition">
-        {
-            console.log("MY CARD ID IS:", props.cardId)
-        }
             <button className="btn__close card__definition--close"
             onClick={e => {
                 const removed = definitionCards.filter(card => definitionCards.indexOf(card) !== props.cardId)
@@ -40,7 +41,8 @@ export const DefinitionCard = props => {
             </h2>
             
             <h3 className="card__h3 definition__h3">
-                Autumn
+                {/* Get first item and show its name */}
+                {props.props[0].meta.id}
             </h3>
             <h4 className="card__h4 definition__h4--speech">
                 noun
@@ -61,11 +63,13 @@ export const DefinitionCard = props => {
             {/* stems array of: 'autumn, autumnal, autumnally, autumns, fall' */}
 
             {/* IF word is already in the user's collection, change this to REMOVE */}
-            <button className="btn definition__submit"
-            onClick={e => console.log("ADD ME TO COLLECTION")}>
-                Add to SELECTED collection
-            </button>
-
+            {
+                selectedCollection.id === 0 ? null :
+                <button className="btn definition__submit"
+                onClick={e => console.log("ADD ME TO COLLECTION")}>
+                    Add to {selectedCollection.name}
+                </button>
+            }
         </article>
     )
 }

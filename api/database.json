@@ -261,12 +261,6 @@
     {
       "userId": 1,
       "collectionId": 20,
-      "word": "warm",
-      "id": 110
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
       "word": "odor",
       "id": 111
     },
@@ -314,21 +308,27 @@
     },
     {
       "userId": 1,
-      "collectionId": 0,
-      "word": "adfgadfgadfgadfg",
+      "collectionId": 15,
+      "word": "adgffdagdafgadfgadfga",
       "id": 135
     },
     {
       "userId": 1,
-      "collectionId": 0,
-      "word": "wertgadfgadfgadfgert",
+      "collectionId": 15,
+      "word": "stankyz",
       "id": 136
     },
     {
       "userId": 1,
       "collectionId": 0,
-      "word": "test",
+      "word": "autumn",
       "id": 137
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "test",
+      "id": 138
     }
   ],
   "words": []
