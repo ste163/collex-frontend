@@ -329,6 +329,18 @@
       "collectionId": 20,
       "word": "test",
       "id": 138
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "many",
+      "id": 139
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "test",
+      "id": 140
     }
   ],
   "words": []

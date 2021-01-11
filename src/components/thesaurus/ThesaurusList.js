@@ -5,6 +5,7 @@ import { DidYouMeanCard } from "../definition/DidYouMeanCard"
 import { DefinitionNotFound } from "../definition/DefinitionNotFound"
 import { ThesaurusSearch } from "./ThesaurusSearch"
 import { ThesaurusContext } from "./ThesaurusProvider"
+import { DefinitionCardProvider } from "../definition/DefinitionCardProvider"
 import "./ThesaurusList.css"
 
 export const ThesaurusList = () => {
@@ -21,12 +22,18 @@ export const ThesaurusList = () => {
                     // Definition Cards created by state. Word buttons & search bar update state.
                     // Hitting the X on any card would remove it from definitionList state.
                     definitionCards.map(def => {
+                        const keyInstance = definitionCards.indexOf(def)
+
                         if (typeof def[0] !== "string" && def[0] !== undefined) {
-                            return <DefinitionCard key={definitionCards.indexOf(def)} props={def} cardId={definitionCards.indexOf(def)} />
+                            return (
+                                <DefinitionCardProvider key={keyInstance}>
+                                    <DefinitionCard key={keyInstance} props={def} cardId={keyInstance} />
+                                </DefinitionCardProvider>
+                            )
                         } else if (def[0] !== undefined) {
-                            return <DidYouMeanCard key={definitionCards.indexOf(def)} props={def} cardId={definitionCards.indexOf(def)} />
+                            return <DidYouMeanCard key={keyInstance} props={def} cardId={keyInstance} />
                         } else {
-                            return <DefinitionNotFound key={definitionCards.indexOf(def)} props={def} cardId={definitionCards.indexOf(def)} />
+                            return <DefinitionNotFound key={keyInstance} props={def} cardId={keyInstance} />
                         }
                     })
                 }
