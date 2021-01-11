@@ -1,7 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
+import { ThesaurusContext } from "../thesaurus/ThesaurusProvider"
 import { IconClose } from "../icons/IconClose"
 import { WordButton } from "../word/WordButton"
 import "./DefinitionCard.css"
+
+
+// IF there is more than one definition in the array, show the back and next buttons 
+export const DefinitionCard = props => {
 
     const afterlife = {
         word: "afterlife"
@@ -15,47 +20,52 @@ import "./DefinitionCard.css"
         word: "age"
     } 
 
-// IF there is more than one definition in the array, show the back and next buttons 
-export const DefinitionCard = props => (
-    
-    <article className="card card__color--white card__definition">
+    const { definitionCards, setDefinitionCards } = useContext(ThesaurusContext)
 
-        <button className="btn__close card__definition--close"
-        onClick={e => console.log("DELETE MY STATE")}>
-            <IconClose color="icon__gray" />
-        </button>
+    return (
+        <article className="card card__color--white card__definition">
+        {
+            console.log("MY CARD ID IS:", props.cardId)
+        }
+            <button className="btn__close card__definition--close"
+            onClick={e => {
+                const removed = definitionCards.filter(card => definitionCards.indexOf(card) !== props.cardId)
+                setDefinitionCards(removed)
+            }}>
+                <IconClose color="icon__gray" />
+            </button>
 
-        <h2 className="card__h2">
-            Definition
-        </h2>
-        
-        <h3 className="card__h3 definition__h3">
-            Autumn
-        </h3>
-        <h4 className="card__h4 definition__h4--speech">
-            noun
-        </h4>
-        <p className="card__definition--text">
-            a later period in  one's life
-        </p>
-        <h4 className="card__h4 definition__h4--synonym">
-            synonyms
-        </h4>
+            <h2 className="card__h2">
+                Definition
+            </h2>
+            
+            <h3 className="card__h3 definition__h3">
+                Autumn
+            </h3>
+            <h4 className="card__h4 definition__h4--speech">
+                noun
+            </h4>
+            <p className="card__definition--text">
+                a later period in  one's life
+            </p>
+            <h4 className="card__h4 definition__h4--synonym">
+                synonyms
+            </h4>
 
-        {/* word button list */}
-        <ul className="word__list definition__words">
-            <WordButton key={1} props={afterlife} />
-            <WordButton key={2} props={afternoon} />
-            <WordButton key={3} props={age} />
-        </ul>
-        {/* stems array of: 'autumn, autumnal, autumnally, autumns, fall' */}
+            {/* word button list */}
+            <ul className="word__list definition__words">
+                <WordButton key={1} props={afterlife} />
+                <WordButton key={2} props={afternoon} />
+                <WordButton key={3} props={age} />
+            </ul>
+            {/* stems array of: 'autumn, autumnal, autumnally, autumns, fall' */}
 
-        {/* IF word is already in the user's collection, change this to REMOVE */}
-        <button className="btn definition__submit"
-        onClick={e => console.log("ADD ME TO COLLECTION")}>
-            Add to SELECTED collection
-        </button>
+            {/* IF word is already in the user's collection, change this to REMOVE */}
+            <button className="btn definition__submit"
+            onClick={e => console.log("ADD ME TO COLLECTION")}>
+                Add to SELECTED collection
+            </button>
 
-    </article>
-)
-
+        </article>
+    )
+}

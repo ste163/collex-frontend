@@ -21,14 +21,11 @@ export const ThesaurusList = () => {
                     // Definition Cards created by state. Word buttons & search bar update state.
                     // Hitting the X on any card would remove it from definitionList state.
                     definitionCards.map(def => {
-                        // For the Key
-                            // Use the position of the item in the array to set the key.
-                            // That way, we you hit the X, it uses that location to remove it from state.
-                            if (def[0].meta) {
-                                return <DefinitionCard key={1} props={def} />
-                            } else {
-                                return <DidYouMeanCard key={1} props={def} />
-                            }
+                        if (def[0].meta) {
+                            return <DefinitionCard key={definitionCards.indexOf(def)} props={def} cardId={definitionCards.indexOf(def)} />
+                        } else {
+                            return <DidYouMeanCard key={definitionCards.indexOf(def)} props={def} cardId={definitionCards.indexOf(def)} />
+                        }
                     })
                 }
             </div>

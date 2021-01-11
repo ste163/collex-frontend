@@ -25,7 +25,7 @@ export const ThesaurusProvider = props => {
 
     return (
         <ThesaurusContext.Provider value={{
-            word, definitionCards, getWord
+            word, definitionCards, setDefinitionCards, getWord
         }}>
             {props.children}
         </ThesaurusContext.Provider>
