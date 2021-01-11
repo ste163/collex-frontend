@@ -5,11 +5,10 @@ import { DefinitionCardContext } from "../definition/DefinitionCardProvider"
 import { IconClose } from "../icons/IconClose"
 import { WordButton } from "../word/WordButton"
 import "./DefinitionCard.css"
+// Definition cards handle all information related to searched for definitions
 
-
-// IF there is more than one definition in the array, show the back and next buttons 
 export const DefinitionCard = props => {
-
+    // stores incoming array of all definitions for current term
     const definitions = props.props
 
     const afterlife = {
@@ -24,17 +23,20 @@ export const DefinitionCard = props => {
         word: "age"
     } 
 
+    // DefinitionCards hold the array of current cards
     const { definitionCards, setDefinitionCards } = useContext(ThesaurusContext)
-
+    // currentDef holds current definition showing in card
     const { currentDef, setCurrentDef } = useContext(DefinitionCardContext)
+    // currently selected collection to add/remove definition from
     const { selectedCollection } = useContext(CollectionContext)
 
+    // Need useEffect to setState on card instantiation
+    // Whenever the definitions change (ie, a new card is added, re-load state)
     useEffect(() => {
         setCurrentDef(definitions[0])
     }, [definitions])
 
     console.log(definitions)
-    // console.log(`DEF STATE ${currentDef.meta.id}: `, currentDef)
 
     return (
         !currentDef ? null : 
