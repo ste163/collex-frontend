@@ -87,6 +87,7 @@
 /* Thesaurus column */
 .collection__thesaurus {
   display: grid;
+  grid-template-rows: min-content min-content;
 }
 
 

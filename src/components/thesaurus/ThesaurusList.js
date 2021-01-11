@@ -9,9 +9,6 @@ export const ThesaurusList = () => {
     const { definitionCards } = useContext(ThesaurusContext)
     console.log("Definition cards: ", definitionCards)
 
-    // Generating my own unique IDs for definition cards because they do not have their own
-    let id = 0;
-
     return (
         <section className="collection__thesaurus">
             <div className="thesaurus__container--search">
@@ -23,8 +20,9 @@ export const ThesaurusList = () => {
                     // Definition Cards created by state. Word buttons & search bar update state.
                     // Hitting the X on any card would remove it from definitionList state.
                     definitionCards.map(def => {
-                        id++
-                        return <DefinitionCard key={id} props={def} />
+                        // Use the position of the item in the array to set the key.
+                        // That way, we you hit the X, it uses that location to remove it from state.
+                        return <DefinitionCard key={1} props={def} />
                     })
                 }
             </div>

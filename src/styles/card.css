@@ -45,6 +45,7 @@
     margin: 0.5em;
     padding: 0.5em;
     max-width: 16em;
+    height: min-content;
 }
 
 .card__definition--close {
