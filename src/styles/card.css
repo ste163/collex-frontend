@@ -44,7 +44,7 @@
     display: grid;
     margin: 0.5em;
     padding: 0.5em;
-    max-width: 16em;
+    width: 15em;
     height: min-content;
 }
 
