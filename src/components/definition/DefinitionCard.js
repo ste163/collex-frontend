@@ -66,10 +66,23 @@ export const DefinitionCard = props => {
                 <div className="definition__next">
                     {
                         definitions.indexOf(currentDef) === 0 ? null :
-                            <button className="btn">Previous</button>
+                            <button 
+                            onClick={e => {
+                                const previous = definitions.indexOf(currentDef) - 1
+                                setCurrentDef(definitions[previous])
+                            }}
+                            className="btn">Previous</button>
                     }
                     <p className="next__text"> {definitions.indexOf(currentDef) + 1} / {definitions.length}</p>
-                    <button className="btn">Next</button>
+                    {
+                        definitions.indexOf(currentDef) === definitions.length - 1 ? null :
+                            <button
+                            onClick={e => {
+                                const next = definitions.indexOf(currentDef) + 1
+                                setCurrentDef(definitions[next])
+                            }}
+                            className="btn">Next</button>
+                    }
                 </div>
             }
 
