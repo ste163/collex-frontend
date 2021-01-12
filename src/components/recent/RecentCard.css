@@ -4,13 +4,6 @@
     margin-bottom: 1.5em;
     padding: .5em;
     align-items: left;
-    max-width: 16em;
-}
-
-.recent__list {
-    display: flex;
-    flex-flow: row wrap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    width: 16em;
+    height: min-content;
 }

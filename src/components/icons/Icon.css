@@ -51,6 +51,7 @@
 
 .icon__arrow {
     height: 0.5em;
+    pointer-events: none;
     transform-origin: center;
     transform: rotate(270deg);
 }

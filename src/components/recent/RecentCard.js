@@ -7,10 +7,6 @@ import { RecentDotMenu } from "./RecentDotMenu"
 import "./RecentCard.css"
 // Store most recent searches in a card beneath the search card
 
-// WILL NEED:
-    // Recents Provider
-        // that has a GET, and a DELETE. No Update needed.
-
 export const RecentCard = () => {
     const totalRecents = +sessionStorage.getItem("TotalRecentsToStore")
     const userId = +sessionStorage.getItem("userId")
@@ -51,7 +47,7 @@ export const RecentCard = () => {
                 <h2 className="card__h2">
                     Most recent searches {selectedCollection.id === 0 ? 'for no selection' : `for ${selectedCollection.name}`}
                 </h2>
-                <ul className="recent__list">
+                <ul className="word__list">
                     {
                         selectedRecents.map(recent => {
                             return <WordButton key={recent.id} props={recent} />
