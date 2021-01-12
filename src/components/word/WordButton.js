@@ -15,7 +15,7 @@ export const WordButton = props => {
         <li className="word__button">
             <button className="btn btn--word"
             // getWord fetch and update state
-            onClick={e => getWord(e.target.innerHTML)}>
+            onClick={e => getWord(e.target.textContent)}>
                 {props.props.word}
             </button>
         </li>

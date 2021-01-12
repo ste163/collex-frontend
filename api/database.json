@@ -260,36 +260,6 @@
     },
     {
       "userId": 1,
-      "collectionId": 20,
-      "word": "odor",
-      "id": 111
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "aromatic goodness",
-      "id": 112
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "short",
-      "id": 113
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "another wrod",
-      "id": 114
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "roar",
-      "id": 124
-    },
-    {
-      "userId": 1,
       "collectionId": 21,
       "word": "jell",
       "id": 130
@@ -326,12 +296,6 @@
     },
     {
       "userId": 1,
-      "collectionId": 20,
-      "word": "test",
-      "id": 138
-    },
-    {
-      "userId": 1,
       "collectionId": 0,
       "word": "many",
       "id": 139
@@ -347,6 +311,12 @@
       "collectionId": 0,
       "word": "spooky",
       "id": 141
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "stinky",
+      "id": 142
     }
   ],
   "words": []
