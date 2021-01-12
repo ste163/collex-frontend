@@ -341,6 +341,12 @@
       "collectionId": 0,
       "word": "test",
       "id": 140
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "spooky",
+      "id": 141
     }
   ],
   "words": []

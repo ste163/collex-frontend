@@ -5,7 +5,7 @@ import { DefinitionCardContext } from "../definition/DefinitionCardProvider"
 import { IconClose } from "../icons/IconClose"
 import { WordButton } from "../word/WordButton"
 import "./DefinitionCard.css"
-// Definition cards handle all information related to searched for definitions
+// Definition cards handle all information related to retrieved search terms
 
 export const DefinitionCard = props => {
     // stores incoming array of all definitions for current term
@@ -44,14 +44,12 @@ export const DefinitionCard = props => {
                 </h2>
                 
                 <h3 className="card__h3 definition__h3">
-                    {/* Get first item and show its name */}
+                    {/* Display currentDefintion's name */}
                     {currentDef.meta.id}
                 </h3>
 
                 {
-                    // If more than one definition, show next buttons to cycle through definition
-                    // Which means each card needs to hold its own state, so it has the ability to change
-                    // ONLY SHOW NEXT AND PREVIOUS IF THERE IS SOMETHING YOU CAN MOVE TO
+                    // If more than one definition, show previous/next buttons to cycle through definitions
                     definitions.length === 1 ? null :
                     <div className="definition__next">
                         {
@@ -63,7 +61,9 @@ export const DefinitionCard = props => {
                             }}
                             className="btn">Previous</button>
                         }
+
                         <p className="next__text"> {definitions.indexOf(currentDef) + 1} / {definitions.length}</p>
+
                         {
                             <button
                             disabled={definitions.indexOf(currentDef) === definitions.length - 1}  
@@ -108,12 +108,10 @@ export const DefinitionCard = props => {
                                 }
                             </ul>
                         </>
-
                 }
                 
-
-                {/* IF word is already in the user's collection, change this to REMOVE */}
                 {
+                    // If word is already in the user's collection, change this to REMOVE
                     selectedCollection.id === 0 ? null :
                     <button className="btn definition__submit"
                     onClick={e => console.log("ADD ME TO COLLECTION")}>
