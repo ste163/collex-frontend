@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom"
 import { Modal } from "../modal/Modal";
 import { SettingsContext } from "../settings/SettingsProvider"
 import { HeaderColorMode } from "../header/HeaderColorMode"
+import LexLogo from "../branding/LexLogo"
 import "./AuthView.css"
 
 export const AuthView = props => {
@@ -132,7 +133,7 @@ export const AuthView = props => {
             <Modal ref={conflictDialog} contentFunction={<ConflictDialog/>} width={"modal__width--small"} />    
 
             <div className="auth__column--middle">
-                <div>COLLEX LOGO</div>
+                <LexLogo location={"login__logo--lex"}/>
                 <h1>COLLEX FANCY TITLE</h1>
                 <h2 className="subtitle">
                     Create and share word collections<br/>

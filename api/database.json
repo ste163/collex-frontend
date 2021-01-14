@@ -242,24 +242,6 @@
     },
     {
       "userId": 1,
-      "collectionId": 15,
-      "word": "hot",
-      "id": 102
-    },
-    {
-      "userId": 1,
-      "collectionId": 15,
-      "word": "muggy",
-      "id": 103
-    },
-    {
-      "userId": 1,
-      "collectionId": 15,
-      "word": "humid",
-      "id": 104
-    },
-    {
-      "userId": 1,
       "collectionId": 21,
       "word": "jell",
       "id": 130
@@ -279,44 +261,14 @@
     {
       "userId": 1,
       "collectionId": 15,
-      "word": "adgffdagdafgadfgadfga",
+      "word": "summer",
       "id": 135
     },
     {
       "userId": 1,
       "collectionId": 15,
-      "word": "stankyz",
+      "word": "muggy",
       "id": 136
-    },
-    {
-      "userId": 1,
-      "collectionId": 0,
-      "word": "autumn",
-      "id": 137
-    },
-    {
-      "userId": 1,
-      "collectionId": 0,
-      "word": "many",
-      "id": 139
-    },
-    {
-      "userId": 1,
-      "collectionId": 0,
-      "word": "test",
-      "id": 140
-    },
-    {
-      "userId": 1,
-      "collectionId": 0,
-      "word": "spooky",
-      "id": 141
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "stinky",
-      "id": 142
     }
   ],
   "words": []
