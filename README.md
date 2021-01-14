@@ -7,7 +7,7 @@ Writing a story that takes place during the winter? Collex allows you to search 
 and their synonyms and antonyms at a time, so you are able to explore and save wintery-related words to your own collection.
 
 ## API Key
-The application currently requires the use of (Merriam-Webster's Collegiate Thesaurus)[https://dictionaryapi.com/products/api-collegiate-thesaurus].
+The application currently requires the use of [Merriam-Webster's Collegiate Thesaurus](https://dictionaryapi.com/products/api-collegiate-thesaurus).
 
 See the ```src/.APIKey.js``` for information on how to setup the key.
 
