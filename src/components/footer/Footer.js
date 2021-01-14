@@ -1,6 +1,7 @@
 import React from "react"
 import LexLogo from "../branding/LexLogo"
 import LexTitle from "../branding/LexTitle"
+import MwLogo from "../branding/MwLogo";
 import "./Footer.css"
 
 export const Footer = () => (
@@ -10,7 +11,7 @@ export const Footer = () => (
             <section className="footer__branding">
                 <LexLogo location={"logo__footer--lex"} color={"logo__white"} />
                 <LexTitle location={"title__footer"} color={"title__white"} />
-                MW Logo
+                <MwLogo location={"logo__footer--mw"} />
             </section>
 
             <section className="footer__summary">
