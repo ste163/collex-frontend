@@ -5,6 +5,7 @@ import { IconGear } from "../icons/IconGear"
 import { HeaderSettings } from "./HeaderSettings"
 import { Modal } from "../modal/Modal"
 import LexLogo from "../branding/LexLogo"
+import LexTitle from "../branding/LexTitle"
 import "./Header.css"
 
 export const Header = () => {
@@ -38,10 +39,7 @@ export const Header = () => {
 
             <section className="header__branding">
                 <LexLogo location={"logo__header--lex"} color={"logo__gray"} />
-                <div>
-                    COLLEX
-                </div>
-                {/* <VisLitTitle location="title__header" color="title__white" /> */}
+                <LexTitle location={"title__header"} color={"title__white"} />
             </section>
 
             <nav className="header__nav">

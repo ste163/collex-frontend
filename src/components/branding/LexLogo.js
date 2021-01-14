@@ -7,6 +7,7 @@ import "./LexLogo.css"
 
 const LexLogo = props => (
     <svg className={props.location} width="195" height="160" version="1.1" viewBox="0 0 51.594 42.333" xmlns="http://www.w3.org/2000/svg">
+        <title>Lexicon Logo</title>
         <path id="tri_yellow" d="m34.507 1.3433-34.453 39.621h30.672z" style={{fill:"#e4e485", paintOrder:"stroke fill markers", strokeLinecap:"round", strokeLinejoin: "round", strokWidth:".10087"}}/>
         <path id="tri_red" d="m0.053477 1.3434 17.389 19.811 8.464-9.5514 6.941 9.5514 14.396-19.811h-28.792z" style={{fill:"#d64d4d", paintOrder:"stroke fill markers",strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:".050434"}}/>
         <path id="tri_gray" d="m32.848 21.154-14.396 19.811h28.792z" style={{fill:"#dbdbdb",paintOrder:"stroke fill markers",strokeLinecap:"round",strokeLinejoin:"round", strokeWidth:".050434"}}/>

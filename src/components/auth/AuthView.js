@@ -4,6 +4,7 @@ import { Modal } from "../modal/Modal";
 import { SettingsContext } from "../settings/SettingsProvider"
 import { HeaderColorMode } from "../header/HeaderColorMode"
 import LexLogo from "../branding/LexLogo"
+import LexTitle from "../branding/LexTitle"
 import "./AuthView.css"
 
 export const AuthView = props => {
@@ -134,7 +135,7 @@ export const AuthView = props => {
 
             <div className="auth__column--middle">
                 <LexLogo location={"login__logo--lex"}/>
-                <h1>COLLEX FANCY TITLE</h1>
+                <LexTitle location={"title__login"} />
                 <h2 className="subtitle">
                     Create and share word collections<br/>
                     using Merriam-Webster's CollegiateR Thesaurus

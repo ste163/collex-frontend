@@ -1,0 +1,19 @@
+.title__login {
+    width: 18em;
+    height: 6em;
+}
+
+.title__header {
+    width: 6.5em;
+    height: 1.5em;
+    margin: 0 1em;
+}
+
+.title__footer {
+    width: 6em;
+    height: 2em;
+}
+
+.title__white {
+    fill: #FCFCFC !important;
+}
