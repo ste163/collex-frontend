@@ -4,6 +4,7 @@ import { IconLogout } from "../icons/IconLogout"
 import { IconGear } from "../icons/IconGear"
 import { HeaderSettings } from "./HeaderSettings"
 import { Modal } from "../modal/Modal"
+import LexLogo from "../branding/LexLogo"
 import "./Header.css"
 
 export const Header = () => {
@@ -36,19 +37,11 @@ export const Header = () => {
         <header className="header">
 
             <section className="header__branding">
-                <div>
-                    LOGO
-                </div>
+                <LexLogo location={"logo__header--lex"} color={"logo__gray"} />
                 <div>
                     COLLEX
                 </div>
-                {/* <VisLitLogo
-                location="logo__header"
-                colorVis="logo__color--mintBlue"
-                colorLit="logo__color--white"
-                colorVisDot="logo__color--mintBlue"
-                colorLitDot="logo__color--white"/>
-                <VisLitTitle location="title__header" color="title__white" /> */}
+                {/* <VisLitTitle location="title__header" color="title__white" /> */}
             </section>
 
             <nav className="header__nav">

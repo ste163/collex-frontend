@@ -14,3 +14,7 @@
     height: 2em;
     margin-bottom: 0.5em;
 }
+
+.logo__gray {
+    fill: #dbdbdb !important;
+}

@@ -1,5 +1,5 @@
 import React from "react"
-// import { VisLitLogo } from "../branding/VisLitLogo"
+import LexLogo from "../branding/LexLogo"
 // import { VisLitTitle } from "../branding/VisLitTitle"
 import "./Footer.css"
 
@@ -8,15 +8,9 @@ export const Footer = () => (
         <div className="footer__row1">
 
             <section className="footer__branding">
-                Collex Logo
+                <LexLogo location={"logo__footer--lex"} color={"logo__gray"} />
                 MW Logo
-                {/* <VisLitLogo
-                location="logo__footer"
-                colorVis="logo__color--darkMintBlue"
-                colorLit="logo__color--lightBlack"
-                colorVisDot="logo__color--darkMintBlue"
-                colorLitDot="logo__color--lightBlack"/>
-                <VisLitTitle location="title__footer" color="title__lightBlack" /> */}
+                {/* <VisLitTitle location="title__footer" color="title__lightBlack" /> */}
             </section>
 
             <section className="footer__summary">
