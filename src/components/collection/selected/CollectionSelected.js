@@ -41,6 +41,9 @@ export const CollectionSelected = () => {
                     </p>
                     <div>
                         {
+                            // Organize into buttons by alphabetical. With option for by part of speech
+                            // Will probably need to store the part of speech in db for quick sorting
+                                // Organize PoS alphabetically
                             wordsInCollection.map(w => <p key={w.id}>{w.word}</p>)
                         }
                     </div>

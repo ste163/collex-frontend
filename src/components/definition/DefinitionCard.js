@@ -123,6 +123,7 @@ export const DefinitionCard = props => {
                             "collectionId": selectedCollection.id,
                             "word": currentDef.meta.id
                         }
+                        // NEED TO KNOW IF WORD IS IN DATABASE, AND NOT ALLOW IT TO BE ADDED.
                         addWord(word)
                     }}>
                         Add to {selectedCollection.name}

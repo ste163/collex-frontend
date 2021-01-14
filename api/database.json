@@ -337,6 +337,12 @@
       "collectionId": 20,
       "word": "bouquet",
       "id": 7
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "musty",
+      "id": 8
     }
   ]
 }

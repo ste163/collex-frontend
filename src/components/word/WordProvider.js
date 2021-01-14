@@ -9,12 +9,10 @@ export const WordProvider = props => {
 
     const userId = parseInt(sessionStorage.getItem("userId"))
 
-    // Words are ALL the words in the database. Different from ThesaurusProvider's word state.
-    // That state is for the single word
+    // Words are ALL the words in the database. Different from ThesaurusProvider's word state; that state is for the single word
     const [ words, setWords ] =  useState([])
+    // State for words in currently selected collection
     const [ wordsInCollection, setWordsInCollection ] = useState([])
-
-    // Need deleteWord
 
     const getWords = userId => {
         return fetch(`http://localhost:8088/words/?userId=${userId}`)
