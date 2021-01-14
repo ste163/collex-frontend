@@ -118,7 +118,6 @@ export const DefinitionCard = props => {
                     selectedCollection.id === 0 ? null :
                     <button className="btn definition__submit"
                     onClick={e => {
-                        debugger
                         const word = {
                             userId,
                             "collectionId": selectedCollection.id,

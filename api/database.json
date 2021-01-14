@@ -295,6 +295,12 @@
       "collectionId": 20,
       "word": "attar",
       "id": 2
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "odorize",
+      "id": 3
     }
   ]
 }
