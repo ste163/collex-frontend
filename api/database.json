@@ -269,7 +269,32 @@
       "collectionId": 15,
       "word": "muggy",
       "id": 136
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "aroma",
+      "id": 138
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "bouquet",
+      "id": 139
     }
   ],
-  "words": []
+  "words": [
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "bouquet",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "attar",
+      "id": 2
+    }
+  ]
 }
