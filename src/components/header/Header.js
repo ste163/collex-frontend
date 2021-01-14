@@ -38,7 +38,7 @@ export const Header = () => {
         <header className="header">
 
             <section className="header__branding">
-                <LexLogo location={"logo__header--lex"} color={"logo__gray"} />
+                <LexLogo location={"logo__header--lex"} color={"logo__white"} />
                 <LexTitle location={"title__header"} color={"title__white"} />
             </section>
 

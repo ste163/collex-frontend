@@ -8,7 +8,7 @@ export const Footer = () => (
         <div className="footer__row1">
 
             <section className="footer__branding">
-                <LexLogo location={"logo__footer--lex"} color={"logo__gray"} />
+                <LexLogo location={"logo__footer--lex"} color={"logo__white"} />
                 <LexTitle location={"title__footer"} color={"title__white"} />
                 MW Logo
             </section>
