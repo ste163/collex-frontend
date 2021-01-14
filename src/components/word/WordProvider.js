@@ -12,13 +12,20 @@ export const WordProvider = props => {
     // Words are ALL the words in the database. Different from ThesaurusProvider's word state.
     // That state is for the single word
     const [ words, setWords ] =  useState([])
+    const [ wordsInCollection, setWordsInCollection ] = useState([])
 
-    // Need getWords, getWordsByCollectionId, addWord deleteWord
+    // Need deleteWord
 
     const getWords = userId => {
         return fetch(`http://localhost:8088/words/?userId=${userId}`)
         .then(response => response.json())
         .then(setWords)
+    }
+
+    const getWordsByCollectionId = collectionId => {
+        return fetch(`http://localhost:8088/words/?collectionId=${collectionId}`)
+        .then(response => response.json())
+        .then(setWordsInCollection)
     }
 
     const addWord = word => {
@@ -36,7 +43,7 @@ export const WordProvider = props => {
 
     return (
         <WordContext.Provider value={{
-            words, getWords, addWord
+            words, wordsInCollection, getWords, getWordsByCollectionId, addWord
         }}>
             {props.children}
         </WordContext.Provider>

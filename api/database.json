@@ -281,6 +281,18 @@
       "collectionId": 20,
       "word": "bouquet",
       "id": 139
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "stinky",
+      "id": 140
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "fetid",
+      "id": 141
     }
   ],
   "words": [
@@ -301,6 +313,30 @@
       "collectionId": 20,
       "word": "odorize",
       "id": 3
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "fetid",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "malodorous",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "frowsy",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "bouquet",
+      "id": 7
     }
   ]
 }
