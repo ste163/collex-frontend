@@ -26,6 +26,7 @@
     margin: 0 0 0.7em 0;
     padding: 0;
     font-weight: var(--weightThinnest);
+    text-align: center;
 }
 
 .card__auth {

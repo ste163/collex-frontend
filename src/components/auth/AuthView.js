@@ -137,10 +137,9 @@ export const AuthView = props => {
                 <LexLogo location={"login__logo--lex"}/>
                 <LexTitle location={"title__login"} />
                 <h2 className="subtitle">
-                    Create and share word collections<br/>
-                    using Merriam-Webster's CollegiateR Thesaurus
+                    Create custom word collections<br/>
+                    using Merriam-Webster's Collegiate<sup>&#174;</sup> Thesaurus
                 </h2>
-                <div>MW LOGO</div>
 
                 <section className="card card__color--white card__auth">
                     <ul  className="auth__btns">

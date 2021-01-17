@@ -74,15 +74,6 @@
       "starred": false
     },
     {
-      "id": 16,
-      "userId": 1,
-      "name": "Water",
-      "description": "Words relating to water",
-      "public": "1",
-      "categorizationType": "",
-      "starred": false
-    },
-    {
       "id": 19,
       "userId": 1,
       "name": "Winter",
@@ -149,18 +140,6 @@
       "collectionId": 19,
       "word": "blizzard",
       "id": 72
-    },
-    {
-      "userId": 1,
-      "collectionId": 16,
-      "word": "ocean",
-      "id": 86
-    },
-    {
-      "userId": 1,
-      "collectionId": 16,
-      "word": "swim",
-      "id": 87
     },
     {
       "userId": 1,
@@ -287,12 +266,6 @@
       "collectionId": 20,
       "word": "stinky",
       "id": 140
-    },
-    {
-      "userId": 1,
-      "collectionId": 0,
-      "word": "fetid",
-      "id": 141
     }
   ],
   "words": [
