@@ -68,7 +68,7 @@
 .app__container {
   display: grid;
   grid-template-rows: min-content min-content auto min-content;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .view__container {
