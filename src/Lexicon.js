@@ -1,11 +1,10 @@
 import React from "react"
 import { Route, Redirect } from "react-router-dom"
-import { ApplicationViews } from "./ApplicationViews"
-import { AuthView } from "./auth/AuthView"
-import { SettingsProvider } from "./settings/SettingsProvider"
+import ApplicationViews from "./ApplicationViews"
+import { AuthView } from "./components/auth/AuthView"
+import { SettingsProvider } from "./components/settings/SettingsProvider"
 
-export const Collex = () => (
-    <>
+const Lexicon = () => (
     <SettingsProvider>
         <Route render={() => {
             if (sessionStorage.getItem("userId")) {
@@ -19,5 +18,6 @@ export const Collex = () => (
             <AuthView />
         </Route>
     </SettingsProvider>
-    </>
-);
+)
+
+export default Lexicon
