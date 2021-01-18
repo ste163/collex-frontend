@@ -1,5 +1,5 @@
 import React, { useRef, forwardRef, useContext, useState } from "react"
-import { IconDots } from "../icons/IconDots"
+import { IconDots } from "../icons/Icons"
 import { Modal } from "../modal/Modal"
 import { RecentContext } from "./RecentProvider"
 

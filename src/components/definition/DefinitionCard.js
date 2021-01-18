@@ -3,7 +3,7 @@ import { ThesaurusContext } from "../thesaurus/ThesaurusProvider"
 import { CollectionContext } from "../collection/CollectionProvider"
 import { DefinitionCardContext } from "../definition/DefinitionCardProvider" 
 import { WordContext } from "../word/WordProvider"
-import { IconClose } from "../icons/IconClose"
+import { IconClose } from "../icons/Icons"
 import { WordButton } from "../word/WordButton"
 import "./DefinitionCard.css"
 // Definition cards handle all information related to retrieved search terms

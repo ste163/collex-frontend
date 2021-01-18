@@ -1,7 +1,6 @@
 import React, { useRef } from "react"
 import { useHistory } from "react-router-dom"
-import { IconLogout } from "../../../components/icons/IconLogout"
-import { IconGear } from "../../../components/icons/IconGear"
+import { IconLogout, IconGear } from "../../../components/icons/Icons"
 import LexLogo from "../../../components/branding/LexLogo"
 import LexTitle from "../../../components/branding/LexTitle"
 import { Modal } from "../../../components/modal/Modal"

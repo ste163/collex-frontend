@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { ThesaurusContext } from "../thesaurus/ThesaurusProvider"
-import { IconClose } from "../icons/IconClose"
+import { IconClose } from "../icons/Icons"
 import { WordButton } from "../word/WordButton"
 import "./DefinitionCard.css"
 // Displays if there are no matches. Shows similar words

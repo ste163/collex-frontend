@@ -1,5 +1,5 @@
 import React, { useRef, forwardRef, useContext } from "react"
-import { IconDots } from "../../icons/IconDots"
+import { IconDots } from "../../icons/Icons"
 import { Modal } from "../../modal/Modal"
 import { CollectionForm } from "../CollectionForm"
 import { CollectionContext } from "../CollectionProvider"
