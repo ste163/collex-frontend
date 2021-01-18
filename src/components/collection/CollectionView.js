@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react"
 import { CollectionContext } from "./CollectionProvider"
-import { CollectionViewHeader } from "./CollectionViewHeader"
+import SubHeader from "../../views/main/subHeader/SubHeader"
 import { CollectionList } from "./list/CollectionList"
 import { CollectionSelected } from "./selected/CollectionSelected"
 import { ThesaurusList } from "../thesaurus/ThesaurusList"
@@ -23,7 +23,7 @@ export const CollectionView = () => {
 
     return (
         <>
-        <CollectionViewHeader />
+        <SubHeader />
 
         <section className="view__container">
             <CollectionList />

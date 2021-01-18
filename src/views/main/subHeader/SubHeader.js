@@ -1,11 +1,12 @@
 import React, { useRef, useContext, useEffect } from "react"
-import { CollectionContext } from "./CollectionProvider"
-import { IconPlus } from "../icons/IconPlus"
-import { IconDivider } from "../icons/IconDivider"
-import { Modal } from "../modal/Modal"
-import { CollectionForm } from "./CollectionForm"
+import { CollectionContext } from "../../../components/collection/CollectionProvider"
+import { IconPlus } from "../../../components/icons/IconPlus"
+import { IconDivider } from "../../../components/icons/IconDivider"
+import { Modal } from "../../../components/modal/Modal"
+import { CollectionForm } from "../../../components/collection/CollectionForm"
+import "./SubHeader.css"
 
-export const CollectionViewHeader = () => {
+const SubHeader = () => {
     // Default Selection currently is not being checked. Need a useEffect for this.
     const defaultSelection = +sessionStorage.getItem("defaultCollection")
     const modal = useRef()
@@ -66,3 +67,5 @@ export const CollectionViewHeader = () => {
         </>
     )
 }
+
+export default SubHeader

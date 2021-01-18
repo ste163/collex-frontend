@@ -1,10 +1,10 @@
 import React from "react"
-import LexLogo from "../branding/LexLogo"
-import LexTitle from "../branding/LexTitle"
-import MwLogo from "../branding/MwLogo";
+import LexLogo from "../../../components/branding/LexLogo"
+import LexTitle from "../../../components/branding/LexTitle"
+import MwLogo from "../../../components/branding/MwLogo";
 import "./Footer.css"
 
-export const Footer = () => (
+const Footer = () => (
     <footer>
         <div className="footer__row1">
 
@@ -67,3 +67,5 @@ export const Footer = () => (
 
     </footer>
 )
+
+export default Footer

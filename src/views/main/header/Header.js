@@ -1,11 +1,11 @@
 import React, { useRef } from "react"
 import { useHistory } from "react-router-dom"
-import { IconLogout } from "../icons/IconLogout"
-import { IconGear } from "../icons/IconGear"
-import SettingsForm from "../settings/SettingsForm"
-import { Modal } from "../modal/Modal"
-import LexLogo from "../branding/LexLogo"
-import LexTitle from "../branding/LexTitle"
+import { IconLogout } from "../../../components/icons/IconLogout"
+import { IconGear } from "../../../components/icons/IconGear"
+import LexLogo from "../../../components/branding/LexLogo"
+import LexTitle from "../../../components/branding/LexTitle"
+import { Modal } from "../../../components/modal/Modal"
+import SettingsForm from "../../../components/settings/SettingsForm"
 import "./Header.css"
 
 const Header = () => {
