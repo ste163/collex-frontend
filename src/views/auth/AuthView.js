@@ -1,10 +1,10 @@
 import React, { useRef, useState, useContext } from "react"
 import { useHistory } from "react-router-dom"
-import { Modal } from "../modal/Modal";
-import { SettingsContext } from "../settings/SettingsProvider"
-import { HeaderColorMode } from "../header/HeaderColorMode"
-import LexLogo from "../branding/LexLogo"
-import LexTitle from "../branding/LexTitle"
+import { Modal } from "../../components/modal/Modal";
+import { SettingsContext } from "../../components/settings/SettingsProvider"
+import { HeaderColorMode } from "../../components/header/HeaderColorMode"
+import LexLogo from "../../components/branding/LexLogo"
+import LexTitle from "../../components/branding/LexTitle"
 import AuthBorderTop from "./AuthBorderTop"
 import AuthBorderBottom from "./AuthBorderBottom";
 import "./AuthView.css"
@@ -34,7 +34,7 @@ const AuthView = props => {
     const [activeBtn, setBtn] = useState(true)
 
     // Create default settings for user or load user's settings
-    const { settings, getSettingsOnLogin, addDefaultSettings } = useContext(SettingsContext)
+    const { getSettingsOnLogin, addDefaultSettings } = useContext(SettingsContext)
 
     // // Fetch for only login field
     const existingUserCheckLogin = () => {
@@ -137,15 +137,14 @@ const AuthView = props => {
     return (
         <main className="auth__container">
 
-            <AuthBorderTop />
-            
+            <AuthBorderTop />         
 
             <Modal ref={existDialog} contentFunction={<ExistDialog/>} width={"modal__width--smallest"}/>
             <Modal ref={conflictDialog} contentFunction={<ConflictDialog/>} width={"modal__width--small"} />    
 
 
             <div className="auth__column--middle">
-                <LexLogo location={"login__logo--lex"}/>
+                <LexLogo location={"logo__login--lex"}/>
                 <LexTitle location={"title__login"} />
                 <h2 className="subtitle">
                     Create custom word collections<br/>
