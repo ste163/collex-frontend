@@ -2,7 +2,7 @@ import React, { useRef, useState, useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { Modal } from "../../components/modal/Modal";
 import { SettingsContext } from "../../components/settings/SettingsProvider"
-import { HeaderColorMode } from "../../components/header/HeaderColorMode"
+import { SettingsChangeColorMode } from "../../components/settings/SettingsChangeColorMode"
 import LexLogo from "../../components/branding/LexLogo"
 import LexTitle from "../../components/branding/LexTitle"
 import AuthBorderTop from "./AuthBorderTop"
@@ -17,7 +17,7 @@ const AuthView = props => {
     bodyElement.style.setProperty("overflow", "hidden")
 
     // If logging out with dark mode active, this resets colors to white 
-    HeaderColorMode()
+    SettingsChangeColorMode()
 
     // Get references for all of the elements that will change
     const usernameLogin = useRef()

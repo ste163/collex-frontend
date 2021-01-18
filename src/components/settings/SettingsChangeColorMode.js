@@ -1,5 +1,5 @@
 // Change CSS property values on the :root for light & dark mode
-export const HeaderColorMode = () => {
+export const SettingsChangeColorMode = () => {
     const root = document.documentElement.style
     const colorMode = sessionStorage.getItem('colorMode')
 

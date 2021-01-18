@@ -1,33 +1,20 @@
-import React, { useEffect, useRef, useState } from "react"
-import { useHistory, useLocation } from "react-router-dom"
+import React, { useRef } from "react"
+import { useHistory } from "react-router-dom"
 import { IconLogout } from "../icons/IconLogout"
 import { IconGear } from "../icons/IconGear"
-import { HeaderSettings } from "./HeaderSettings"
+import SettingsForm from "../settings/SettingsForm"
 import { Modal } from "../modal/Modal"
 import LexLogo from "../branding/LexLogo"
 import LexTitle from "../branding/LexTitle"
 import "./Header.css"
 
-export const Header = () => {
+const Header = () => {
 
-    // To use history and location, need to store the invoked functions
+    // Instantiate useHistory to use it
     const history = useHistory()
-    const location = useLocation()
-
-    // Get references for nav buttons and underline
-    const btnCollections = useRef()
-    const btnCommunity = useRef()
-    const navLine = useRef()
 
     // Get references for modals
     const settingsModal = useRef()
-
-    const [currentLocation, setCurrentLocation] = useState(location.pathname)
-
-    // Re-render the header whenever the pathname in the URL changes
-    useEffect(() => {
-        setCurrentLocation(location.pathname)
-    }, [location.pathname])
 
     return (
         <header className="header">
@@ -91,8 +78,10 @@ export const Header = () => {
                 </ul>
             </nav>
 
-            <Modal  ref={settingsModal} contentFunction={<HeaderSettings/>} width={"modal__width--med"}/>
+            <Modal  ref={settingsModal} contentFunction={<SettingsForm/>} width={"modal__width--med"}/>
         
         </header>
     )
 }
+
+export default Header

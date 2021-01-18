@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react"
-import { SettingsContext } from "../settings/SettingsProvider"
+import { SettingsContext } from "./SettingsProvider"
 import { CollectionContext } from "../collection/CollectionProvider"
-import { HeaderColorMode } from "./HeaderColorMode"
+import { SettingsChangeColorMode } from "./SettingsChangeColorMode"
 
 // Create the heading form to be passed into the modal
 
-export const HeaderSettings = () => {
+const SettingsForm = () => {
 
     // Default settings from session storage
     const userId = parseInt(sessionStorage.getItem("userId"))
@@ -36,7 +36,7 @@ export const HeaderSettings = () => {
     // Needed to populate the drop-downs and set colors
     useEffect(() => {
         getSettings(userId)
-        HeaderColorMode()
+        SettingsChangeColorMode()
     }, [collections])
 
     // Wait for any settings to change, then re-run this code
@@ -54,7 +54,7 @@ export const HeaderSettings = () => {
             sessionStorage.setItem("defaultCollection", +currentSettings.defaultCollection) 
             sessionStorage.setItem("TotalRecentsToStore", +currentSettings.TotalRecentsToStore) 
             sessionStorage.setItem("colorMode", currentSettings.colorMode)
-            HeaderColorMode()
+            SettingsChangeColorMode()
         }
     }, [currentSettings])
 
@@ -120,3 +120,5 @@ export const HeaderSettings = () => {
         </>
     )
 }
+
+export default SettingsForm
