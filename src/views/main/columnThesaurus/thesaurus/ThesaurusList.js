@@ -1,9 +1,9 @@
 import React, { useContext } from "react"
 import { ThesaurusSearch } from "./ThesaurusSearch"
 import { ThesaurusContext } from "./ThesaurusProvider"
-import { RecentCard } from "../../../../components/recent/RecentCard"
+import { RecentCard } from "../recent/RecentCard"
 import { DefinitionCard } from "../definitionCards/DefinitionCard"
-import { DidYouMeanCard } from "../definitionCards/DidYouMeanCard"
+import DefinitionSimilar from "../definitionCards/DefinitionSimilar"
 import { DefinitionNotFound } from "../definitionCards/DefinitionNotFound"
 import { DefinitionCardProvider } from "../definitionCards/DefinitionCardProvider"
 import "./ThesaurusList.css"
@@ -31,7 +31,8 @@ export const ThesaurusList = () => {
                                 </DefinitionCardProvider>
                             )
                         } else if (def[0] !== undefined) {
-                            return <DidYouMeanCard key={keyInstance} props={def} cardId={keyInstance} />
+                            // Return similar words
+                            return <DefinitionSimilar key={keyInstance} props={def} cardId={keyInstance} />
                         } else {
                             return <DefinitionNotFound key={keyInstance} props={def} cardId={keyInstance} />
                         }

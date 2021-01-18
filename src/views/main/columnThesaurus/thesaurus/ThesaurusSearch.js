@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState, useRef } from "react"
 import { ThesaurusContext } from "./ThesaurusProvider"
-import { RecentContext } from "../../../../components/recent/RecentProvider"
+import { RecentContext } from "../recent/RecentProvider"
 import { CollectionContext } from "../../../../components/collection/CollectionProvider"
 import "./ThesaurusSearch.css"
 

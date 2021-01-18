@@ -5,7 +5,7 @@ import { WordButton } from "../../../../components/word/WordButton"
 import "./DefinitionCard.css"
 // Displays if there are no matches. Shows similar words
 
-export const DidYouMeanCard = props => {
+const DefinitionSimilar = props => {
 
     const { definitionCards, setDefinitionCards } = useContext(ThesaurusContext)
 
@@ -46,3 +46,5 @@ export const DidYouMeanCard = props => {
         </article>
     )
 }
+
+export default DefinitionSimilar

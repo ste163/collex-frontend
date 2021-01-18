@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect, useRef } from "react"
-import { WordButton } from "../word/WordButton"
 import { RecentContext } from "./RecentProvider"
-import { CollectionContext } from "../collection/CollectionProvider"
-import { SettingsContext } from "../settings/SettingsProvider"
 import { RecentDotMenu } from "./RecentDotMenu"
+import { WordButton } from "../../../../components/word/WordButton"
+import { CollectionContext } from "../../../../components/collection/CollectionProvider"
+import { SettingsContext } from "../../../../components/settings/SettingsProvider"
 import "./RecentCard.css"
 // Store most recent searches in a card beneath the search card
 

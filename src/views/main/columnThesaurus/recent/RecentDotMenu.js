@@ -1,6 +1,6 @@
 import React, { useRef, forwardRef, useContext, useState } from "react"
-import { IconDots } from "../icons/Icons"
-import { Modal } from "../modal/Modal"
+import { IconDots } from "../../../../components/icons/Icons"
+import { Modal } from "../../../../components/modal/Modal"
 import { RecentContext } from "./RecentProvider"
 
 export const RecentDotMenu = (React.forwardRef((props, ref) => {

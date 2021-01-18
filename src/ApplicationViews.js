@@ -3,11 +3,11 @@ import { Route } from "react-router-dom"
 import { CollectionProvider } from "./components/collection/CollectionProvider"
 import { ThesaurusProvider} from "./views/main/columnThesaurus/thesaurus/ThesaurusProvider"
 import { SettingsProvider } from "./components/settings/SettingsProvider"
+import { CollectionView } from "./components/collection/CollectionView"
+import { RecentProvider } from "./views/main/columnThesaurus/recent/RecentProvider"
+import { WordProvider } from "./components/word/WordProvider"
 import Header from "./views/main/header/Header"
 import Footer from "./views/main/footer/Footer"
-import { CollectionView } from "./components/collection/CollectionView"
-import { RecentProvider } from "./components/recent/RecentProvider"
-import { WordProvider } from "./components/word/WordProvider"
 
 const ApplicationViews = () => (
     <CollectionProvider>
