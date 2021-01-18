@@ -57,12 +57,18 @@
   --btnHover: 0.2s
 }
 
-/* Setup page layout */
+/* Login/Register layout */
+.auth__container {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+}
 
-#root {
+/* Main application layout post-sign-in */
+.app__container {
   display: grid;
   grid-template-rows: min-content min-content auto min-content;
-  height: 120vh;
+  min-height: 100vh;
 }
 
 .view__container {
@@ -70,11 +76,11 @@
   grid-template-columns: 1fr 2fr 4fr;
 }
 
-/* Concise collection column */
+/* Collection list column */
 .collection__list {
   overflow-y: auto;
   overflow-x: none;
-  max-height: 87vh;
+  max-height: 88vh;
   width: 22vw;
 }
 

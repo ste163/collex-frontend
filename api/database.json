@@ -13,7 +13,7 @@
     {
       "id": 1,
       "userId": 1,
-      "defaultCollection": 22,
+      "defaultCollection": 0,
       "TotalRecentsToStore": 6,
       "addToMultiple": "true",
       "colorMode": "dark"
@@ -69,15 +69,6 @@
       "userId": 1,
       "name": "Summer",
       "description": "Word about summer",
-      "public": "1",
-      "categorizationType": "",
-      "starred": false
-    },
-    {
-      "id": 16,
-      "userId": 1,
-      "name": "Water",
-      "description": "Words relating to water",
       "public": "1",
       "categorizationType": "",
       "starred": false
@@ -149,18 +140,6 @@
       "collectionId": 19,
       "word": "blizzard",
       "id": 72
-    },
-    {
-      "userId": 1,
-      "collectionId": 16,
-      "word": "ocean",
-      "id": 86
-    },
-    {
-      "userId": 1,
-      "collectionId": 16,
-      "word": "swim",
-      "id": 87
     },
     {
       "userId": 1,
@@ -269,7 +248,80 @@
       "collectionId": 15,
       "word": "muggy",
       "id": 136
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "aroma",
+      "id": 138
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "bouquet",
+      "id": 139
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "stinky",
+      "id": 140
     }
   ],
-  "words": []
+  "words": [
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "bouquet",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "attar",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "odorize",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "fetid",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "malodorous",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "frowsy",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "bouquet",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "musty",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "trite",
+      "id": 9
+    }
+  ]
 }

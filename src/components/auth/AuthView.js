@@ -5,9 +5,16 @@ import { SettingsContext } from "../settings/SettingsProvider"
 import { HeaderColorMode } from "../header/HeaderColorMode"
 import LexLogo from "../branding/LexLogo"
 import LexTitle from "../branding/LexTitle"
+import AuthBorderTop from "./AuthBorderTop"
+import AuthBorderBottom from "./AuthBorderBottom";
 import "./AuthView.css"
 
 export const AuthView = props => {
+
+    // 'Locks' the overflow so the user SVG borders are in correct position
+    // This is removed when user lands on main view
+    const bodyElement = document.querySelector("body")
+    bodyElement.style.setProperty("overflow", "hidden")
 
     // If logging out with dark mode active, this resets colors to white 
     HeaderColorMode()
@@ -130,17 +137,20 @@ export const AuthView = props => {
     return (
         <main className="auth__container">
 
+            <AuthBorderTop />
+            
+
             <Modal ref={existDialog} contentFunction={<ExistDialog/>} width={"modal__width--smallest"}/>
             <Modal ref={conflictDialog} contentFunction={<ConflictDialog/>} width={"modal__width--small"} />    
+
 
             <div className="auth__column--middle">
                 <LexLogo location={"login__logo--lex"}/>
                 <LexTitle location={"title__login"} />
                 <h2 className="subtitle">
-                    Create and share word collections<br/>
-                    using Merriam-Webster's CollegiateR Thesaurus
+                    Create custom word collections<br/>
+                    using Merriam-Webster's Collegiate<sup>&#174;</sup> Thesaurus
                 </h2>
-                <div>MW LOGO</div>
 
                 <section className="card card__color--white card__auth">
                     <ul  className="auth__btns">
@@ -184,12 +194,15 @@ export const AuthView = props => {
                         onSubmit={activeBtn ? handleLogin : handleRegister}>
 
                             <fieldset>
-                                <label htmlFor={activeBtn ? "usernameLogin" : "usernameRegister"}>Username</label>
+                                {/* Need to change type to email in final version, along with renaming the labels */}
+                                <label htmlFor={activeBtn ? "usernameLogin" : "usernameRegister"}>Email</label>
                                 <input className="input--auth" ref={activeBtn ? usernameLogin : usernameRegister} type="text"
                                     id={activeBtn ? "usernameLogin" : "usernameRegister"}
-                                    placeholder="Author123"
+                                    placeholder="user@email.com"
                                     required autoFocus />
                             </fieldset>
+                            
+                            {/* Password field here */}
 
                             <fieldset className="fieldset__btn">
                                 <button 
@@ -206,6 +219,8 @@ export const AuthView = props => {
                     </section>
                 </section>
             </div>
+
+            <AuthBorderBottom />
 
         </main>
     )

@@ -14,7 +14,7 @@ export const WordButton = props => {
         <>
         <li className="word__button">
             <button className="btn btn--word"
-            // getWord fetch and update state
+            // getWord fetch and update state to generate definition card
             onClick={e => getWord(e.target.textContent)}>
                 {props.props.word}
             </button>

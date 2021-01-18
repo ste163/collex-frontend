@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { ThesaurusContext } from "../thesaurus/ThesaurusProvider"
 import { CollectionContext } from "../collection/CollectionProvider"
 import { DefinitionCardContext } from "../definition/DefinitionCardProvider" 
+import { WordContext } from "../word/WordProvider"
 import { IconClose } from "../icons/IconClose"
 import { WordButton } from "../word/WordButton"
 import "./DefinitionCard.css"
@@ -10,9 +11,13 @@ import "./DefinitionCard.css"
 export const DefinitionCard = props => {
     // stores incoming array of all definitions for current term
     const definitions = props.props
+    const userId = parseInt(sessionStorage.getItem("userId"))
 
     // DefinitionCards hold the array of current cards
     const { definitionCards, setDefinitionCards } = useContext(ThesaurusContext)
+
+    // addWord allows us to add to the currently selected collection
+    const { addWord } = useContext(WordContext)
 
     // currentDef holds current definition showing in card
     const { currentDef, setCurrentDef } = useContext(DefinitionCardContext)
@@ -25,8 +30,6 @@ export const DefinitionCard = props => {
     useEffect(() => {
         setCurrentDef(definitions[0])
     }, [definitions])
-
-    console.log(definitions)
 
     return (
         !currentDef ? null : 
@@ -44,7 +47,7 @@ export const DefinitionCard = props => {
                 </h2>
                 
                 <h3 className="card__h3 definition__h3">
-                    {/* Display currentDefintion's name */}
+                    {/* Displays currentDefintion's name */}
                     {currentDef.meta.id}
                 </h3>
 
@@ -82,7 +85,7 @@ export const DefinitionCard = props => {
                 <div className="card__definition--text">
                     {
                         // RENAME THIS CONTAINER
-                        // NEED TO IMPROVE STYLING
+                        // NEED TO IMPROVE STYLING WITH BULLETS, ETC.
                         currentDef.shortdef.map(shortDefinition => {
                             return <p key={currentDef.shortdef.indexOf(shortDefinition)}>{shortDefinition}</p>
                         })
@@ -114,7 +117,15 @@ export const DefinitionCard = props => {
                     // If word is already in the user's collection, change this to REMOVE
                     selectedCollection.id === 0 ? null :
                     <button className="btn definition__submit"
-                    onClick={e => console.log("ADD ME TO COLLECTION")}>
+                    onClick={e => {
+                        const word = {
+                            userId,
+                            "collectionId": selectedCollection.id,
+                            "word": currentDef.meta.id
+                        }
+                        // NEED TO KNOW IF WORD IS IN DATABASE, AND NOT ALLOW IT TO BE ADDED.
+                        addWord(word)
+                    }}>
                         Add to {selectedCollection.name}
                     </button>
                 }
