@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef } from "react"
-import { CollectionContext } from "../CollectionProvider"
+import { CollectionContext } from "../../../views/main/collection/CollectionProvider"
 import { NoSelectedCollectionCard } from "./NoSelectedCollectionCard"
 import { SelectedDotMenu } from "./SelectedDotMenu"
 import { WordContext } from "../../word/WordProvider"

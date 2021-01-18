@@ -1,11 +1,11 @@
 import React, { useContext } from "react"
-import { ThesaurusSearch } from "./ThesaurusSearch"
-import { ThesaurusContext } from "./ThesaurusProvider"
-import { RecentCard } from "../recent/RecentCard"
-import { DefinitionCard } from "../definitionCards/DefinitionCard"
-import DefinitionSimilar from "../definitionCards/DefinitionSimilar"
-import { DefinitionNotFound } from "../definitionCards/DefinitionNotFound"
-import { DefinitionCardProvider } from "../definitionCards/DefinitionCardProvider"
+import { ThesaurusSearch } from "./thesaurus/ThesaurusSearch"
+import { ThesaurusContext } from "./thesaurus/ThesaurusProvider"
+import { RecentCard } from "./recent/RecentCard"
+import { DefinitionCard } from "./definitionCards/DefinitionCard"
+import DefinitionSimilar from "./definitionCards/DefinitionSimilar"
+import { DefinitionNotFound } from "./definitionCards/DefinitionNotFound"
+import { DefinitionCardProvider } from "./definitionCards/DefinitionCardProvider"
 import "./ThesaurusList.css"
 
 export const ThesaurusList = () => {

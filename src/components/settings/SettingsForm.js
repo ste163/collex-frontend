@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { SettingsContext } from "./SettingsProvider"
-import { CollectionContext } from "../collection/CollectionProvider"
+import { CollectionContext } from "../../views/main/collection/CollectionProvider"
 import { SettingsChangeColorMode } from "./SettingsChangeColorMode"
 
 // Create the heading form to be passed into the modal

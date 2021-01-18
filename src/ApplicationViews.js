@@ -1,9 +1,9 @@
 import React from "react"
 import { Route } from "react-router-dom"
-import { CollectionProvider } from "./components/collection/CollectionProvider"
+import { CollectionProvider } from "./views/main/collection/CollectionProvider"
 import { ThesaurusProvider} from "./views/main/columnThesaurus/thesaurus/ThesaurusProvider"
 import { SettingsProvider } from "./components/settings/SettingsProvider"
-import { CollectionView } from "./components/collection/CollectionView"
+import MainView from "./views/main/MainView"
 import { RecentProvider } from "./views/main/columnThesaurus/recent/RecentProvider"
 import { WordProvider } from "./components/word/WordProvider"
 import Header from "./views/main/header/Header"
@@ -25,7 +25,7 @@ const ApplicationViews = () => (
                             <Header />
 
                             <Route path="/">
-                                <CollectionView />
+                                <MainView />
                             </Route>
                         </div>
 

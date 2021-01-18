@@ -1,11 +1,11 @@
 import React, { useEffect, useContext } from "react"
-import { CollectionContext } from "./CollectionProvider"
-import SubHeader from "../../views/main/subHeader/SubHeader"
-import { CollectionList } from "./list/CollectionList"
-import { CollectionSelected } from "./selected/CollectionSelected"
-import { ThesaurusList } from "../../views/main/columnThesaurus/thesaurus/ThesaurusList"
+import { CollectionContext } from "./collection/CollectionProvider"
+import SubHeader from "./subHeader/SubHeader"
+import { CollectionList } from "../../components/collection/list/CollectionList"
+import { CollectionSelected } from "../../components/collection/selected/CollectionSelected"
+import { ThesaurusList } from "./columnThesaurus/ThesaurusList"
 
-export const CollectionView = () => {
+const MainView = () => {
 
     // Removes the 'locked' overflow on the login page, so the border SVGs stay in place
     const bodyElement = document.querySelector("body")
@@ -33,3 +33,5 @@ export const CollectionView = () => {
         </>
     )
 }
+
+export default MainView

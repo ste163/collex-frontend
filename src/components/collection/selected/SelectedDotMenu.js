@@ -1,8 +1,8 @@
 import React, { useRef, forwardRef, useContext } from "react"
 import { IconDots } from "../../icons/Icons"
 import { Modal } from "../../modal/Modal"
-import { CollectionForm } from "../CollectionForm"
-import { CollectionContext } from "../CollectionProvider"
+import { CollectionForm } from "../../../views/main/collection/CollectionForm"
+import { CollectionContext } from "../../../views/main/collection/CollectionProvider"
 
 export const SelectedDotMenu = (React.forwardRef((props, ref) => {
 

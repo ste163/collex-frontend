@@ -1,9 +1,9 @@
 import React, { useRef, useContext, useEffect } from "react"
-import { CollectionContext } from "../../../components/collection/CollectionProvider"
+import { CollectionContext } from "../collection/CollectionProvider"
 import { IconPlus } from "../../../components/icons/Icons"
 import { IconDivider } from "../../../components/icons/Icons"
 import { Modal } from "../../../components/modal/Modal"
-import { CollectionForm } from "../../../components/collection/CollectionForm"
+import { CollectionForm } from "../collection/CollectionForm"
 import "./SubHeader.css"
 
 const SubHeader = () => {
