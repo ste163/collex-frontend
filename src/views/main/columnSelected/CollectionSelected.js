@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useRef } from "react"
-import { CollectionContext } from "../../../views/main/collection/CollectionProvider"
+import { CollectionContext } from "../collection/CollectionProvider"
 import { NoSelectedCollectionCard } from "./NoSelectedCollectionCard"
 import { SelectedDotMenu } from "./SelectedDotMenu"
-import { WordContext } from "../../word/WordProvider"
-import { WordButton } from "../../word/WordButton"
+import { WordContext } from "../../../components/word/WordProvider"
+import { WordButton } from "../../../components/word/WordButton"
 import "./CollectionSelected.css"
 
 export const CollectionSelected = () => {

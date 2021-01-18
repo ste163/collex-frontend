@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
-import { CollectionContext } from "../../../views/main/collection/CollectionProvider"
-import { IconArrow } from "../../icons/Icons"
+import { CollectionContext } from "../collection/CollectionProvider"
+import { IconArrow } from "../../../components/icons/Icons"
 import "./CollectionCard.css"
 
 export const CollectionCard = ({collection}) => {

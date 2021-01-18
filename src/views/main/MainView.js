@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from "react"
 import { CollectionContext } from "./collection/CollectionProvider"
 import SubHeader from "./subHeader/SubHeader"
-import { CollectionList } from "../../components/collection/list/CollectionList"
-import { CollectionSelected } from "../../components/collection/selected/CollectionSelected"
+import { CollectionList } from "./columnList/CollectionList"
+import { CollectionSelected } from "./columnSelected/CollectionSelected"
 import { ThesaurusList } from "./columnThesaurus/ThesaurusList"
 
 const MainView = () => {
