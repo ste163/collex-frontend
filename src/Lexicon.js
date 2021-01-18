@@ -1,7 +1,7 @@
 import React from "react"
 import { Route, Redirect } from "react-router-dom"
 import ApplicationViews from "./ApplicationViews"
-import { AuthView } from "./components/auth/AuthView"
+import AuthView from "./components/auth/AuthView"
 import { SettingsProvider } from "./components/settings/SettingsProvider"
 
 const Lexicon = () => (

@@ -29,11 +29,6 @@ export const Header = () => {
         setCurrentLocation(location.pathname)
     }, [location.pathname])
 
-    // Resets the nav underline when the mouse stops hovering 
-    const navLineMouseLeave = () => {
-        navLine.current.className = `${currentLocation.includes("/Collections") ? "nav__line nav__line--collections" : "nav__line nav__line--community"}`
-    }
-
     return (
         <header className="header">
 
@@ -44,34 +39,9 @@ export const Header = () => {
 
             <nav className="header__nav">
                 <ul className="nav__list">
+                    
                     <div className="nav__centered">
-                        <li className="nav__item">
-                            <button 
-                            ref={btnCollections}
-                            className={currentLocation.includes("/Collections") ? "nav__btn nav__btn--active" : "nav__btn"}
-                            onMouseEnter={e => navLine.current.className = "nav__line nav__line--collections"}
-                            onMouseLeave={e => navLineMouseLeave()}
-                            onClick={ e => history.push("/Collections")}>
-                                Your Collections
-                            </button>
-                        </li>
-
-                        <li className="nav__item">
-                            <button 
-                            className="nav__btn"
-                            ref={btnCommunity}
-                            className={currentLocation.includes("/Community") ? "nav__btn nav__btn--active" : "nav__btn"}
-                            onMouseEnter={e => navLine.current.className = "nav__line nav__line--community"}
-                            onMouseLeave={e => navLineMouseLeave()}
-                            onClick={e => history.push("/Community")}>
-                                Community Collections
-                            </button>
-                        </li>
-
-                        <div
-                        ref={navLine}
-                        className={currentLocation.includes("/Collections") ? "nav__line nav__line--collections" : "nav__line nav__line--community"}>
-                        </div>
+                        {/* Leave empty for proper flex spacing */}
                     </div>
 
                     <div className="nav__rightAligned">
@@ -81,9 +51,9 @@ export const Header = () => {
                                 settingsModal.current.className = "background__modal modal__active"
                             }}
                             onMouseOver={e => {
-                                const svg = e.currentTarget.firstElementChild.children[1].classList
-                                svg.remove("icon__whiteNoChange")
-                                svg.add("icon__hovered")
+                                    const svg = e.currentTarget.firstElementChild.children[1].classList
+                                    svg.remove("icon__whiteNoChange")
+                                    svg.add("icon__hovered")
                                 }}
                                 onMouseLeave={e => {
                                     const svg = e.currentTarget.firstElementChild.children[1].classList
@@ -98,14 +68,14 @@ export const Header = () => {
                         <li className="nav__item">
                             <button className="nav__btn btn__logout" 
                             onClick={() => {
-                            sessionStorage.clear("userId")
-                            history.push()
+                                sessionStorage.clear("userId")
+                                history.push()
                             }}
                             onMouseOver={e => {
-                            e.currentTarget.firstElementChild.children[1].childNodes.forEach(svg => {
-                                    svg.classList.remove("icon__whiteNoChange")
-                                    svg.classList.add("icon__hovered")
-                                })
+                                e.currentTarget.firstElementChild.children[1].childNodes.forEach(svg => {
+                                        svg.classList.remove("icon__whiteNoChange")
+                                        svg.classList.add("icon__hovered")
+                                    })
                             }}
                             onMouseLeave={e => {
                                 e.currentTarget.firstElementChild.children[1].childNodes.forEach(svg => {

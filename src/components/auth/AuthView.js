@@ -9,7 +9,7 @@ import AuthBorderTop from "./AuthBorderTop"
 import AuthBorderBottom from "./AuthBorderBottom";
 import "./AuthView.css"
 
-export const AuthView = props => {
+const AuthView = props => {
 
     // 'Locks' the overflow so the user SVG borders are in correct position
     // This is removed when user lands on main view
@@ -225,3 +225,5 @@ export const AuthView = props => {
         </main>
     )
 }
+
+export default AuthView
