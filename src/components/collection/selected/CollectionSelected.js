@@ -3,6 +3,7 @@ import { CollectionContext } from "../CollectionProvider"
 import { NoSelectedCollectionCard } from "./NoSelectedCollectionCard"
 import { SelectedDotMenu } from "./SelectedDotMenu"
 import { WordContext } from "../../word/WordProvider"
+import { WordButton } from "../../word/WordButton"
 import "./CollectionSelected.css"
 
 export const CollectionSelected = () => {
@@ -39,14 +40,36 @@ export const CollectionSelected = () => {
                     <p className="selected__description">
                         {selectedCollection.description}
                     </p>
-                    <div>
+
+                    {/* TO BE REPlACED BY THE SEARCH BAR COMPONENT */}
+                    <fieldset className="selected__search">
+                        <label className="card__h2" htmlFor="collectionSearch">Search words in collection:</label>
+                        <input type="text"
+                        name="collectionSearch"
+                        className="input__search"
+                        placeholder="Search for word or part of speech... "
+                        />
+                    </fieldset>
+
+                    {/* DROPDOWN FOR CATEGORIZATION TYPE */}
+                    <fieldset className="view__collectionSelect selected__categorization">
+                        <label className="collectionSelect__label" htmlFor="collectionSelect">Categorize by:</label>
+                        <select className="collectionSelect__select" name="collectionSelect" id="collectionSelect">
+                            <option value="1">Part of Speech</option>
+                        </select>
+                    </fieldset>
+
+                    <div className="selected__divider">Dividing Line</div>
+
+                    <section className="selected__words word__list definition__words">
                         {
                             // Organize into buttons by alphabetical. With option for by part of speech
                             // Will probably need to store the part of speech in db for quick sorting
-                                // Organize PoS alphabetically
-                            wordsInCollection.map(w => <p key={w.id}>{w.word}</p>)
+                                // Organize part of speech alphabetically
+                            wordsInCollection.map(w => <WordButton key={w.id} props={{word: w.word}} />)
                         }
-                    </div>
+                    </section>
+
                 </article>
             }
         </section>

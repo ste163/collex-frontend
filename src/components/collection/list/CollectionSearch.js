@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from "react"
 import { CollectionContext } from "../CollectionProvider"
 
+// Move into separate component for searching through either Collections or Words in Collection
+
 export const CollectionSearch = () => {
     const { setSearchTerms } = useContext(CollectionContext)
 

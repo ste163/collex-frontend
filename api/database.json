@@ -13,7 +13,7 @@
     {
       "id": 1,
       "userId": 1,
-      "defaultCollection": 22,
+      "defaultCollection": 0,
       "TotalRecentsToStore": 6,
       "addToMultiple": "true",
       "colorMode": "dark"

@@ -47,7 +47,7 @@ export const DefinitionCard = props => {
                 </h2>
                 
                 <h3 className="card__h3 definition__h3">
-                    {/* Display currentDefintion's name */}
+                    {/* Displays currentDefintion's name */}
                     {currentDef.meta.id}
                 </h3>
 
