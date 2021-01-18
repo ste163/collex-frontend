@@ -5,9 +5,15 @@ import { SettingsContext } from "../settings/SettingsProvider"
 import { HeaderColorMode } from "../header/HeaderColorMode"
 import LexLogo from "../branding/LexLogo"
 import LexTitle from "../branding/LexTitle"
+import AuthBorderTop from "./AuthBorderTop"
+import AuthBorderBottom from "./AuthBorderBottom";
 import "./AuthView.css"
 
 export const AuthView = props => {
+
+    // To remove overflow. Need to get the route. If it is /login, need to add the overflow: hidden
+    // property to #root. If it's anything else, remove the property
+
 
     // If logging out with dark mode active, this resets colors to white 
     HeaderColorMode()
@@ -130,8 +136,12 @@ export const AuthView = props => {
     return (
         <main className="auth__container">
 
+            <AuthBorderTop />
+            
+
             <Modal ref={existDialog} contentFunction={<ExistDialog/>} width={"modal__width--smallest"}/>
             <Modal ref={conflictDialog} contentFunction={<ConflictDialog/>} width={"modal__width--small"} />    
+
 
             <div className="auth__column--middle">
                 <LexLogo location={"login__logo--lex"}/>
@@ -205,6 +215,8 @@ export const AuthView = props => {
                     </section>
                 </section>
             </div>
+
+            <AuthBorderBottom />
 
         </main>
     )

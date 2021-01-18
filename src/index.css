@@ -59,11 +59,9 @@
 
 /* Login/Register layout */
 .auth__container {
-  display: grid;
-  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
   height: 100vh;
-  width: 100vw;
-  overflow: hidden;
 }
 
 /* Main application layout post-sign-in */
