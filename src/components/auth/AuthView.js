@@ -194,12 +194,15 @@ export const AuthView = props => {
                         onSubmit={activeBtn ? handleLogin : handleRegister}>
 
                             <fieldset>
-                                <label htmlFor={activeBtn ? "usernameLogin" : "usernameRegister"}>Username</label>
+                                {/* Need to change type to email in final version, along with renaming the labels */}
+                                <label htmlFor={activeBtn ? "usernameLogin" : "usernameRegister"}>Email</label>
                                 <input className="input--auth" ref={activeBtn ? usernameLogin : usernameRegister} type="text"
                                     id={activeBtn ? "usernameLogin" : "usernameRegister"}
-                                    placeholder="Author123"
+                                    placeholder="user@email.com"
                                     required autoFocus />
                             </fieldset>
+                            
+                            {/* Password field here */}
 
                             <fieldset className="fieldset__btn">
                                 <button 
