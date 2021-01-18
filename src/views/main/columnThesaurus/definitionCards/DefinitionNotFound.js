@@ -1,7 +1,6 @@
 import React, { useContext } from "react"
 import { ThesaurusContext } from "../thesaurus/ThesaurusProvider"
-import { IconClose } from "../icons/Icons"
-import { WordButton } from "../word/WordButton"
+import { IconClose } from "../../../../components/icons/Icons"
 import "./DefinitionCard.css"
 
 
@@ -28,7 +27,7 @@ export const DefinitionNotFound = props => {
             </h2>
             
             <h3 className="card__h3 definition__h3">
-                TERM not found
+                TERM NAME not found
             </h3>
 
         </article>

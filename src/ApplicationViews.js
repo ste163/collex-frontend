@@ -1,7 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { CollectionProvider } from "./components/collection/CollectionProvider"
-import { ThesaurusProvider} from "./components/thesaurus/ThesaurusProvider"
+import { ThesaurusProvider} from "./views/main/columnThesaurus/thesaurus/ThesaurusProvider"
 import { SettingsProvider } from "./components/settings/SettingsProvider"
 import Header from "./views/main/header/Header"
 import Footer from "./views/main/footer/Footer"

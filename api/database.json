@@ -322,6 +322,12 @@
       "collectionId": 20,
       "word": "trite",
       "id": 9
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "ripe",
+      "id": 10
     }
   ]
 }

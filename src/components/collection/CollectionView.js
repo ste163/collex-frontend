@@ -3,7 +3,7 @@ import { CollectionContext } from "./CollectionProvider"
 import SubHeader from "../../views/main/subHeader/SubHeader"
 import { CollectionList } from "./list/CollectionList"
 import { CollectionSelected } from "./selected/CollectionSelected"
-import { ThesaurusList } from "../thesaurus/ThesaurusList"
+import { ThesaurusList } from "../../views/main/columnThesaurus/thesaurus/ThesaurusList"
 
 export const CollectionView = () => {
 
