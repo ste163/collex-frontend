@@ -39,6 +39,7 @@ export const ApplicationViews = () => {
                                         <CollectionView />
                                     </Route>
 
+                                    {/* Will not be doing a community view */}
                                     <Route exact path="/Community">
                                         <CommunityView />
                                     </Route>
