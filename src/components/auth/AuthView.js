@@ -11,9 +11,10 @@ import "./AuthView.css"
 
 export const AuthView = props => {
 
-    // To remove overflow. Need to get the route. If it is /login, need to add the overflow: hidden
-    // property to #root. If it's anything else, remove the property
-
+    // 'Locks' the overflow so the user SVG borders are in correct position
+    // This is removed when user lands on main view
+    const bodyElement = document.querySelector("body")
+    bodyElement.style.setProperty("overflow", "hidden")
 
     // If logging out with dark mode active, this resets colors to white 
     HeaderColorMode()

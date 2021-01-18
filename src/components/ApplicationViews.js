@@ -35,7 +35,7 @@ export const ApplicationViews = () => {
                                         <Redirect to="/Collections" />
                                     </Route>
 
-                                    <Route exact path="/Collections">
+                                    <Route exact path="/Collections">                                        
                                         <CollectionView />
                                     </Route>
 

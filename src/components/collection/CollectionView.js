@@ -7,6 +7,10 @@ import { ThesaurusList } from "../thesaurus/ThesaurusList"
 
 export const CollectionView = () => {
 
+    // Removes the 'locked' overflow on the login page, so the border SVGs stay in place
+    const bodyElement = document.querySelector("body")
+    bodyElement.style.removeProperty("overflow", "hidden")
+
     const activeUser = +sessionStorage.getItem("userId")
     
     const { getCollections } = useContext(CollectionContext)
