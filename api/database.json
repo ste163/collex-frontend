@@ -322,6 +322,42 @@
       "collectionId": 20,
       "word": "trite",
       "id": 9
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "ripe",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "collectionId": 8,
+      "word": "paranormal",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "collectionId": 8,
+      "word": "phantasm",
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "collectionId": 8,
+      "word": "apparition",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "collectionId": 8,
+      "word": "poltergeist",
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "collectionId": 8,
+      "word": "specter",
+      "id": 15
     }
   ]
 }

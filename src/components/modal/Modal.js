@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react"
-import { IconClose } from "../icons/IconClose"
+import { IconClose } from "../icons/Icons"
 import "./Modal.css"
 
 // To use Modal
