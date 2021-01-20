@@ -3,7 +3,7 @@ import { CollectionContext } from "../collection/CollectionProvider"
 import SelectedCardNone from "./SelectedCardNone"
 import SelectedDotMenu from "./SelectedDotMenu"
 import { WordContext } from "../../../components/word/WordProvider"
-import { WordButton } from "../../../components/word/WordButton"
+import WordButton from "../../../components/word/WordButton"
 import "./SelectedCard.css"
 
 const SelectedCard = () => {

@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { ThesaurusContext } from "../thesaurus/ThesaurusProvider"
+import { ThesaurusContext } from "../ThesaurusProvider"
 import { IconClose } from "../../../../components/icons/Icons"
 import "./DefinitionCard.css"
 

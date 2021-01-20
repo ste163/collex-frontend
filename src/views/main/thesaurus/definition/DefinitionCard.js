@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react"
 import { DefinitionCardContext } from "./DefinitionCardProvider" 
-import { ThesaurusContext } from "../thesaurus/ThesaurusProvider"
+import { ThesaurusContext } from "../ThesaurusProvider"
 import { CollectionContext } from "../../collection/CollectionProvider"
 import { IconClose } from "../../../../components/icons/Icons"
 import { WordContext } from "../../../../components/word/WordProvider"
-import { WordButton } from "../../../../components/word/WordButton"
+import WordButton from "../../../../components/word/WordButton"
 import "./DefinitionCard.css"
 // Definition cards handle all information related to retrieved search terms
 

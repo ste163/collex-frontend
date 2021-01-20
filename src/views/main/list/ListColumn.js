@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react"
 import ListCardCreator from "./ListCardCreator"
 import { CollectionContext } from "../collection/CollectionProvider"
-import { NoCreatedCollectionCard } from "../collection/NoCreatedCollectionCard"
+import ListCardNone from "./ListCardNone"
 import ListSearch from "./ListSearch"
 
 const ListColumn = () => {
@@ -30,7 +30,7 @@ const ListColumn = () => {
     return (
         <section className="collection__list">
             {
-                !collections.length ? <NoCreatedCollectionCard /> : 
+                !collections.length ? <ListCardNone /> : 
                 <>
                     <ListSearch />
 

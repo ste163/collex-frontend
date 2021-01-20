@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
-import { ThesaurusContext } from "../thesaurus/ThesaurusProvider"
+import { ThesaurusContext } from "../ThesaurusProvider"
 import { IconClose } from "../../../../components/icons/Icons"
-import { WordButton } from "../../../../components/word/WordButton"
+import WordButton from "../../../../components/word/WordButton"
 import "./DefinitionCard.css"
 // Displays if there are no matches. Shows similar words
 

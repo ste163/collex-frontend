@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect, useRef } from "react"
 import { RecentContext } from "./RecentProvider"
 import { RecentDotMenu } from "./RecentDotMenu"
-import { WordButton } from "../../../../components/word/WordButton"
+import WordButton from "../../../../components/word/WordButton"
 import { CollectionContext } from "../../collection/CollectionProvider"
 import { SettingsContext } from "../../../../components/settings/SettingsProvider"
 import "./RecentCard.css"

@@ -1,14 +1,14 @@
 import React, { useContext } from "react"
-import { ThesaurusSearch } from "./thesaurus/ThesaurusSearch"
-import { ThesaurusContext } from "./thesaurus/ThesaurusProvider"
+import { ThesaurusSearch } from "./ThesaurusSearch"
+import { ThesaurusContext } from "./ThesaurusProvider"
 import { RecentCard } from "./recent/RecentCard"
-import { DefinitionCard } from "./definitionCards/DefinitionCard"
-import DefinitionSimilar from "./definitionCards/DefinitionSimilar"
-import { DefinitionNotFound } from "./definitionCards/DefinitionNotFound"
-import { DefinitionCardProvider } from "./definitionCards/DefinitionCardProvider"
-import "./ThesaurusList.css"
+import { DefinitionCard } from "./definition/DefinitionCard"
+import DefinitionSimilar from "./definition/DefinitionSimilar"
+import { DefinitionNotFound } from "./definition/DefinitionNotFound"
+import { DefinitionCardProvider } from "./definition/DefinitionCardProvider"
+import "./ThesaurusColumn.css"
 
-export const ThesaurusList = () => {
+const ThesaurusColumn = () => {
     const { definitionCards } = useContext(ThesaurusContext)
 
     return (
@@ -42,3 +42,5 @@ export const ThesaurusList = () => {
         </section>
     )
 }
+
+export default ThesaurusColumn

@@ -11,8 +11,6 @@ const ListCard = ({collection}) => {
     // Words context??
     // const { progress, getProgressByProjectId } = useContext(ProgressContext)
 
-    // NEED TO FIX
-    // so if they click on any piece of the SVG, it gets the correct ID, currently it's the SVG id
     return (
         <button
         id={collection.id}

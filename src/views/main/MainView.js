@@ -3,7 +3,7 @@ import { CollectionContext } from "./collection/CollectionProvider"
 import SubHeader from "./subHeader/SubHeader"
 import ListColumn from "./list/ListColumn"
 import SelectedColumn from "./selected/SelectedColumn"
-import { ThesaurusList } from "./columnThesaurus/ThesaurusList"
+import ThesaurusColumn from "./thesaurus/ThesaurusColumn"
 
 const MainView = () => {
 
@@ -28,7 +28,7 @@ const MainView = () => {
         <section className="view__container">
             <ListColumn />
             <SelectedColumn />
-            <ThesaurusList />
+            <ThesaurusColumn />
         </section>
         </>
     )

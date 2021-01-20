@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState, useRef } from "react"
 import { ThesaurusContext } from "./ThesaurusProvider"
-import { RecentContext } from "../recent/RecentProvider"
-import { CollectionContext } from "../../collection/CollectionProvider"
+import { RecentContext } from "./recent/RecentProvider"
+import { CollectionContext } from "../collection/CollectionProvider"
 import "./ThesaurusSearch.css"
 
 export const ThesaurusSearch = () => {
