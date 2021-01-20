@@ -1,7 +1,7 @@
 import React, { useRef, useState, useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { Modal } from "../../components/modal/Modal";
-import { SettingsContext } from "../../components/settings/SettingsProvider"
+import { SettingsContext } from "../../providers/SettingsProvider"
 import { SettingsChangeColorMode } from "../../components/settings/SettingsChangeColorMode"
 import LexLogo from "../../components/branding/LexLogo"
 import LexTitle from "../../components/branding/LexTitle"

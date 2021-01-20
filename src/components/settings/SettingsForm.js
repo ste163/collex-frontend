@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
-import { SettingsContext } from "./SettingsProvider"
+import { SettingsContext } from "../../providers/SettingsProvider"
 import { CollectionContext } from "../../providers/CollectionProvider"
 import { SettingsChangeColorMode } from "./SettingsChangeColorMode"
 

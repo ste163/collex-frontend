@@ -3,7 +3,7 @@ import { RecentContext } from "./RecentProvider"
 import { RecentDotMenu } from "./RecentDotMenu"
 import WordButton from "../../../../components/word/WordButton"
 import { CollectionContext } from "../../../../providers/CollectionProvider"
-import { SettingsContext } from "../../../../components/settings/SettingsProvider"
+import { SettingsContext } from "../../../../providers/SettingsProvider"
 import "./RecentCard.css"
 // Store most recent searches in a card beneath the search card
 
