@@ -1,6 +1,6 @@
 import React from "react"
 import { Route } from "react-router-dom"
-import { CollectionProvider } from "./views/main/collection/CollectionProvider"
+import { CollectionProvider } from "./providers/CollectionProvider"
 import { ThesaurusProvider} from "./views/main/thesaurus/ThesaurusProvider"
 import { SettingsProvider } from "./components/settings/SettingsProvider"
 import MainView from "./views/main/MainView"

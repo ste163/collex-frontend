@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, useRef } from "react"
-import { CollectionContext } from "./CollectionProvider"
+import { CollectionContext } from "../../../providers/CollectionProvider"
 import { Modal } from "../../../components/modal/Modal"
 import "./CollectionForm.css"
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react"
 import ListCardCreator from "./ListCardCreator"
-import { CollectionContext } from "../collection/CollectionProvider"
+import { CollectionContext } from "../../../providers/CollectionProvider"
 import ListCardNone from "./ListCardNone"
 import ListSearch from "./ListSearch"
 

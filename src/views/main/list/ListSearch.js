@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react"
-import { CollectionContext } from "../collection/CollectionProvider"
+import { CollectionContext } from "../../../providers/CollectionProvider"
 
 // Move into separate component for searching through either Collections or Words in Collection
 

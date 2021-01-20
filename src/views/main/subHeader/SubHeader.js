@@ -1,5 +1,5 @@
 import React, { useRef, useContext, useEffect } from "react"
-import { CollectionContext } from "../collection/CollectionProvider"
+import { CollectionContext } from "../../../providers/CollectionProvider"
 import { IconPlus } from "../../../components/icons/Icons"
 import { IconDivider } from "../../../components/icons/Icons"
 import { Modal } from "../../../components/modal/Modal"

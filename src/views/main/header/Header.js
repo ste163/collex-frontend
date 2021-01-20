@@ -1,9 +1,9 @@
 import React, { useRef } from "react"
 import { useHistory } from "react-router-dom"
 import { IconLogout, IconGear } from "../../../components/icons/Icons"
+import { Modal } from "../../../components/modal/Modal"
 import LexLogo from "../../../components/branding/LexLogo"
 import LexTitle from "../../../components/branding/LexTitle"
-import { Modal } from "../../../components/modal/Modal"
 import SettingsForm from "../../../components/settings/SettingsForm"
 import "./Header.css"
 

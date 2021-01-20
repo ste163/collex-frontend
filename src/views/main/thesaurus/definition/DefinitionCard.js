@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { DefinitionCardContext } from "./DefinitionCardProvider" 
 import { ThesaurusContext } from "../ThesaurusProvider"
-import { CollectionContext } from "../../collection/CollectionProvider"
+import { CollectionContext } from "../../../../providers/CollectionProvider"
 import { IconClose } from "../../../../components/icons/Icons"
 import { WordContext } from "../../../../components/word/WordProvider"
 import WordButton from "../../../../components/word/WordButton"

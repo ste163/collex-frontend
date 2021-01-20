@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { SettingsContext } from "./SettingsProvider"
-import { CollectionContext } from "../../views/main/collection/CollectionProvider"
+import { CollectionContext } from "../../providers/CollectionProvider"
 import { SettingsChangeColorMode } from "./SettingsChangeColorMode"
 
 // Create Settings form to be passed into modal from header's gear icon

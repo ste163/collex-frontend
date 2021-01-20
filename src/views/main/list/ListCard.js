@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react"
-import { CollectionContext } from "../collection/CollectionProvider"
+import { CollectionContext } from "../../../providers/CollectionProvider"
 import { IconArrow } from "../../../components/icons/Icons"
 import "./ListCard.css"
 
