@@ -3,7 +3,7 @@ import { CollectionContext } from "../../../providers/CollectionProvider"
 import { IconPlus } from "../../../components/icons/Icons"
 import { IconDivider } from "../../../components/icons/Icons"
 import { Modal } from "../../../components/modal/Modal"
-import { CollectionForm } from "../collection/CollectionForm"
+import { CollectionForm } from "../collectionForm/CollectionForm"
 import "./SubHeader.css"
 
 const SubHeader = () => {

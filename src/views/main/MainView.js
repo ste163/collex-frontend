@@ -1,6 +1,5 @@
 import React, { useEffect, useContext } from "react"
 import { CollectionContext } from "../../providers/CollectionProvider"
-import SubHeader from "./subHeader/SubHeader"
 import ListColumn from "./list/ListColumn"
 import SelectedColumn from "./selected/SelectedColumn"
 import ThesaurusColumn from "./thesaurus/ThesaurusColumn"
