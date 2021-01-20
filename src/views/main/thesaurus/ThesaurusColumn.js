@@ -1,11 +1,11 @@
 import React, { useContext } from "react"
 import { ThesaurusSearch } from "./ThesaurusSearch"
-import { ThesaurusContext } from "./ThesaurusProvider"
+import { ThesaurusContext } from "../../../providers/ThesaurusProvider"
 import { RecentCard } from "./recent/RecentCard"
 import { DefinitionCard } from "./definition/DefinitionCard"
 import DefinitionSimilar from "./definition/DefinitionSimilar"
 import { DefinitionNotFound } from "./definition/DefinitionNotFound"
-import { DefinitionCardProvider } from "./definition/DefinitionCardProvider"
+import { DefinitionCardProvider } from "../../../providers/DefinitionCardProvider"
 import "./ThesaurusColumn.css"
 
 const ThesaurusColumn = () => {
@@ -26,6 +26,7 @@ const ThesaurusColumn = () => {
 
                         if (typeof def[0] !== "string" && def[0] !== undefined) {
                             return (
+                                // DefinitionCardProvider is unique to every card
                                 <DefinitionCardProvider key={keyInstance}>
                                     <DefinitionCard key={keyInstance} props={def} cardId={keyInstance} />
                                 </DefinitionCardProvider>

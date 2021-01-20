@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { ThesaurusContext } from "../../views/main/thesaurus/ThesaurusProvider"
+import { ThesaurusContext } from "../../providers/ThesaurusProvider"
 import "./WordButton.css"
 
 // The word buttons are representations of the Words table in database.

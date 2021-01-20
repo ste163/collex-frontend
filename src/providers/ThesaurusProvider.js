@@ -1,5 +1,5 @@
 import React, { useState, createContext } from "react"
-import { APIKey } from "../../../APIKey"
+import { APIKey } from "../APIKey"
 
 export const ThesaurusContext = createContext()
 
