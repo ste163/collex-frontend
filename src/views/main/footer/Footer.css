@@ -35,7 +35,7 @@ footer {
     font-weight: var(--weightHeavy);
 }
 
-.summary__p, .about__p {
+.footer__p {
     font-size: 0.75em;
     font-weight: var(--weightThin);
 }

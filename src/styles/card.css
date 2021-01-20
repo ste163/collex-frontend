@@ -28,8 +28,8 @@
     margin-left: 1.5em;
 }
 
-/* Colors */
 
+/* Colors */
 .card__color--white {
     background-color: var(--offWhite);
 }
@@ -48,8 +48,8 @@
     height: min-content;
 }
 
-/* no default cards */
 
+/* no default cards */
 .card__noDefault {
     display: flex;
     flex-flow: column nowrap;

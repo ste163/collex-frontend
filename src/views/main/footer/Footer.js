@@ -16,7 +16,7 @@ const Footer = () => (
 
             <section className="footer__summary">
                 <h2 className="footer__heading">Summary</h2>
-                <p className="summary__p">
+                <p className="footer__p">
                     Lexicon allows writers to easily search for and store words from Merriam-Webster's Collegiate Thesaurus.
                 </p>
             </section>
@@ -24,14 +24,16 @@ const Footer = () => (
             <section className="footer__about">
                 <h2 className="footer__heading">About</h2>
                 <div>
-                    <p className="about__p">
-                    Lexicon was created by Sam Edwards, a creative writer and web development student at <a href="http://nashvillesoftwareschool.com/">Nashville Software School</a>.
+                    <p className="footer__p">
+                        Lexicon was created by Sam Edwards, a creative writer and web development student at <a href="http://nashvillesoftwareschool.com/">Nashville Software School</a>.
                     </p>
                     <div>
-                        <a className="about__p" href="https://www.linkedin.com/in/st-edwards">LinkedIn</a>
+                        {/* ICON */}
+                        <a className="footer__p" href="https://www.linkedin.com/in/st-edwards">LinkedIn</a>
                     </div>
                     <div>
-                        <a className="about__p" href="https://github.com/ste163">Github</a>
+                        {/* ICON */}
+                        <a className="footer__p" href="https://github.com/ste163">Github</a>
                     </div>
                 </div>
             </section>
@@ -43,6 +45,8 @@ const Footer = () => (
                     <div>
                         <h3 className="footer__subHeading">Development</h3>
                         <ul className="tech__list">
+                            BACKEND
+                            FRONTEND
                             <li className="tech__item"><a href="https://reactjs.org/">React</a></li>
                             <li className="tech__item"><a href="https://code.visualstudio.com/">VS Code</a></li>
                         </ul>

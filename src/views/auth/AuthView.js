@@ -22,12 +22,12 @@ const AuthView = props => {
     // Get references for all of the elements that will change
     const usernameLogin = useRef()
     const usernameRegister = useRef()
-    const existDialog = useRef()
-    const conflictDialog = useRef()
-    const history = useHistory()
-
     const loginBtn = useRef()
     const registerBtn = useRef()
+    const existDialog = useRef()
+    const conflictDialog = useRef()    
+    
+    const history = useHistory()
 
     // To allow for the nav underline to move, target it by useRef
     const underline = useRef()

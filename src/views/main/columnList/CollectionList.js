@@ -36,7 +36,6 @@ export const CollectionList = () => {
                     <CollectionSearch />
 
                     <CollectionCreateList props={unfiltered}/>
-
                     {
                         // Heading must have a separate check or it will not render properly
                         !filtered.length ? null : <h2 className="card__h2 card__h2--list">Matching collections</h2>
