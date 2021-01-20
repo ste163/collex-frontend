@@ -5,8 +5,7 @@ import { SettingsContext } from "../../providers/SettingsProvider"
 import { SettingsChangeColorMode } from "../../components/settings/SettingsChangeColorMode"
 import LexLogo from "../../components/branding/LexLogo"
 import LexTitle from "../../components/branding/LexTitle"
-import AuthBorderTop from "./AuthBorderTop"
-import AuthBorderBottom from "./AuthBorderBottom";
+import { AuthBorderTop, AuthBorderBottom } from "./AuthBorders"
 import "./AuthView.css"
 
 const AuthView = props => {
