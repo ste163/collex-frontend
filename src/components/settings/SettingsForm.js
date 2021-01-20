@@ -3,7 +3,7 @@ import { SettingsContext } from "./SettingsProvider"
 import { CollectionContext } from "../../views/main/collection/CollectionProvider"
 import { SettingsChangeColorMode } from "./SettingsChangeColorMode"
 
-// Create the heading form to be passed into the modal
+// Create Settings form to be passed into modal from header's gear icon
 
 const SettingsForm = () => {
 
@@ -14,6 +14,7 @@ const SettingsForm = () => {
     const addToMultiple = sessionStorage.getItem("addToMultiple")
     const colorMode = sessionStorage.getItem("colorMode")
 
+    // Default settings to create
     const defaultSettings = {
         userId,
         defaultCollection,
@@ -58,65 +59,65 @@ const SettingsForm = () => {
         }
     }, [currentSettings])
 
+    if (!settings[0]) {
+        return null
+    }
+
     return (
         <>
-        {settings[0] === undefined ? null : 
-            <>
-            <div className="container__settings">
-                <h2 className="modal__h2">Settings</h2>
-                <p className="form__subtitle">(settings autosave)</p>
-                <form className="form__settings">
-                        
-                    <fieldset className="settings__fieldset">
-                        <label htmlFor="defaultCollection">Set default collection:</label>
-                        <select
-                        id="defaultCollection"
-                        name="defaultCollection"
-                        value={settings[0].defaultCollection}
-                        onChange={handleControlledInputChange}>
-                            <option value="0">Select default collection</option>
-                            {collections.map(collection => (
-                                <option key={collection.id} value={collection.id}>
-                                    {collection.name}
-                                </option>
-                            ))}
-                        </select>
-                    </fieldset>
+        <div className="container__settings">
+            <h2 className="modal__h2">Settings</h2>
+            <p className="form__subtitle">(settings autosave)</p>
+            <form className="form__settings">
                     
-                    <fieldset className="settings__fieldset">
-                        <label htmlFor="recents">Total recent searches to keep (12 max): </label>
-                        <input type="number" 
-                        name="TotalRecentsToStore"
-                        onChange={handleControlledInputChange}
-                        id="recents"
-                        defaultValue={+settings[0].TotalRecentsToStore}
-                        min="1"
-                        max="12"
-                        />
-                    </fieldset>
+                <fieldset className="settings__fieldset">
+                    <label htmlFor="defaultCollection">Set default collection:</label>
+                    <select
+                    id="defaultCollection"
+                    name="defaultCollection"
+                    value={settings[0].defaultCollection}
+                    onChange={handleControlledInputChange}>
+                        <option value="0">Select default collection</option>
+                        {collections.map(collection => (
+                            <option key={collection.id} value={collection.id}>
+                                {collection.name}
+                            </option>
+                        ))}
+                    </select>
+                </fieldset>
+                
+                <fieldset className="settings__fieldset">
+                    <label htmlFor="recents">Total recent searches to keep (12 max): </label>
+                    <input type="number" 
+                    name="TotalRecentsToStore"
+                    onChange={handleControlledInputChange}
+                    id="recents"
+                    defaultValue={+settings[0].TotalRecentsToStore}
+                    min="1"
+                    max="12"
+                    />
+                </fieldset>
 
-                    <fieldset className="settings__fieldset">
-                        <label htmlFor="darkMode">Color mode:</label>
-                        <div className="radios">
-                            <input className="input__radio" type="radio" id="light" name="colorMode" value="light" required
-                            checked={settings[0].colorMode === "light" ? "light" : ""}
-                            onChange={handleControlledInputChange}
-                            />
-                            <label htmlFor="daily">Light</label>
-                            
-                            <input className="input__radio" type="radio" id="dark" name="colorMode" value="dark" required
-                            checked={settings[0].colorMode === "dark" ? "dark" : ""}
-                            onChange={handleControlledInputChange}
-                            />
-                            <label htmlFor="weekly">Dark</label>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-            <button className="btn"
-            onClick={e => e.currentTarget.parentElement.parentElement.parentElement.className = "background__modal"}>Close</button>
-            </>
-        }
+                <fieldset className="settings__fieldset">
+                    <label htmlFor="darkMode">Color mode:</label>
+                    <div className="radios">
+                        <input className="input__radio" type="radio" id="light" name="colorMode" value="light" required
+                        checked={settings[0].colorMode === "light" ? "light" : ""}
+                        onChange={handleControlledInputChange}
+                        />
+                        <label htmlFor="daily">Light</label>
+                        
+                        <input className="input__radio" type="radio" id="dark" name="colorMode" value="dark" required
+                        checked={settings[0].colorMode === "dark" ? "dark" : ""}
+                        onChange={handleControlledInputChange}
+                        />
+                        <label htmlFor="weekly">Dark</label>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <button className="btn"
+        onClick={e => e.currentTarget.parentElement.parentElement.parentElement.className = "background__modal"}>Close</button>
         </>
     )
 }

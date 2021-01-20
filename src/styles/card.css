@@ -24,6 +24,12 @@
     font-weight: var(--weightNormal);
 }
 
+.card__type {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 0.6em;
+}
+
 .card__h2--list {
     margin-left: 1.5em;
 }

@@ -31,8 +31,8 @@ export const CollectionSelected = () => {
                 <article className="card card__color--white card__selected">
                     <SelectedDotMenu ref={dotMenu} collection={selectedCollection} />
 
-                    <div className="selected__type">
-                       {selectedCollection.public === "2" ? "Public" : "Private"} Collection
+                    <div className="card__type">
+                       Selected Collection
                     </div>
                     <h1 className="selected__h1">
                         {selectedCollection.name}

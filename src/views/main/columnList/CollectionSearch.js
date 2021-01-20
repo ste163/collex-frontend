@@ -13,7 +13,7 @@ export const CollectionSearch = () => {
 
     return (
             <fieldset className="card card__color--white card__collection card__collection--search">
-                <label className="card__h2" htmlFor="collectionSearch">Search collections by name</label>
+                <label className="card__type type__margin--search" htmlFor="collectionSearch">Search collections by name</label>
                 <input type="text"
                 name="collectionSearch"
                 className="input__search"

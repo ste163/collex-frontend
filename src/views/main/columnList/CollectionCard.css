@@ -24,6 +24,10 @@
     cursor: initial;
 }
 
+.type__margin--search {
+    margin-bottom: var(--typeMarginBottom);
+}
+
 .card__btn {
     background-color: transparent;
     border: none;

@@ -44,7 +44,7 @@ export const RecentCard = () => {
         !selectedRecents.length ? null :
             <article className="card card__color--white card__recent">
                 <RecentDotMenu ref={dotMenu} collection={selectedCollection} />
-                <h2 className="card__h2">
+                <h2 className="card__type type__margin--recents">
                     Most recent searches {selectedCollection.id === 0 ? 'for no selection' : `for ${selectedCollection.name}`}
                 </h2>
                 <ul className="word__list">

@@ -7,3 +7,7 @@
     width: 16em;
     height: min-content;
 }
+
+.type__margin--recents {
+    margin-bottom: var(--typeMarginBottom);
+}

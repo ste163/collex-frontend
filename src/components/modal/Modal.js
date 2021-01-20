@@ -20,9 +20,12 @@ export const Modal = (React.forwardRef((props, ref) => (
            }
         }}>
 
+            {/* Modal Card */}
             <article className={`modal__container ${props.width}`}>
-
-                <section className="modal__heading">
+                <section className="modal__header">
+                    <div className="card__type">
+                        Form
+                    </div>
                     <button className="btn__close"
                     onClick={e => ref.current.className = "background__modal"}>
                         <IconClose color="icon__gray" />
@@ -32,7 +35,6 @@ export const Modal = (React.forwardRef((props, ref) => (
                 <section className="modal__content">
                     {props.contentFunction}                
                 </section>
-
             </article>
 
         </section>
