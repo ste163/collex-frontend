@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { SettingsContext } from "../../providers/SettingsProvider"
 import { CollectionContext } from "../../providers/CollectionProvider"
-import { SettingsChangeColorMode } from "../../utils/SettingsChangeColorMode"
+import ChangeColorMode from "../../utils/ChangeColorMode"
 
 // Create Settings form to be passed into modal from header's gear icon
 
@@ -37,7 +37,7 @@ const SettingsForm = () => {
     // Needed to populate the drop-downs and set colors
     useEffect(() => {
         getSettings(userId)
-        SettingsChangeColorMode()
+        ChangeColorMode()
     }, [collections])
 
     // Wait for any settings to change, then re-run this code
@@ -55,7 +55,7 @@ const SettingsForm = () => {
             sessionStorage.setItem("defaultCollection", +currentSettings.defaultCollection) 
             sessionStorage.setItem("TotalRecentsToStore", +currentSettings.TotalRecentsToStore) 
             sessionStorage.setItem("colorMode", currentSettings.colorMode)
-            SettingsChangeColorMode()
+            ChangeColorMode()
         }
     }, [currentSettings])
 

@@ -1,5 +1,5 @@
 // Change CSS property values on the :root for light & dark mode
-export const SettingsChangeColorMode = () => {
+const ChangeColorMode = () => {
     const root = document.documentElement.style
     const colorMode = sessionStorage.getItem('colorMode')
 
@@ -35,3 +35,5 @@ export const SettingsChangeColorMode = () => {
         root.setProperty('--progressBarBackground', '#484848')
     }
 }
+
+export default ChangeColorMode
