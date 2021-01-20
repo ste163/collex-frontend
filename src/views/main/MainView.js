@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react"
 import { CollectionContext } from "./collection/CollectionProvider"
 import SubHeader from "./subHeader/SubHeader"
 import { CollectionList } from "./columnList/CollectionList"
-import { CollectionSelected } from "./columnSelected/CollectionSelected"
+import SelectedCard from "./Selected/SelectedCard"
 import { ThesaurusList } from "./columnThesaurus/ThesaurusList"
 
 const MainView = () => {
@@ -27,7 +27,7 @@ const MainView = () => {
 
         <section className="view__container">
             <CollectionList />
-            <CollectionSelected />
+            <SelectedCard />
             <ThesaurusList />
         </section>
         </>

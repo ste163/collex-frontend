@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useRef } from "react"
 import { CollectionContext } from "../collection/CollectionProvider"
-import { NoSelectedCollectionCard } from "./NoSelectedCollectionCard"
+import SelectedCardNone from "./SelectedCardNone"
 import { SelectedDotMenu } from "./SelectedDotMenu"
 import { WordContext } from "../../../components/word/WordProvider"
 import { WordButton } from "../../../components/word/WordButton"
-import "./CollectionSelected.css"
+import "./SelectedCard.css"
 
-export const CollectionSelected = () => {
+const SelectedCard = () => {
     
     const dotMenu = useRef()
 
@@ -26,8 +26,8 @@ export const CollectionSelected = () => {
     return (
         <section className="collection__selected">
             {
-                selectedCollection === undefined ? <NoSelectedCollectionCard /> :
-                selectedCollection.id === 0  ? <NoSelectedCollectionCard /> :
+                selectedCollection === undefined ? <SelectedCardNone /> :
+                selectedCollection.id === 0  ? <SelectedCardNone /> :
                 <article className="card card__color--white card__selected">
                     <SelectedDotMenu ref={dotMenu} collection={selectedCollection} />
 
@@ -75,3 +75,5 @@ export const CollectionSelected = () => {
         </section>
     )
 }
+
+export default SelectedCard
