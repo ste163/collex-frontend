@@ -5,7 +5,7 @@ import { ThesaurusProvider} from "./views/main/thesaurus/ThesaurusProvider"
 import { SettingsProvider } from "./providers/SettingsProvider"
 import MainView from "./views/main/MainView"
 import { RecentProvider } from "./views/main/thesaurus/recent/RecentProvider"
-import { WordProvider } from "./components/word/WordProvider"
+import { WordProvider } from "./providers/WordProvider"
 import Header from "./views/main/header/Header"
 import Footer from "./views/main/footer/Footer"
 
