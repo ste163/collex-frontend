@@ -1,7 +1,7 @@
 import React from "react"
-import LexLogo from "../../../components/branding/LexLogo"
-import LexTitle from "../../../components/branding/LexTitle"
-import MwLogo from "../../../components/branding/MwLogo";
+import LexLogo from "../branding/LexLogo"
+import LexTitle from "../branding/LexTitle"
+import MwLogo from "../branding/MwLogo";
 import "./Footer.css"
 
 const Footer = () => (

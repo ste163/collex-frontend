@@ -3,12 +3,12 @@ import { Route } from "react-router-dom"
 import { CollectionProvider } from "./providers/CollectionProvider"
 import { ThesaurusProvider} from "./providers/ThesaurusProvider"
 import { SettingsProvider } from "./providers/SettingsProvider"
-import MainView from "./views/main/MainView"
 import { RecentProvider } from "./providers/RecentProvider"
 import { WordProvider } from "./providers/WordProvider"
-import Header from "./views/main/header/Header"
-import SubHeader from "./views/main/subHeader/SubHeader"
-import Footer from "./views/main/footer/Footer"
+import Header from "./components/header/Header"
+import SubHeader from "./components/subHeader/SubHeader"
+import MainView from "./views/main/MainView"
+import Footer from "./components/footer/Footer"
 
 
 const ApplicationViews = () => (
