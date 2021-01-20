@@ -3,7 +3,7 @@ import { CollectionContext } from "../collection/CollectionProvider"
 
 // Move into separate component for searching through either Collections or Words in Collection
 
-export const CollectionSearch = () => {
+const ListSearch = () => {
     const { setSearchTerms } = useContext(CollectionContext)
 
     // On page load, set search terms to empty string
@@ -25,3 +25,5 @@ export const CollectionSearch = () => {
             </fieldset>
     )
 }
+
+export default ListSearch

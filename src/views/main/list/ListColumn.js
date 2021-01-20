@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useContext } from "react"
-import { CollectionCreateList } from "./CollectionCreateList"
+import ListCardCreator from "./ListCardCreator"
 import { CollectionContext } from "../collection/CollectionProvider"
 import { NoCreatedCollectionCard } from "../collection/NoCreatedCollectionCard"
-import { CollectionSearch } from "./CollectionSearch"
+import ListSearch from "./ListSearch"
 
-export const CollectionList = () => {
+const ListColumn = () => {
 
     const { collections, searchTerms } = useContext(CollectionContext)
 
@@ -20,7 +20,6 @@ export const CollectionList = () => {
             // We are searching, so empty unfiltered state
             setUnfiltered([])
             setFiltered(subsetNames)
-
         } else {
             // no terms in search, so display all collections, reset filtered items
             setUnfiltered(collections)
@@ -33,16 +32,19 @@ export const CollectionList = () => {
             {
                 !collections.length ? <NoCreatedCollectionCard /> : 
                 <>
-                    <CollectionSearch />
+                    <ListSearch />
 
-                    <CollectionCreateList props={unfiltered}/>
+                    <ListCardCreator props={unfiltered}/>
                     {
                         // Heading must have a separate check or it will not render properly
                         !filtered.length ? null : <h2 className="card__h2 card__h2--list">Matching collections</h2>
                     }
-                    <CollectionCreateList props={filtered}/>        
+
+                    <ListCardCreator props={filtered}/>        
                 </>                  
             }
         </section>
     )
 }
+
+export default ListColumn

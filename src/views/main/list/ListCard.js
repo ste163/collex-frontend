@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react"
 import { CollectionContext } from "../collection/CollectionProvider"
 import { IconArrow } from "../../../components/icons/Icons"
-import "./CollectionCard.css"
+import "./ListCard.css"
 
-export const CollectionCard = ({collection}) => {
+const ListCard = ({collection}) => {
 
     // needs to update whenever there is a selectedCollection. Because if it's selected, it's background color will change
     const { collections, selectedCollection, setSelectedCollection } = useContext(CollectionContext)
@@ -32,3 +32,5 @@ export const CollectionCard = ({collection}) => {
         </button>
     )
 }
+
+export default ListCard
