@@ -4,7 +4,7 @@ import { IconLogout, IconGear } from "../icons/Icons"
 import { Modal } from "../modal/Modal"
 import LexLogo from "../branding/LexLogo"
 import LexTitle from "../branding/LexTitle"
-import SettingsForm from "../settings/SettingsForm"
+import SettingsForm from "../forms/SettingsForm"
 import "./Header.css"
 
 const Header = () => {
