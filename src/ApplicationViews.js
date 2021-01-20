@@ -7,7 +7,9 @@ import MainView from "./views/main/MainView"
 import { RecentProvider } from "./providers/RecentProvider"
 import { WordProvider } from "./providers/WordProvider"
 import Header from "./views/main/header/Header"
+import SubHeader from "./views/main/subHeader/SubHeader"
 import Footer from "./views/main/footer/Footer"
+
 
 const ApplicationViews = () => (
     <CollectionProvider>
@@ -23,6 +25,7 @@ const ApplicationViews = () => (
                                 login and main application can have different CSS layouts
                             */}
                             <Header />
+                            <SubHeader />
 
                             <Route path="/">
                                 <MainView />

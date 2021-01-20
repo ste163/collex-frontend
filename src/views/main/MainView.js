@@ -22,15 +22,11 @@ const MainView = () => {
     }, [])
 
     return (
-        <>
-        <SubHeader />
-
         <section className="view__container">
             <ListColumn />
             <SelectedColumn />
             <ThesaurusColumn />
         </section>
-        </>
     )
 }
 
