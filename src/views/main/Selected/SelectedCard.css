@@ -1,6 +1,5 @@
 .card__selected {
     display: grid;
-    margin: 0.8em;
     padding: 0.5em;
     width: 85%;
     font-size: 1em;
