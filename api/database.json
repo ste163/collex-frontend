@@ -17,8 +17,8 @@
     {
       "id": 1,
       "userId": 1,
-      "defaultCollection": 20,
-      "TotalRecentsToStore": 6,
+      "defaultCollection": 0,
+      "TotalRecentsToStore": 7,
       "addToMultiple": "true",
       "colorMode": "light"
     },
@@ -125,42 +125,6 @@
   "recents": [
     {
       "userId": 1,
-      "collectionId": 19,
-      "word": "blizzard",
-      "id": 68
-    },
-    {
-      "userId": 1,
-      "collectionId": 19,
-      "word": "blizzard",
-      "id": 69
-    },
-    {
-      "userId": 1,
-      "collectionId": 19,
-      "word": "blizzard",
-      "id": 70
-    },
-    {
-      "userId": 1,
-      "collectionId": 19,
-      "word": "blizzard",
-      "id": 71
-    },
-    {
-      "userId": 1,
-      "collectionId": 19,
-      "word": "blizzard",
-      "id": 72
-    },
-    {
-      "userId": 1,
-      "collectionId": 19,
-      "word": "snow",
-      "id": 88
-    },
-    {
-      "userId": 1,
       "collectionId": 10,
       "word": "city",
       "id": 90
@@ -179,54 +143,6 @@
     },
     {
       "userId": 1,
-      "collectionId": 11,
-      "word": "mansion",
-      "id": 93
-    },
-    {
-      "userId": 1,
-      "collectionId": 11,
-      "word": "horror",
-      "id": 94
-    },
-    {
-      "userId": 1,
-      "collectionId": 11,
-      "word": "dusty",
-      "id": 95
-    },
-    {
-      "userId": 1,
-      "collectionId": 11,
-      "word": "spooky",
-      "id": 96
-    },
-    {
-      "userId": 1,
-      "collectionId": 21,
-      "word": "bang",
-      "id": 97
-    },
-    {
-      "userId": 1,
-      "collectionId": 21,
-      "word": "loud",
-      "id": 98
-    },
-    {
-      "userId": 1,
-      "collectionId": 21,
-      "word": "snappy",
-      "id": 99
-    },
-    {
-      "userId": 1,
-      "collectionId": 21,
-      "word": "jell",
-      "id": 130
-    },
-    {
-      "userId": 1,
       "collectionId": 15,
       "word": "summer",
       "id": 135
@@ -236,42 +152,6 @@
       "collectionId": 15,
       "word": "muggy",
       "id": 136
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "not good",
-      "id": 145
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "gross",
-      "id": 146
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "wonderful",
-      "id": 147
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "superb",
-      "id": 148
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "test",
-      "id": 149
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "another word",
-      "id": 150
     }
   ],
   "words": [

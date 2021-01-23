@@ -45,7 +45,7 @@ const SelectedCard = () => {
 
             {/* TO BE REPlACED BY THE SEARCH BAR COMPONENT */}
             <fieldset className="selected__search">
-                <label className="card__h2" htmlFor="collectionSearch">Search words in collection:</label>
+                <label htmlFor="collectionSearch">Search words in collection:</label>
                 <input type="text"
                 name="collectionSearch"
                 className="input__search"
@@ -54,9 +54,9 @@ const SelectedCard = () => {
             </fieldset>
 
             {/* DROPDOWN FOR CATEGORIZATION TYPE */}
-            <fieldset className="view__collectionSelect selected__categorization">
-                <label className="collectionSelect__label" htmlFor="collectionSelect">Categorize by:</label>
-                <select className="collectionSelect__select" name="collectionSelect" id="collectionSelect">
+            <fieldset className="selected__categorization">
+                <label htmlFor="collectionSelect">Categorize by:</label>
+                <select name="collectionSelect" id="collectionSelect">
                     <option value="1">Part of Speech</option>
                 </select>
             </fieldset>

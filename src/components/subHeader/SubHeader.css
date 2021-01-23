@@ -8,10 +8,21 @@
     padding: 0.5em 0;
 }
 
+.header__fieldset {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin: 0;
+}
+
+.fieldset__collection {
+    margin-right: 0.5em;
+}
+
 .collection__btn {
     display: flex;
     align-items: center;
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: var(--weightThin);
     background-color: transparent;
     border-style: none;
@@ -29,29 +40,4 @@
 .collection__btn:active {
     color: var(--lightBlack);
     font-weight: var(--weightMedium)
-}
-
-.view__collectionSelect {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    margin: 0 0 0 0.5em;
-}
-
-.view__sort {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    margin: 0;
-}
-
-.sort__label, .collectionSelect__label {
-    margin-right: 0.3em;
-    font-size: 0.8em;
-}
-
-.sort__select, .collectionSelect__select {
-    padding: 0.2em;
-    font-size: 0.8em;
-    font-weight: var(--weightThin)
 }

@@ -18,6 +18,10 @@ export const RecentCard = () => {
 
     const [ selectedRecents, setSelectedRecents ] = useState(recents)
 
+    // USER CAN SAY THEY WANT 0 RECENTS TO SAVE
+    // CURRENTLY, THE CARD GETS ADDED THEN DELETED IMMEDIATELY AFTER
+    // NEED TO ENSURE THAT IF THEY HAVE RECENTS TO 0, WE NEVER ADD THEM TO THE RECENTS LIST
+    // MAYBE THIS GOES INTO THE PROVIDER????
     useEffect(() => {
         if (recents !== undefined) {
             // Only get recents for the selected collection

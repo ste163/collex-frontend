@@ -46,10 +46,9 @@ const SubHeader = () => {
             {/* Do not use the SVG, but the border styles CSS on a div */}
             <IconDividerVertical color="icon__lightGray" />
 
-            {/* Begin with redoing all form field CSS */}
-            <fieldset className="view__collectionSelect">
-                <label className="collectionSelect__label" htmlFor="collectionSelect">Selected collection: </label>
-                <select className="collectionSelect__select" name="collectionSelect" id="collectionSelect"
+            <fieldset className="header__fieldset">
+                <label className="fieldset__collection" htmlFor="collectionSelect">Selected collection: </label>
+                <select name="collectionSelect" id="collectionSelect"
                 value={selectedCollection === undefined ? 0 : selectedCollection.id}
                 onChange={e => selectCollection(e)}>
                     <option value="0">Select collection</option>

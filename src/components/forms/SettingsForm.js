@@ -91,7 +91,7 @@ const SettingsForm = () => {
                     onChange={handleControlledInputChange}
                     id="recents"
                     defaultValue={+settings[0].TotalRecentsToStore}
-                    min="1"
+                    min="0"
                     max="12"
                     />
                 </fieldset>

@@ -1,21 +1,3 @@
-.form__h3 {
-    font-size: 1em;
-  }
-
-.form__h4 {
-  font-size: 0.9em;
-  font-weight: var(--weightThin);
-  letter-spacing: 0.04em;
-  margin: 0.5em 0 0.1em;
-}
-
-.form__subtitle {
-  font-weight: var(--weightThin);
-  font-size: 0.7em;
-  margin: 0 0 1.5em;
-  padding: 0;
-}
-
 fieldset {
   display: flex;
   flex-flow: column nowrap;
@@ -24,34 +6,38 @@ fieldset {
   padding: 0;
 }
 
-.fieldset__btn {
-  display: grid;
-  justify-content: center;
-}
-
 label {
-  font-size: 0.75em;
+  font-size: 0.7em;
   letter-spacing: 0.03em;
   font-weight: var(--weightThin);
 }
 
 input, textarea, select{
+  width: min-content;
+  font-size: 0.65em;
+  letter-spacing: 0.03em;
+  padding: 0.5em;
   background-color: var(--mediumGray);
   border-style: none;
   border-radius: var(--formFieldRadius);
-  padding: 0.5em;
-  font-size: 0.7em;
-  width: min-content;
-  letter-spacing: 0.03em;
-}
-
-.input__search {
-  width: 94%;
-  margin-bottom: 0.3em;
 }
 
 textarea {
-  width: 100%;
+  width: 95%
+} 
+
+.form__h3 {
+  font-size: 1em;
+}
+
+.fieldset__btn {
+  display: grid;
+  justify-content: center;
+}
+
+.input__search {
+  width: 95%;
+  margin-bottom: 0.3em;
 }
 
 .input__radio {
