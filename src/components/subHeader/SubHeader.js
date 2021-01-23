@@ -43,8 +43,10 @@ const SubHeader = () => {
                 Create new collection
             </button>
 
+            {/* Do not use the SVG, but the border styles CSS on a div */}
             <IconDividerVertical color="icon__lightGray" />
 
+            {/* Begin with redoing all form field CSS */}
             <fieldset className="view__collectionSelect">
                 <label className="collectionSelect__label" htmlFor="collectionSelect">Selected collection: </label>
                 <select className="collectionSelect__select" name="collectionSelect" id="collectionSelect"
