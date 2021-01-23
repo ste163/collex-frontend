@@ -21,7 +21,7 @@ const SubHeader = () => {
 
     return (
         <>
-        <Modal ref={modal} contentFunction={<CollectionForm />} width={"modal__width--widest"}/>
+        <Modal ref={modal} contentFunction={<CollectionForm />} />
 
         <section className="view__header">
             <button className="collection__btn"

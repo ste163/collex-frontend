@@ -21,8 +21,9 @@
 
 .modal__container {
     background-color: var(--offWhite);
-    padding: 1em;
     border-radius: var(--cardRadius);
+    padding: 1em;
+    width: max-content;
     max-width: 100%;
     overflow-y: auto;
     z-index: 6;
@@ -36,6 +37,7 @@
 .modal__content {
     display: flex;
     flex-flow: column nowrap;
+    margin: 0.5em;
     justify-content: center;
     align-items:center;
 }
@@ -61,26 +63,4 @@
 
 .settings__fieldset {
     margin: 0 0 1em 0;
-}
-
-
-/* MODAL SIZES */
-.modal__width--widest {
-    width: 22em;
-}
-
-.modal__width--wide {
-    width: 20em;
-}
-
-.modal__width--med {
-    width: 15em;
-}
-
-.modal__width--small {
-    width: 13em;
-}
-
-.modal__width--smallest {
-    width: 8em;
 }

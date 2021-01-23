@@ -30,9 +30,9 @@ const SelectedDotMenu = (React.forwardRef((props, ref) => {
         }
     }}>
 
-        <Modal ref={editModal} contentFunction={<CollectionForm props={props.collection} />} width={"modal__width--wide"}/> 
+        <Modal ref={editModal} contentFunction={<CollectionForm props={props.collection} />} /> 
        
-        <Modal ref={deleteModal} contentFunction={<DeleteWarning/>} width={"modal__width--small"}/>
+        <Modal ref={deleteModal} contentFunction={<DeleteWarning/>} />
         
         <button 
         className="card__btn"

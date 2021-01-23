@@ -138,8 +138,8 @@ const AuthView = props => {
 
             <AuthBorderTop />         
 
-            <Modal ref={existDialog} contentFunction={<ExistDialog/>} width={"modal__width--smallest"}/>
-            <Modal ref={conflictDialog} contentFunction={<ConflictDialog/>} width={"modal__width--small"} />    
+            <Modal ref={existDialog} contentFunction={<ExistDialog/>} />
+            <Modal ref={conflictDialog} contentFunction={<ConflictDialog/>} />    
 
 
             <div className="auth__column--middle">

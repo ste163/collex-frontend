@@ -3,9 +3,6 @@ import { IconClose } from "../icons/Icons"
 import "./Modal.css"
 
 // To use Modal
-    // Add props for width (see Modal.css for all):
-        // modal__width--small
-        // modal__width--wide
     // Add content with
         // contentFunction
         
@@ -21,7 +18,7 @@ export const Modal = (React.forwardRef((props, ref) => (
         }}>
 
             {/* Modal Card */}
-            <article className={`modal__container ${props.width}`}>
+            <article className={`modal__container`}>
                 <section className="modal__header">
                     <div className="card__type">
                         Form
