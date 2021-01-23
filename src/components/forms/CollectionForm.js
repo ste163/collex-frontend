@@ -101,7 +101,7 @@ export const CollectionForm = props => {
         <form className="form__collection" onSubmit={createCollection}>
 
             <h3 className="form__h3">
-                {editableCollection ? (<>Edit {editableCollection.name}</>) : "Create New Collection"}
+                {editableCollection ? "Edit" : "Create"}
             </h3>
 
             <fieldset>
@@ -128,22 +128,6 @@ export const CollectionForm = props => {
                 placeholder="Collection description"
                 />
             </fieldset>
-            
-            {/* Make this Public or Private, with a note that you can change this later */}
-            <fieldset>
-                <label htmlFor="public">Visibility (can change later): </label>
-                <select
-                onChange={handleControlledInputChange}
-                id="public"
-                name="public"
-                value={collection.public}
-                required
-                autoFocus>
-                    <option value="0">Select a visibility</option>
-                    <option value="1">Private</option>
-                    <option value="2">Public</option>
-                </select>
-            </fieldset>  
             
             <div className="collection__submit">
                 <button 

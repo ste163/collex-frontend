@@ -18,6 +18,8 @@ const Header = () => {
     return (
         <header className="header">
 
+        <Modal  ref={settingsModal} contentFunction={<SettingsForm/>} contentHeader={"Settings"}/>
+
             <section className="header__branding">
                 <LexLogo location={"logo__header--lex"} color={"logo__white"} />
                 <LexTitle location={"title__header"} color={"title__white"} />
@@ -76,8 +78,6 @@ const Header = () => {
                     </div>
                 </ul>
             </nav>
-
-            <Modal  ref={settingsModal} contentFunction={<SettingsForm/>} width={"modal__width--med"}/>
         
         </header>
     )

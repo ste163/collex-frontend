@@ -13,7 +13,6 @@ const SelectedDotMenu = (React.forwardRef((props, ref) => {
 
     const DeleteWarning = () => (
         <>
-            <h2 className="modal__warning">Warning</h2>
             <p className="warning__p">Deleting {props.collection.name} is permanent.</p>
             <button className="btn btn--red"
             onClick={e => deleteCollection(props.collection.userId, props.collection.id)}>
@@ -30,9 +29,9 @@ const SelectedDotMenu = (React.forwardRef((props, ref) => {
         }
     }}>
 
-        <Modal ref={editModal} contentFunction={<CollectionForm props={props.collection} />} /> 
+        <Modal ref={editModal} contentFunction={<CollectionForm props={props.collection} />} contentHeader={"Collection"} /> 
        
-        <Modal ref={deleteModal} contentFunction={<DeleteWarning/>} />
+        <Modal ref={deleteModal} contentFunction={<DeleteWarning/>} contentHeader={<div className="modal__warning">WARNING</div>} />
         
         <button 
         className="card__btn"

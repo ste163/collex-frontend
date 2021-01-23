@@ -112,7 +112,6 @@ const AuthView = props => {
     // Content for warning modal
     const ExistDialog = () => (
         <>
-            <h2 className="modal__warning">Warning</h2>
             <p className="auth__warning">User does not exist.</p>
             <button className="btn"
             onClick={e => existDialog.current.className = "background__modal"}>
@@ -124,7 +123,6 @@ const AuthView = props => {
     // Content for warning modal
     const ConflictDialog = () => (
         <>
-            <h2 className="modal__warning">Warning</h2>
             <p className="auth__warning">Username has already been taken.</p>
             <button className="btn"
             onClick={e => conflictDialog.current.className = "background__modal"}>
@@ -138,8 +136,8 @@ const AuthView = props => {
 
             <AuthBorderTop />         
 
-            <Modal ref={existDialog} contentFunction={<ExistDialog/>} />
-            <Modal ref={conflictDialog} contentFunction={<ConflictDialog/>} />    
+            <Modal ref={existDialog} contentFunction={<ExistDialog />} contentHeader={<div className="modal__warning">WARNING</div>}/>
+            <Modal ref={conflictDialog} contentFunction={<ConflictDialog />} contentHeader={<div className="modal__warning">WARNING</div>}/>    
 
 
             <div className="auth__column--middle">

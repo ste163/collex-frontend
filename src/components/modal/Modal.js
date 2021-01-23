@@ -5,6 +5,8 @@ import "./Modal.css"
 // To use Modal
     // Add content with
         // contentFunction
+    // Add a type label to top right corner with
+        // contentHeader
         
 export const Modal = (React.forwardRef((props, ref) => (
      (
@@ -21,7 +23,7 @@ export const Modal = (React.forwardRef((props, ref) => (
             <article className={`modal__container`}>
                 <section className="modal__header">
                     <div className="card__type">
-                        Form
+                        {props.contentHeader}
                     </div>
                     <button className="btn__close"
                     onClick={e => ref.current.className = "background__modal"}>

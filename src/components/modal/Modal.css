@@ -44,7 +44,7 @@
 
 .modal__warning {
     color: var(--red);
-    font-weight: var(--weightNormal);
+    font-weight: var(--weightHeavy);
 }
 
 .modal__h2 {
@@ -55,10 +55,6 @@
 .warning__p {
     margin-bottom: 0.8em;
     font-weight: var(--weightThin)
-}
-
-.container__settings {
-    width: 90%;
 }
 
 .settings__fieldset {

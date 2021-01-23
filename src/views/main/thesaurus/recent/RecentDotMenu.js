@@ -11,7 +11,6 @@ export const RecentDotMenu = (React.forwardRef((props, ref) => {
 
     const ClearWarning = () => (
         <>
-            <h2 className="modal__warning">Warning</h2>
             <p className="warning__p">Clearing recents for {props.collection.name} is permanent.</p>
             <button className="btn btn--red"
             onClick={e => {
@@ -35,7 +34,7 @@ export const RecentDotMenu = (React.forwardRef((props, ref) => {
             }
         }}>
 
-            <Modal ref={clearModal} contentFunction={<ClearWarning />} width={"modal__width--small"}/>
+            <Modal ref={clearModal} contentFunction={<ClearWarning />} contentHeader={<div className="modal__warning">WARNING</div>}/>
             
             <button 
             className="card__btn"

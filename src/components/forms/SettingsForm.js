@@ -65,9 +65,7 @@ const SettingsForm = () => {
 
     return (
         <>
-        <div className="container__settings">
-            <h2 className="modal__h2">Settings</h2>
-            <p className="form__subtitle">(settings autosave)</p>
+        <div>
             <form className="form__settings">
                     
                 <fieldset className="settings__fieldset">
@@ -87,7 +85,7 @@ const SettingsForm = () => {
                 </fieldset>
                 
                 <fieldset className="settings__fieldset">
-                    <label htmlFor="recents">Total recent searches to keep (12 max): </label>
+                    <label htmlFor="recents">Total recent searches to keep: </label>
                     <input type="number" 
                     name="TotalRecentsToStore"
                     onChange={handleControlledInputChange}

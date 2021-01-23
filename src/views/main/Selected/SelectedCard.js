@@ -38,6 +38,11 @@ const SelectedCard = () => {
                 {selectedCollection.description}
             </p>
 
+            {/* 
+                IF NO WORDS IN COLLECTION YET,
+                INFORM USER TO SEARCH THESAURUS TO ADD WORDS
+            */}
+
             {/* TO BE REPlACED BY THE SEARCH BAR COMPONENT */}
             <fieldset className="selected__search">
                 <label className="card__h2" htmlFor="collectionSearch">Search words in collection:</label>
