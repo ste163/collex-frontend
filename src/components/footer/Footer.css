@@ -1,6 +1,6 @@
 footer {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     font-size: 0.7em;
     background-color: var(--offWhite);
     box-shadow: var(--footerDropShadow);
@@ -14,9 +14,9 @@ footer {
 
 .footer__branding, .footer__summary, .footer__about, .footer__tech {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     margin: 0.5em 1em;
-    width: 20%;
+    flex-basis: 20%
 }
 
 .footer__branding {
@@ -42,6 +42,7 @@ footer {
 
 .footer__lists {
     display: flex;
+    /* flex-flow: row wrap; */
 }
 
 .footer__list {

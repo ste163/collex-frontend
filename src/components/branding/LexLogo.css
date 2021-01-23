@@ -18,3 +18,7 @@
 .logo__white {
     fill: #FCFCFC !important;
 }
+
+.logo__black {
+    fill: var(--black) !important;
+}
