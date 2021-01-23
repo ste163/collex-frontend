@@ -25,13 +25,9 @@ const Header = () => {
                 <LexTitle location={"title__header"} color={"title__white"} />
             </section>
 
-            <nav className="header__nav">
+            <nav>
                 <ul className="nav__list">
                     
-                    <div className="nav__centered">
-                        {/* Leave empty for proper flex spacing */}
-                    </div>
-
                     <div className="nav__rightAligned">
                         <li className="nav__item">
                             <button className="nav__btn btn__settings"
