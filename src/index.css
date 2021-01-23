@@ -123,7 +123,7 @@
   }
 
   .collection__selected {
-    width: min-content;
+    width: 18em;
   }
 }
 
