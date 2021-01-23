@@ -14,10 +14,6 @@
     align-items: center;
 }
 
-.header__nav {
-    flex-grow: 1;
-}
-
 .nav__list {
     display: flex;
     flex-flow: row nowrap;

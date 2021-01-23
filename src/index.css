@@ -67,7 +67,7 @@
   height: 100vh;
 }
 
-/* Main application layout post-sign-in */
+/* Main application layout after sign-in */
 .app__container {
   display: grid;
   grid-template-rows: min-content min-content auto min-content;
@@ -116,14 +116,15 @@
 }
 
 /* Desktop - small-screen size - stack selected & thesaurus column  */
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 768px) {
 
   .view__container {
-    grid-template-columns: auto;
+    display: flex;
+    flex-flow: column;
   }
 
   .collection__selected {
-    width: 18em;
+    width: 75%;
   }
 }
 
@@ -141,7 +142,9 @@ body {
 }
 
 hr {
-  border: 0em solid;
+  border: 0 solid;
+  height: 0.3em;
+  margin: 1em 0.2em;
   border-radius: var(--lineRadius);
   background-color: var(--mediumGray);
   border-color: var(--mediumGray);

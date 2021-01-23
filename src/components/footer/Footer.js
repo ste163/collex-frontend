@@ -10,7 +10,7 @@ const Footer = () => (
 
             <section className="footer__branding">
                 <LexLogo location={"logo__footer--lex"} color={"logo__black"} />
-                <LexTitle location={"title__footer"} color={"title__white"} />
+                <LexTitle location={"title__footer"} color={"title__black"} />
                 <MwLogo location={"logo__footer--mw"} />
             </section>
 

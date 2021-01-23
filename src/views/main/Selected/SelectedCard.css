@@ -1,7 +1,7 @@
 .card__selected {
     display: grid;
     padding: 0.5em;
-    width: 85%;
+    width: 90%;
     font-size: 1em;
 }
 
@@ -29,9 +29,6 @@
 .selected__divider {
     grid-column: 1 / 3;
     grid-row: 6;
-    height: 0.3em;
-    margin: 1em 0;
-    width: 15em;
 }
 
 .selected__words {

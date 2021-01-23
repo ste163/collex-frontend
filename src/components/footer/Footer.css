@@ -16,13 +16,13 @@ footer {
     display: flex;
     flex-flow: column wrap;
     margin: 0.5em 1em;
-    flex-basis: 20%
+    flex-basis: 18%
 }
 
 .footer__branding {
     align-items: center;
     width: min-content;
-    margin: 2em 1em;
+    margin-top: 1em;
 }
 
 .footer__heading {
