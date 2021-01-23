@@ -1,9 +1,0 @@
-.card__recent {
-    display: grid;
-    margin: 0.5em;
-    margin-bottom: 1.5em;
-    padding: .5em;
-    align-items: left;
-    width: 16em;
-    height: min-content;
-}

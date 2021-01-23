@@ -7,6 +7,10 @@
     {
       "username": "test1",
       "id": 2
+    },
+    {
+      "username": "test02",
+      "id": 3
     }
   ],
   "settings": [
@@ -14,9 +18,9 @@
       "id": 1,
       "userId": 1,
       "defaultCollection": 0,
-      "TotalRecentsToStore": 6,
+      "TotalRecentsToStore": 7,
       "addToMultiple": "true",
-      "colorMode": "dark"
+      "colorMode": "light"
     },
     {
       "userId": 2,
@@ -25,6 +29,14 @@
       "addToMultiple": true,
       "colorMode": "light",
       "id": 2
+    },
+    {
+      "userId": 3,
+      "defaultCollection": 0,
+      "TotalRecentsToStore": 6,
+      "addToMultiple": true,
+      "colorMode": "light",
+      "id": 3
     }
   ],
   "collections": [
@@ -113,42 +125,6 @@
   "recents": [
     {
       "userId": 1,
-      "collectionId": 19,
-      "word": "blizzard",
-      "id": 68
-    },
-    {
-      "userId": 1,
-      "collectionId": 19,
-      "word": "blizzard",
-      "id": 69
-    },
-    {
-      "userId": 1,
-      "collectionId": 19,
-      "word": "blizzard",
-      "id": 70
-    },
-    {
-      "userId": 1,
-      "collectionId": 19,
-      "word": "blizzard",
-      "id": 71
-    },
-    {
-      "userId": 1,
-      "collectionId": 19,
-      "word": "blizzard",
-      "id": 72
-    },
-    {
-      "userId": 1,
-      "collectionId": 19,
-      "word": "snow",
-      "id": 88
-    },
-    {
-      "userId": 1,
       "collectionId": 10,
       "word": "city",
       "id": 90
@@ -167,78 +143,6 @@
     },
     {
       "userId": 1,
-      "collectionId": 11,
-      "word": "mansion",
-      "id": 93
-    },
-    {
-      "userId": 1,
-      "collectionId": 11,
-      "word": "horror",
-      "id": 94
-    },
-    {
-      "userId": 1,
-      "collectionId": 11,
-      "word": "dusty",
-      "id": 95
-    },
-    {
-      "userId": 1,
-      "collectionId": 11,
-      "word": "spooky",
-      "id": 96
-    },
-    {
-      "userId": 1,
-      "collectionId": 21,
-      "word": "bang",
-      "id": 97
-    },
-    {
-      "userId": 1,
-      "collectionId": 21,
-      "word": "loud",
-      "id": 98
-    },
-    {
-      "userId": 1,
-      "collectionId": 21,
-      "word": "snappy",
-      "id": 99
-    },
-    {
-      "userId": 1,
-      "collectionId": 8,
-      "word": "apparition",
-      "id": 100
-    },
-    {
-      "userId": 1,
-      "collectionId": 8,
-      "word": "paranormal",
-      "id": 101
-    },
-    {
-      "userId": 1,
-      "collectionId": 21,
-      "word": "jell",
-      "id": 130
-    },
-    {
-      "userId": 1,
-      "collectionId": 8,
-      "word": "test",
-      "id": 131
-    },
-    {
-      "userId": 1,
-      "collectionId": 8,
-      "word": "gsadfdhgfsdagfadfg",
-      "id": 134
-    },
-    {
-      "userId": 1,
       "collectionId": 15,
       "word": "summer",
       "id": 135
@@ -248,24 +152,6 @@
       "collectionId": 15,
       "word": "muggy",
       "id": 136
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "aroma",
-      "id": 138
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "bouquet",
-      "id": 139
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
-      "word": "stinky",
-      "id": 140
     }
   ],
   "words": [

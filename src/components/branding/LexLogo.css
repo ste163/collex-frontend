@@ -4,9 +4,9 @@
 }
 
 .logo__header--lex {
-    width: 1.7em;
-    height: 1.7em;
-    margin-left: 0.7em;
+    width: 1.25em;
+    height: 1.25em;
+    margin-left: 0.85em;
 }
 
 .logo__footer--lex {
@@ -17,4 +17,8 @@
 
 .logo__white {
     fill: #FCFCFC !important;
+}
+
+.logo__black {
+    fill: var(--black) !important;
 }

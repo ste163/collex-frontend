@@ -1,12 +1,11 @@
 import React, { useRef, useState, useContext } from "react"
 import { useHistory } from "react-router-dom"
 import { Modal } from "../../components/modal/Modal";
-import { SettingsContext } from "../../components/settings/SettingsProvider"
-import { SettingsChangeColorMode } from "../../components/settings/SettingsChangeColorMode"
+import { SettingsContext } from "../../providers/SettingsProvider"
+import ChangeColorMode from "../../utils/ChangeColorMode"
 import LexLogo from "../../components/branding/LexLogo"
 import LexTitle from "../../components/branding/LexTitle"
-import AuthBorderTop from "./AuthBorderTop"
-import AuthBorderBottom from "./AuthBorderBottom";
+import { AuthBorderTop, AuthBorderBottom } from "./AuthBorders"
 import "./AuthView.css"
 
 const AuthView = props => {
@@ -17,17 +16,17 @@ const AuthView = props => {
     bodyElement.style.setProperty("overflow", "hidden")
 
     // If logging out with dark mode active, this resets colors to white 
-    SettingsChangeColorMode()
+    ChangeColorMode()
 
     // Get references for all of the elements that will change
     const usernameLogin = useRef()
     const usernameRegister = useRef()
-    const existDialog = useRef()
-    const conflictDialog = useRef()
-    const history = useHistory()
-
     const loginBtn = useRef()
     const registerBtn = useRef()
+    const existDialog = useRef()
+    const conflictDialog = useRef()    
+    
+    const history = useHistory()
 
     // To allow for the nav underline to move, target it by useRef
     const underline = useRef()
@@ -113,7 +112,6 @@ const AuthView = props => {
     // Content for warning modal
     const ExistDialog = () => (
         <>
-            <h2 className="modal__warning">Warning</h2>
             <p className="auth__warning">User does not exist.</p>
             <button className="btn"
             onClick={e => existDialog.current.className = "background__modal"}>
@@ -125,7 +123,6 @@ const AuthView = props => {
     // Content for warning modal
     const ConflictDialog = () => (
         <>
-            <h2 className="modal__warning">Warning</h2>
             <p className="auth__warning">Username has already been taken.</p>
             <button className="btn"
             onClick={e => conflictDialog.current.className = "background__modal"}>
@@ -139,8 +136,8 @@ const AuthView = props => {
 
             <AuthBorderTop />         
 
-            <Modal ref={existDialog} contentFunction={<ExistDialog/>} width={"modal__width--smallest"}/>
-            <Modal ref={conflictDialog} contentFunction={<ConflictDialog/>} width={"modal__width--small"} />    
+            <Modal ref={existDialog} contentFunction={<ExistDialog />} contentHeader={<div className="modal__warning">WARNING</div>}/>
+            <Modal ref={conflictDialog} contentFunction={<ConflictDialog />} contentHeader={<div className="modal__warning">WARNING</div>}/>    
 
 
             <div className="auth__column--middle">

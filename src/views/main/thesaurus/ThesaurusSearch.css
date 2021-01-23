@@ -1,0 +1,9 @@
+.card__thesaurus--search {
+    display: grid;
+    padding: 0 .5em .5em .5em;
+    max-width: 16em;
+}
+
+.type__margin--search {
+    margin-bottom: var(--typeMarginBottom);
+}

@@ -1,13 +1,15 @@
 import React from "react"
 import { Route } from "react-router-dom"
-import { CollectionProvider } from "./views/main/collection/CollectionProvider"
-import { ThesaurusProvider} from "./views/main/columnThesaurus/thesaurus/ThesaurusProvider"
-import { SettingsProvider } from "./components/settings/SettingsProvider"
+import { CollectionProvider } from "./providers/CollectionProvider"
+import { ThesaurusProvider} from "./providers/ThesaurusProvider"
+import { SettingsProvider } from "./providers/SettingsProvider"
+import { RecentProvider } from "./providers/RecentProvider"
+import { WordProvider } from "./providers/WordProvider"
+import Header from "./components/header/Header"
+import SubHeader from "./components/subHeader/SubHeader"
 import MainView from "./views/main/MainView"
-import { RecentProvider } from "./views/main/columnThesaurus/recent/RecentProvider"
-import { WordProvider } from "./components/word/WordProvider"
-import Header from "./views/main/header/Header"
-import Footer from "./views/main/footer/Footer"
+import Footer from "./components/footer/Footer"
+
 
 const ApplicationViews = () => (
     <CollectionProvider>
@@ -23,6 +25,7 @@ const ApplicationViews = () => (
                                 login and main application can have different CSS layouts
                             */}
                             <Header />
+                            <SubHeader />
 
                             <Route path="/">
                                 <MainView />

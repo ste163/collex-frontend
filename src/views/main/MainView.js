@@ -1,9 +1,8 @@
 import React, { useEffect, useContext } from "react"
-import { CollectionContext } from "./collection/CollectionProvider"
-import SubHeader from "./subHeader/SubHeader"
-import { CollectionList } from "./columnList/CollectionList"
-import { CollectionSelected } from "./columnSelected/CollectionSelected"
-import { ThesaurusList } from "./columnThesaurus/ThesaurusList"
+import { CollectionContext } from "../../providers/CollectionProvider"
+import ListColumn from "./list/ListColumn"
+import SelectedColumn from "./selected/SelectedColumn"
+import ThesaurusColumn from "./thesaurus/ThesaurusColumn"
 
 const MainView = () => {
 
@@ -22,15 +21,11 @@ const MainView = () => {
     }, [])
 
     return (
-        <>
-        <SubHeader />
-
         <section className="view__container">
-            <CollectionList />
-            <CollectionSelected />
-            <ThesaurusList />
+            <ListColumn />
+            <SelectedColumn />
+            <ThesaurusColumn />
         </section>
-        </>
     )
 }
 
