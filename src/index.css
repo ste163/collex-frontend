@@ -80,7 +80,7 @@
 }
 
 /* Collection list column */
-.collection__list {
+.column__list {
   overflow-y: auto;
   overflow-x: none;
   max-height: 88vh;
@@ -88,13 +88,11 @@
 }
 
 /* Selected collection column */
-.collection__selected {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+.column__selected {
 }
 
 /* Thesaurus column */
-.collection__thesaurus {
+.column__thesaurus {
   display: grid;
   grid-template-rows: min-content min-content;
 }
@@ -106,11 +104,11 @@
     grid-template-columns: 1fr 2fr;
   }
   
-  .collection__list {
+  .column__list {
     display: none
   }
 
-  .collection__selected {
+  .column__selected {
     margin-left: 0;
   }
 }
@@ -123,7 +121,7 @@
     flex-flow: column;
   }
 
-  .collection__selected {
+  .column__selected {
     width: 75%;
   }
 }

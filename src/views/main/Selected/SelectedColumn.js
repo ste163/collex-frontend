@@ -4,7 +4,7 @@ import SelectedCard from "./SelectedCard"
 const SelectedColumn = () => {
 
     return (
-        <section className="collection__selected">
+        <section className="column__selected">
             <SelectedCard />
         </section>
     )

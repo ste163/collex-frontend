@@ -12,7 +12,7 @@ const ThesaurusColumn = () => {
     const { definitionCards } = useContext(ThesaurusContext)
 
     return (
-        <section className="collection__thesaurus">
+        <section className="column__thesaurus">
             <div className="thesaurus__container--search">
                 <ThesaurusSearch />
                 <RecentCard />

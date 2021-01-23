@@ -28,7 +28,7 @@ const ListColumn = () => {
     }, [searchTerms, collections])
 
     return (
-        <section className="collection__list">
+        <section className="column__list">
             {
                 !collections.length ? <ListCardNone /> : 
                 <>

@@ -3,6 +3,9 @@
     padding: 0.5em;
     width: 90%;
     font-size: 1em;
+    /* Need to set these as important or else they flow out of the Selected Column */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
 .selected__h1 {
