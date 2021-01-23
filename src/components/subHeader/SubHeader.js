@@ -1,7 +1,7 @@
 import React, { useRef, useContext } from "react"
 import { CollectionContext } from "../../providers/CollectionProvider"
 import { IconPlus } from "../icons/Icons"
-import { IconDivider } from "../icons/Icons"
+import { IconDividerVertical } from "../icons/Icons"
 import { Modal } from "../modal/Modal"
 import { CollectionForm } from "../forms/CollectionForm"
 import "./SubHeader.css"
@@ -43,7 +43,7 @@ const SubHeader = () => {
                 Create new collection
             </button>
 
-            <IconDivider color="icon__lightGray" />
+            <IconDividerVertical color="icon__lightGray" />
 
             <fieldset className="view__collectionSelect">
                 <label className="collectionSelect__label" htmlFor="collectionSelect">Selected collection: </label>

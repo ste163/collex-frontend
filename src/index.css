@@ -42,10 +42,11 @@
   --weightHeavier: 700;
   --weightHeaviest: 900;
 
-  /* Border Radius */
+  /* Border Radii */
   --cardRadius: 15px;
   --formFieldRadius: 0.5em;
   --wordBtnRadius: 2em;
+  --lineRadius: 5em;
 
   /* Drop Shadow */
   --cardDropShadow: -0.1em 0.1em 0.3em var(--shadowGray);
@@ -126,6 +127,13 @@ body {
   font-size: 1.3em;
   margin: 0;
   background-color: var(--lightGray);
+}
+
+hr {
+  border: 0em solid;
+  border-radius: var(--lineRadius);
+  background-color: var(--mediumGray);
+  border-color: var(--mediumGray);
 }
 
 h1 {

@@ -56,7 +56,7 @@ const SelectedCard = () => {
                 </select>
             </fieldset>
 
-            <div className="selected__divider">Dividing Line</div>
+            <hr className="selected__divider"></hr>
 
             <section className="selected__words word__list definition__words">
                 {
