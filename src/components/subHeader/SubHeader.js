@@ -23,7 +23,7 @@ const SubHeader = () => {
         <>
         <Modal ref={modal} contentFunction={<CollectionForm />} contentHeader={"Collection"} />
 
-        <section className="view__header">
+        <section className="view__subHeader">
             <button className="collection__btn"
             onClick={e => modal.current.className = "background__modal modal__active"}
             onMouseOver={e => {
@@ -44,9 +44,9 @@ const SubHeader = () => {
             </button>
 
             {/* Do not use the SVG, but the border styles CSS on a div */}
-            <IconDividerVertical color="icon__lightGray" />
+            <div className="line__vertical"></div>
 
-            <fieldset className="header__fieldset">
+            <fieldset className="subHeader__fieldset">
                 <label className="fieldset__collection" htmlFor="collectionSelect">Selected collection: </label>
                 <select name="collectionSelect" id="collectionSelect"
                 value={selectedCollection === undefined ? 0 : selectedCollection.id}
