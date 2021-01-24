@@ -170,6 +170,24 @@
       "collectionId": 0,
       "word": "test",
       "id": 139
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "good",
+      "id": 140
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "book",
+      "id": 141
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "smell",
+      "id": 142
     }
   ],
   "words": [

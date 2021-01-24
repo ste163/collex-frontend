@@ -16,6 +16,7 @@ export const DefinitionCard = props => {
 
     // setState for previous and next buttons
     const [ defPrevBtnDisabled, setDefPrevBtnDisabled ] = useState(true)
+    const [ defNextBtnDisabled, setDefNextBtnDisabled ] = useState(false)
 
     // DefinitionCards hold the array of current cards
     const { definitionCards, setDefinitionCards } = useContext(ThesaurusContext)
@@ -35,12 +36,22 @@ export const DefinitionCard = props => {
         setCurrentDef(definitions[0])
     }, [definitions])
 
+    // Need useEffect to always check if the next def buttons should have
+    // active or disabled SVG arrow class state per card
     useEffect(() => {
-            if (definitions.indexOf(currentDef) === 0) {
-                setDefPrevBtnDisabled(true)
-            } else {
-                setDefPrevBtnDisabled(false)
-            }
+        // PreviousDefinitionBtn State
+        if (definitions.indexOf(currentDef) === 0) {
+            setDefPrevBtnDisabled(true)
+        } else {
+            setDefPrevBtnDisabled(false)
+        }
+        // NextDefinitionBtn State
+        if (definitions.indexOf(currentDef) === definitions.length - 1) {
+            setDefNextBtnDisabled(true)
+        } else {
+            setDefNextBtnDisabled(false)
+        }
+
     }, [currentDef])
 
     if (!currentDef) {
@@ -91,7 +102,7 @@ export const DefinitionCard = props => {
                     onMouseOver={e => ChangeArrowIconClassOnHover(e, true)}
                     onMouseLeave={e => ChangeArrowIconClassOnHover(e, false)}
                     className={definitions.indexOf(currentDef) === definitions.length - 1 ? "btn btn__arrow btn__disabled" : "btn btn__arrow"}>
-                        <IconArrow color="icon__black" disabled={false} />
+                        <IconArrow color="icon__black" disabled={defNextBtnDisabled} />
                     </button>
                 </div>
             }

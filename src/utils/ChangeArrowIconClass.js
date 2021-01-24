@@ -1,5 +1,5 @@
 // Utils for handling Arrow Icon's svg class
-export const ChangeArrowIconClassOnHover = (hoverEvent, isOnMouseOver, isDisabledState) => {
+export const ChangeArrowIconClassOnHover = (hoverEvent, isOnMouseOver) => {
 
     // Must convert HTMLCollection of SVG elements to an Array to loop through children
     const svgs = Array.from(hoverEvent.currentTarget.firstElementChild.children[1].children)  
