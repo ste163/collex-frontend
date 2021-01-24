@@ -106,19 +106,23 @@ export const DefinitionCard = props => {
                     </button>
                 </div>
             }
+            
+            {/* OPEN MODAL WITH SEARCH TO MW'S DICTIONARY API FOR CURRENT DEFINITION */}
+            <a className="definition__expanded">See Expanded Definition</a>
 
+            {/* DEFINITION LIST SECTION */}
             <h4 className="card__h4 definition__h4--speech">
                 {currentDef.fl}
             </h4>
-            <div className="card__definition--text">
+            <ol className="definitions__list">
                 {
-                    // RENAME THIS CONTAINER
-                    // NEED TO IMPROVE STYLING WITH BULLETS, ETC.
-                    currentDef.shortdef.map(shortDefinition => {
-                        return <p key={currentDef.shortdef.indexOf(shortDefinition)}>{shortDefinition}</p>
+                currentDef.shortdef.map(shortDefinition => {
+                        return <li className="list__definition" key={currentDef.shortdef.indexOf(shortDefinition)}>{shortDefinition}</li>
                     })
                 }
-            </div>
+            </ol>
+
+            <hr className="definition__divider"></hr>
             
             {
                 // SYNONYM SECTION
