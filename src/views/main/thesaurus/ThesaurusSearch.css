@@ -1,7 +1,7 @@
 .card__thesaurus--search {
     display: grid;
     padding: 0 .5em .5em .5em;
-    width: 15em;
+    width: var(--cardWidthThesaurusColumn);
 }
 
 .type__margin--search {

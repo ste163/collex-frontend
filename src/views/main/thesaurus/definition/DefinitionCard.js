@@ -64,7 +64,7 @@ export const DefinitionCard = props => {
                         const previous = definitions.indexOf(currentDef) - 1
                         setCurrentDef(definitions[previous])
                     }}
-                    onMouseOver={e => definitions.indexOf(currentDef) === 0 ? null : ChangeSvgClassOnHover(e, true)}
+                    onMouseOver={e => ChangeSvgClassOnHover(e, true)}
                     onMouseLeave={e => ChangeSvgClassOnHover(e, false)}
                     className={definitions.indexOf(currentDef) === 0 ? "btn btn__arrow btn__disabled" : "btn btn__arrow"}>
                         <IconArrow rotation="icon__arrow--rotated" color="icon__black" />
@@ -77,7 +77,7 @@ export const DefinitionCard = props => {
                         const next = definitions.indexOf(currentDef) + 1
                         setCurrentDef(definitions[next])
                     }}
-                    onMouseOver={e => definitions.indexOf(currentDef) === definitions.length ? null : ChangeSvgClassOnHover(e, true)}
+                    onMouseOver={e => ChangeSvgClassOnHover(e, true)}
                     onMouseLeave={e => ChangeSvgClassOnHover(e, false)}
                     className={definitions.indexOf(currentDef) === definitions.length - 1 ? "btn btn__arrow btn__disabled" : "btn btn__arrow"}>
                         <IconArrow color="icon__black" />

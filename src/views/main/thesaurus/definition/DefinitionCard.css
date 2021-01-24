@@ -1,8 +1,8 @@
 .card__definition {
     display: grid;
     padding: 0.5em;
-    width: 15em;
     height: min-content;
+    width: var(--cardWidthThesaurusColumn);
 }
 
 .card__definition--close {

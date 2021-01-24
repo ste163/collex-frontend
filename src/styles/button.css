@@ -14,7 +14,9 @@
 
   .btn__disabled {
     pointer-events: none;
-    border-color: var(--mediumGray)
+    border-color: var(--mediumGray);
+    background-color: var(--mediumGray);
+    transition: .1s;
   }
 
   .btn:hover {
