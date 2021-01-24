@@ -73,7 +73,7 @@ const DefinitionCardSynonyms = ({ currentDef }) => {
 
     const SeparateListOfSynsIntoSets = () => {
         const allSynonyms = CreateArrayOfAllSyns()
-        let separationAmount = 20
+        let separationAmount = 15
         let arraysOfSynonyms = []
         let setOf10Array = []
         
@@ -107,9 +107,10 @@ const DefinitionCardSynonyms = ({ currentDef }) => {
             <hr className="definition__divider"></hr>
             <h4 className="card__h4 definition__h4--synonym">synonyms</h4>
             {
-                arrayOfSynonymArrays.length === 1 ? null :
                 // Only show if there is more than one "page" of synonyms
+                arrayOfSynonymArrays.length === 1 ? null :
                 <>
+                {/* NEED TO MAKE A PROPER SHOWING NUMBER BY ADDING FROM PREVIOUS ARRAY LENGTHS TO GET TOTALS */}
                 <p className="synonym__total">Showing {currentSynArray.length} out of {CalculateTotalSyns()}</p>
                 
                 {/* MAKE THIS A COMPONENT BECAUSE IT'S USED BY BOTH DEFINITIONS AND SYNONYMS */}
@@ -144,7 +145,7 @@ const DefinitionCardSynonyms = ({ currentDef }) => {
                 {
                     currentSynArray.map(synonym => {
                         ++keyValue
-                        return <WordButton key={keyValue} props={{word: synonym}} />
+                        return <WordButton key={keyValue} props={{word: synonym, isSelectedCard: false}} />
                     })
                 }
             </ul>

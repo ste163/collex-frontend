@@ -61,8 +61,6 @@ export const DefinitionCard = props => {
     return (
         <article className="card card__color--white card__definition">
 
-            <Modal />
-
             <button className="btn__close card__definition--close"
             onClick={e => {
                 const removed = definitionCards.filter(card => definitionCards.indexOf(card) !== props.cardId)

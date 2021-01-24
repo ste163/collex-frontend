@@ -11,13 +11,12 @@ export const ThesaurusSearch = () => {
 
     const { word, getWord } = useContext(ThesaurusContext)
     const { selectedCollection } = useContext(CollectionContext)
-    const { getRecents, addRecent } = useContext(RecentContext)
+    const { getRecents, addRecent, createRecentWordObj } = useContext(RecentContext)
 
     const [ search, setSearch ] = useState("")
 
     useEffect(() => {
         getRecents(userId)
-        console.log(`Entered word: ${search.search} `, word)
     }, [word])
 
     const searchThesaurus = e => {
@@ -29,23 +28,11 @@ export const ThesaurusSearch = () => {
             // On the off chance there is just a bunch of spaces, do not add the word
             if (trimmed.length !== 0) {
                 const lowered = trimmed.toLowerCase()
-                createRecentWord(lowered)
+                createRecentWordObj(lowered, selectedCollection)
                 getWord(lowered)
                 searchInput.current.value = ""
             }    
         }
-    }
-
-    const createRecentWord = word => {
-        const collectionId = selectedCollection === undefined ? null : selectedCollection.id
-
-        const newRecent = {
-            userId,
-            collectionId,
-            word
-        }
-
-        addRecent(newRecent)
     }
 
     const handleControlledInputChange = e => {
