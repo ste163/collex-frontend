@@ -5,7 +5,7 @@ import { CollectionContext } from "../../../../providers/CollectionProvider"
 import { WordContext } from "../../../../providers/WordProvider"
 import { IconClose, IconArrow } from "../../../../components/icons/Icons"
 import WordButton from "../../../../components/word/WordButton"
-import { ChangeArrowIconClassOnHover } from "../../../../utils/ChangeArrowIconClass"
+import { ChangeIconClassOnHover } from "../../../../utils/ChangeIconClassOnHover"
 import "./DefinitionCard.css"
 // Definition cards handle all information related to retrieved search terms
 
@@ -64,7 +64,9 @@ export const DefinitionCard = props => {
             onClick={e => {
                 const removed = definitionCards.filter(card => definitionCards.indexOf(card) !== props.cardId)
                 setDefinitionCards(removed)
-            }}>
+            }}
+            onMouseOver={e => ChangeIconClassOnHover(e, true, "icon__gray", "icon__hovered")}
+            onMouseLeave={e => ChangeIconClassOnHover(e, true, "icon__hovered", "icon__gray")}>
                 <IconClose color="icon__gray" />
             </button>
 
@@ -86,8 +88,8 @@ export const DefinitionCard = props => {
                         const previous = definitions.indexOf(currentDef) - 1
                         setCurrentDef(definitions[previous])
                     }}
-                    onMouseOver={e => ChangeArrowIconClassOnHover(e, true)}
-                    onMouseLeave={e => ChangeArrowIconClassOnHover(e, false)}
+                    onMouseOver={e => ChangeIconClassOnHover(e, true, "icon__black", "icon__white")}
+                    onMouseLeave={e => ChangeIconClassOnHover(e, false, "icon__black", "icon__white")}
                     className={definitions.indexOf(currentDef) === 0 ? "btn btn__arrow btn__disabled" : "btn btn__arrow"}>
                         <IconArrow rotation="icon__arrow--rotated" color="icon__black" disabled={defPrevBtnDisabled} />
                     </button>
@@ -99,8 +101,8 @@ export const DefinitionCard = props => {
                         const next = definitions.indexOf(currentDef) + 1
                         setCurrentDef(definitions[next])
                     }}
-                    onMouseOver={e => ChangeArrowIconClassOnHover(e, true)}
-                    onMouseLeave={e => ChangeArrowIconClassOnHover(e, false)}
+                    onMouseOver={e => ChangeIconClassOnHover(e, true, "icon__black", "icon__white")}
+                    onMouseLeave={e => ChangeIconClassOnHover(e, false, "icon__black", "icon__white")}
                     className={definitions.indexOf(currentDef) === definitions.length - 1 ? "btn btn__arrow btn__disabled" : "btn btn__arrow"}>
                         <IconArrow color="icon__black" disabled={defNextBtnDisabled} />
                     </button>
