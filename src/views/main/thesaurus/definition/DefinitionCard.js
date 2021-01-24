@@ -70,7 +70,7 @@ export const DefinitionCard = props => {
                 <IconClose color="icon__gray" />
             </button>
 
-            <h2 className="card__h2">
+            <h2 className="card__h2 definition__h2">
                 Definition
             </h2>
             
@@ -123,47 +123,46 @@ export const DefinitionCard = props => {
                     })
                 }
             </ol>
-
-            <hr className="definition__divider"></hr>
-            
+         
+            {/* SYNONYM SECTION  */}
             {
-                // SYNONYM SECTION
                 // If there are no synonyms, don't show the section
                 currentDef.meta.syns.length === 0 ? null :
-                    <>
-                        <h4 className="card__h4 definition__h4--synonym">
-                            synonyms
-                        </h4>
+                <>
+                    <hr className="definition__divider"></hr>
+                    <h4 className="card__h4 definition__h4--synonym">
+                        synonyms
+                    </h4>
 
-                        {/* word button list */}
-                        <ul className="word__list definition__words">
-                            {
-                                currentDef.meta.syns.map(synonymArray => {
-                                    return synonymArray.map(synonym => {
-                                        return <WordButton key={synonymArray.indexOf(synonym)} props={{word: synonym}} />
-                                    })
+                    {/* word button list */}
+                    <ul className="word__list definition__words">
+                        {
+                            currentDef.meta.syns.map(synonymArray => {
+                                return synonymArray.map(synonym => {
+                                    return <WordButton key={synonymArray.indexOf(synonym)} props={{word: synonym}} />
                                 })
-                            }
-                        </ul>
-                    </>
+                            })
+                        }
+                    </ul>
+                </>
             }
             
+            {/* ADD/REMOVE BUTTON SECTION */}
             {
-                // ADD/REMOVE BUTTON SECTION
                 // If word is already in the user's collection, change this to REMOVE
                 selectedCollection.id === 0 ? null :
-                <button className="btn definition__submit"
-                onClick={e => {
-                    const word = {
-                        userId,
-                        "collectionId": selectedCollection.id,
-                        "word": currentDef.meta.id
-                    }
-                    // NEED TO KNOW IF WORD IS IN DATABASE, AND NOT ALLOW IT TO BE ADDED.
-                    addWord(word)
-                }}>
-                    Add to {selectedCollection.name}
-                </button>
+                    <button className="btn definition__submit"
+                    onClick={e => {
+                        const word = {
+                            userId,
+                            "collectionId": selectedCollection.id,
+                            "word": currentDef.meta.id
+                        }
+                        // NEED TO KNOW IF WORD IS IN DATABASE, AND NOT ALLOW IT TO BE ADDED.
+                        addWord(word)
+                    }}>
+                        Add to {selectedCollection.name}
+                    </button>
             }
         </article>
     )
