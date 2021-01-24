@@ -7,6 +7,9 @@ import WordButton from "../../../../components/word/WordButton"
 
 const DefinitionCardSynonyms = ({ currentDef }) => {
 
+    // Couldn't use .indexOf for WordButton keys for Synonyms, so using global keyValue
+    let keyValue = 0
+
     // Final Array of Arrays of all Synonyms separated into sets of 10
     const [ arrayOfSynonymArrays, setArrayOfSynonymArrays ] = useState([])
 
@@ -19,14 +22,12 @@ const DefinitionCardSynonyms = ({ currentDef }) => {
 
     // Separated so we can get the current array of arrays of synonyms
     useEffect(() => {
-        setArrayOfSynonymArrays(SeparateListOfSynsIntoTens())
+        setArrayOfSynonymArrays(SeparateListOfSynsIntoSets())
     }, [currentDef])
 
     // Whenever the arrayOfSynonymsArrays state changes, update state of CurrentSynArray
     useEffect(() => {
         setCurrentSynArray(arrayOfSynonymArrays[0])
-        console.log("First Array", arrayOfSynonymArrays[0] )
-        console.log("Array of Arrays", arrayOfSynonymArrays)
     }, [arrayOfSynonymArrays])
 
     // Whenever the CurrentSynArray state changes, update Next & Prev button States
@@ -70,16 +71,17 @@ const DefinitionCardSynonyms = ({ currentDef }) => {
         return allSynonyms
     }
 
-    const SeparateListOfSynsIntoTens = () => {
+    const SeparateListOfSynsIntoSets = () => {
         const allSynonyms = CreateArrayOfAllSyns()
+        let separationAmount = 20
         let arraysOfSynonyms = []
         let setOf10Array = []
         
         allSynonyms.forEach(synonym => {
             // If the array 10 or less, add current synonym
-            if (setOf10Array.length < 10) {
+            if (setOf10Array.length < separationAmount) {
                 setOf10Array.push(synonym)
-            } else if (setOf10Array.length === 10) {
+            } else if (setOf10Array.length === separationAmount) {
                 // If we've filled the array and their are still words,
                 // Add the array to Array of Arrays then clear array
                 arraysOfSynonyms.push(setOf10Array)
@@ -141,7 +143,8 @@ const DefinitionCardSynonyms = ({ currentDef }) => {
             <ul className="word__list synonym__words">
                 {
                     currentSynArray.map(synonym => {
-                        return <WordButton key={currentSynArray.indexOf(synonym)} props={{word: synonym}} />
+                        ++keyValue
+                        return <WordButton key={keyValue} props={{word: synonym}} />
                     })
                 }
             </ul>

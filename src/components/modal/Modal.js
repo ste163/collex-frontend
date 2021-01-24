@@ -9,7 +9,7 @@ import "./Modal.css"
     // Add a type label to top right corner with
         // contentHeader
         
-export const Modal = (React.forwardRef((props, ref) => (
+const Modal = (React.forwardRef((props, ref) => (
      (
         // Modal Background
         <section ref={ref} className="background__modal"
@@ -43,3 +43,5 @@ export const Modal = (React.forwardRef((props, ref) => (
         </section>
     )
 )))
+
+export default Modal

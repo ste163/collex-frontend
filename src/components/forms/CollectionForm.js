@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect, useRef } from "react"
 import { CollectionContext } from "../../providers/CollectionProvider"
-import { Modal } from "../modal/Modal"
+import Modal from "../modal/Modal"
 import "./CollectionForm.css"
 
 export const CollectionForm = props => {

@@ -1,8 +1,7 @@
 import React, { useRef, useContext } from "react"
 import { CollectionContext } from "../../providers/CollectionProvider"
 import { IconPlus } from "../icons/Icons"
-import { IconDividerVertical } from "../icons/Icons"
-import { Modal } from "../modal/Modal"
+import Modal from "../modal/Modal"
 import { CollectionForm } from "../forms/CollectionForm"
 import "./SubHeader.css"
 

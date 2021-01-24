@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react"
+import { ChangeIconClassOnHover } from "../../../../utils/ChangeIconClassOnHover"
 import { DefinitionCardContext } from "../../../../providers/DefinitionCardProvider" 
 import { ThesaurusContext } from "../../../../providers/ThesaurusProvider"
 import { CollectionContext } from "../../../../providers/CollectionProvider"
 import { WordContext } from "../../../../providers/WordProvider"
 import { IconClose, IconArrow } from "../../../../components/icons/Icons"
 import DefinitionCardSynonyms from "./DefinitionCardSynonyms"
-import { ChangeIconClassOnHover } from "../../../../utils/ChangeIconClassOnHover"
+import Modal from "../../../../components/modal/Modal"
 import "./DefinitionCard.css"
 // Definition cards handle all information related to retrieved search terms
 
@@ -59,6 +60,9 @@ export const DefinitionCard = props => {
 
     return (
         <article className="card card__color--white card__definition">
+
+            <Modal />
+
             <button className="btn__close card__definition--close"
             onClick={e => {
                 const removed = definitionCards.filter(card => definitionCards.indexOf(card) !== props.cardId)
@@ -109,7 +113,13 @@ export const DefinitionCard = props => {
             }
             
             {/* OPEN MODAL WITH SEARCH TO MW'S DICTIONARY API FOR CURRENT DEFINITION */}
-            <a className="definition__expanded">See Expanded Definition</a>
+            <a className="definition__expanded"
+            onClick={e => {
+                console.log('FETCH INFO FROM MW DICTIONARY WITH CURRENT WORD & PART OF SPEECH, PASS INTO MODAL')
+                // Will probably need a Ref to the modal to pass the info into? Or maybe it is just based on state
+            }}>
+                See Expanded Definition
+            </a>
 
             {/* DEFINITION LIST SECTION */}
             <h4 className="card__h4 definition__h4--speech">
