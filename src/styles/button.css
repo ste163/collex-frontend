@@ -25,6 +25,11 @@
     border-color: var(--black);
   }
 
+  .btn__arrow {
+    margin: 0;
+    padding: 0 0 0.1em 0;
+  }
+
   .btn__close {
     background-color: transparent;
     border: none;

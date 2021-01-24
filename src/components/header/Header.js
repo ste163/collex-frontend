@@ -15,6 +15,18 @@ const Header = () => {
     // Get references for modals
     const settingsModal = useRef()
 
+    // Util for changing just the setting svg icon
+    const ChangeHeaderSettingSvgClassOnHover = (hoverEvent, isOnMouseOver) => {
+        const svg = hoverEvent.currentTarget.firstElementChild.children[1].classList
+        if (isOnMouseOver) {
+            svg.remove("icon__whiteNoChange")
+            svg.add("icon__hovered")
+        } else {
+            svg.remove("icon__hovered")
+            svg.add("icon__whiteNoChange")
+        }
+    }
+
     return (
         <header className="header">
 
@@ -34,16 +46,8 @@ const Header = () => {
                             onClick={() => { 
                                 settingsModal.current.className = "background__modal modal__active"
                             }}
-                            onMouseOver={e => {
-                                    const svg = e.currentTarget.firstElementChild.children[1].classList
-                                    svg.remove("icon__whiteNoChange")
-                                    svg.add("icon__hovered")
-                                }}
-                                onMouseLeave={e => {
-                                    const svg = e.currentTarget.firstElementChild.children[1].classList
-                                    svg.remove("icon__hovered")
-                                    svg.add("icon__whiteNoChange")
-                                }}>
+                            onMouseOver={e => ChangeHeaderSettingSvgClassOnHover(e, true)}
+                            onMouseLeave={e => ChangeHeaderSettingSvgClassOnHover(e, false)}>
                                 <IconGear color="icon__whiteNoChange" />
                                 Settings
                             </button>
@@ -57,9 +61,9 @@ const Header = () => {
                             }}
                             onMouseOver={e => {
                                 e.currentTarget.firstElementChild.children[1].childNodes.forEach(svg => {
-                                        svg.classList.remove("icon__whiteNoChange")
-                                        svg.classList.add("icon__hovered")
-                                    })
+                                    svg.classList.remove("icon__whiteNoChange")
+                                    svg.classList.add("icon__hovered")
+                                })
                             }}
                             onMouseLeave={e => {
                                 e.currentTarget.firstElementChild.children[1].childNodes.forEach(svg => {

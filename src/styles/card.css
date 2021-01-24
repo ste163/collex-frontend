@@ -47,15 +47,6 @@
 }
 
 
-/* Definition card */
-.card__definition {
-    display: grid;
-    padding: 0.5em;
-    width: 15em;
-    height: min-content;
-}
-
-
 /* No Default cards */
 .card__noDefault {
     display: flex;

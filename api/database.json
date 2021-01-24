@@ -18,7 +18,7 @@
       "id": 1,
       "userId": 1,
       "defaultCollection": 0,
-      "TotalRecentsToStore": 7,
+      "TotalRecentsToStore": 6,
       "addToMultiple": "true",
       "colorMode": "light"
     },
@@ -152,6 +152,24 @@
       "collectionId": 15,
       "word": "muggy",
       "id": 136
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "musty",
+      "id": 137
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "test",
+      "id": 138
+    },
+    {
+      "userId": 1,
+      "collectionId": 0,
+      "word": "test",
+      "id": 139
     }
   ],
   "words": [

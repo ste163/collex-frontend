@@ -2,9 +2,10 @@ import React, { useContext, useEffect } from "react"
 import { DefinitionCardContext } from "../../../../providers/DefinitionCardProvider" 
 import { ThesaurusContext } from "../../../../providers/ThesaurusProvider"
 import { CollectionContext } from "../../../../providers/CollectionProvider"
-import { IconClose } from "../../../../components/icons/Icons"
 import { WordContext } from "../../../../providers/WordProvider"
+import { IconClose, IconArrow } from "../../../../components/icons/Icons"
 import WordButton from "../../../../components/word/WordButton"
+import { ChangeSvgClassOnHover } from "../../../../utils/ChangeSvgClassOnHover"
 import "./DefinitionCard.css"
 // Definition cards handle all information related to retrieved search terms
 
@@ -62,7 +63,15 @@ export const DefinitionCard = props => {
                                 const previous = definitions.indexOf(currentDef) - 1
                                 setCurrentDef(definitions[previous])
                             }}
-                            className="btn">Previous</button>
+                            onMouseOver={e => ChangeSvgClassOnHover(e, true)}
+                            onMouseLeave={e => ChangeSvgClassOnHover(e, false)}
+                            className="btn btn__arrow">
+                                {/*
+                                    Need to check on the className to add, If button is disabled? Then  need a 
+                                    btn__disabled class added that has pointer-events: none
+                                */}
+                                <IconArrow rotation="icon__arrow--rotated" color="icon__black" />
+                            </button>
                         }
 
                         <p className="next__text"> {definitions.indexOf(currentDef) + 1} / {definitions.length}</p>
@@ -74,7 +83,11 @@ export const DefinitionCard = props => {
                                 const next = definitions.indexOf(currentDef) + 1
                                 setCurrentDef(definitions[next])
                             }}
-                            className="btn">Next</button>
+                            onMouseOver={e => ChangeSvgClassOnHover(e, true)}
+                            onMouseLeave={e => ChangeSvgClassOnHover(e, false)}
+                            className="btn btn__arrow">
+                                <IconArrow color="icon__black" />
+                            </button>
                         }
                     </div>
                 }
