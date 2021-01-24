@@ -32,116 +32,111 @@ export const DefinitionCard = props => {
         setCurrentDef(definitions[0])
     }, [definitions])
 
+    if (!currentDef) {
+        return null;
+    }
+
     return (
-        !currentDef ? null : 
-            <article className="card card__color--white card__definition">
-                <button className="btn__close card__definition--close"
-                onClick={e => {
-                    const removed = definitionCards.filter(card => definitionCards.indexOf(card) !== props.cardId)
-                    setDefinitionCards(removed)
-                }}>
-                    <IconClose color="icon__gray" />
-                </button>
+        <article className="card card__color--white card__definition">
+            <button className="btn__close card__definition--close"
+            onClick={e => {
+                const removed = definitionCards.filter(card => definitionCards.indexOf(card) !== props.cardId)
+                setDefinitionCards(removed)
+            }}>
+                <IconClose color="icon__gray" />
+            </button>
 
-                <h2 className="card__h2">
-                    Definition
-                </h2>
-                
-                <h3 className="card__h3 definition__h3">
-                    {/* Displays currentDefintion's name */}
-                    {currentDef.meta.id}
-                </h3>
+            <h2 className="card__h2">
+                Definition
+            </h2>
+            
+            <h3 className="card__h3 definition__h3">
+                {/* Displays currentDefintion's name */}
+                {currentDef.meta.id}
+            </h3>
 
-                {
-                    // If more than one definition, show previous/next buttons to cycle through definitions
-                    definitions.length === 1 ? null :
-                    <div className="definition__next">
-                        {
-                            <button
-                            disabled={definitions.indexOf(currentDef) === 0}                           
-                            onClick={e => {
-                                const previous = definitions.indexOf(currentDef) - 1
-                                setCurrentDef(definitions[previous])
-                            }}
-                            onMouseOver={e => ChangeSvgClassOnHover(e, true)}
-                            onMouseLeave={e => ChangeSvgClassOnHover(e, false)}
-                            className="btn btn__arrow">
-                                {/*
-                                    Need to check on the className to add, If button is disabled? Then  need a 
-                                    btn__disabled class added that has pointer-events: none
-                                */}
-                                <IconArrow rotation="icon__arrow--rotated" color="icon__black" />
-                            </button>
-                        }
-
-                        <p className="next__text"> {definitions.indexOf(currentDef) + 1} / {definitions.length}</p>
-
-                        {
-                            <button
-                            disabled={definitions.indexOf(currentDef) === definitions.length - 1}  
-                            onClick={e => {
-                                const next = definitions.indexOf(currentDef) + 1
-                                setCurrentDef(definitions[next])
-                            }}
-                            onMouseOver={e => ChangeSvgClassOnHover(e, true)}
-                            onMouseLeave={e => ChangeSvgClassOnHover(e, false)}
-                            className="btn btn__arrow">
-                                <IconArrow color="icon__black" />
-                            </button>
-                        }
-                    </div>
-                }
-
-                <h4 className="card__h4 definition__h4--speech">
-                    {currentDef.fl}
-                </h4>
-                <div className="card__definition--text">
-                    {
-                        // RENAME THIS CONTAINER
-                        // NEED TO IMPROVE STYLING WITH BULLETS, ETC.
-                        currentDef.shortdef.map(shortDefinition => {
-                            return <p key={currentDef.shortdef.indexOf(shortDefinition)}>{shortDefinition}</p>
-                        })
-                    }
-                </div>
-                
-                {
-                    // If there are no synonyms, don't show the section
-                    currentDef.meta.syns.length === 0 ? null :
-                        <>
-                            <h4 className="card__h4 definition__h4--synonym">
-                                synonyms
-                            </h4>
-
-                            {/* word button list */}
-                            <ul className="word__list definition__words">
-                                {
-                                    currentDef.meta.syns.map(synonymArray => {
-                                        return synonymArray.map(synonym => {
-                                            return <WordButton key={synonymArray.indexOf(synonym)} props={{word: synonym}} />
-                                        })
-                                    })
-                                }
-                            </ul>
-                        </>
-                }
-                
-                {
-                    // If word is already in the user's collection, change this to REMOVE
-                    selectedCollection.id === 0 ? null :
-                    <button className="btn definition__submit"
+            {
+                // If more than one definition, show previous/next buttons to cycle through definitions
+                definitions.length === 1 ? null :
+                <div className="definition__next">
+                    <button                      
                     onClick={e => {
-                        const word = {
-                            userId,
-                            "collectionId": selectedCollection.id,
-                            "word": currentDef.meta.id
-                        }
-                        // NEED TO KNOW IF WORD IS IN DATABASE, AND NOT ALLOW IT TO BE ADDED.
-                        addWord(word)
-                    }}>
-                        Add to {selectedCollection.name}
+                        const previous = definitions.indexOf(currentDef) - 1
+                        setCurrentDef(definitions[previous])
+                    }}
+                    onMouseOver={e => definitions.indexOf(currentDef) === 0 ? null : ChangeSvgClassOnHover(e, true)}
+                    onMouseLeave={e => ChangeSvgClassOnHover(e, false)}
+                    className={definitions.indexOf(currentDef) === 0 ? "btn btn__arrow btn__disabled" : "btn btn__arrow"}>
+                        <IconArrow rotation="icon__arrow--rotated" color="icon__black" />
                     </button>
+
+                    <p className="next__text"> {definitions.indexOf(currentDef) + 1} / {definitions.length}</p>
+                    
+                    <button
+                    onClick={e => {
+                        const next = definitions.indexOf(currentDef) + 1
+                        setCurrentDef(definitions[next])
+                    }}
+                    onMouseOver={e => definitions.indexOf(currentDef) === definitions.length ? null : ChangeSvgClassOnHover(e, true)}
+                    onMouseLeave={e => ChangeSvgClassOnHover(e, false)}
+                    className={definitions.indexOf(currentDef) === definitions.length - 1 ? "btn btn__arrow btn__disabled" : "btn btn__arrow"}>
+                        <IconArrow color="icon__black" />
+                    </button>
+                </div>
+            }
+
+            <h4 className="card__h4 definition__h4--speech">
+                {currentDef.fl}
+            </h4>
+            <div className="card__definition--text">
+                {
+                    // RENAME THIS CONTAINER
+                    // NEED TO IMPROVE STYLING WITH BULLETS, ETC.
+                    currentDef.shortdef.map(shortDefinition => {
+                        return <p key={currentDef.shortdef.indexOf(shortDefinition)}>{shortDefinition}</p>
+                    })
                 }
-            </article>
+            </div>
+            
+            {
+                // SYNONYM SECTION
+                // If there are no synonyms, don't show the section
+                currentDef.meta.syns.length === 0 ? null :
+                    <>
+                        <h4 className="card__h4 definition__h4--synonym">
+                            synonyms
+                        </h4>
+
+                        {/* word button list */}
+                        <ul className="word__list definition__words">
+                            {
+                                currentDef.meta.syns.map(synonymArray => {
+                                    return synonymArray.map(synonym => {
+                                        return <WordButton key={synonymArray.indexOf(synonym)} props={{word: synonym}} />
+                                    })
+                                })
+                            }
+                        </ul>
+                    </>
+            }
+            
+            {
+                // ADD/REMOVE BUTTON SECTION
+                // If word is already in the user's collection, change this to REMOVE
+                selectedCollection.id === 0 ? null :
+                <button className="btn definition__submit"
+                onClick={e => {
+                    const word = {
+                        userId,
+                        "collectionId": selectedCollection.id,
+                        "word": currentDef.meta.id
+                    }
+                    // NEED TO KNOW IF WORD IS IN DATABASE, AND NOT ALLOW IT TO BE ADDED.
+                    addWord(word)
+                }}>
+                    Add to {selectedCollection.name}
+                </button>
+            }
+        </article>
     )
 }

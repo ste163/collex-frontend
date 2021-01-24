@@ -12,6 +12,11 @@
     transition: .1s;
   }
 
+  .btn__disabled {
+    pointer-events: none;
+    border-color: var(--mediumGray)
+  }
+
   .btn:hover {
     cursor: pointer;
     font-weight:var(--weightHeavy);
