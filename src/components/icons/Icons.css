@@ -8,6 +8,7 @@
     transition: var(--btnHover);
 }
 
+/* Colors */
 .icon__gray {
     fill: var(--darkGray);
     transition: var(--btnHover);
@@ -38,6 +39,12 @@
     transition: var(--btnHover);
 }
 
+.icon__disabled {
+    fill: var(--darkGray) !important
+}
+
+
+/* Type sizes */
 .icon__plus {
     height: 1em;
     width: 1em;
@@ -58,18 +65,6 @@
 
 .icon__arrow--rotated {
     transform: rotate(90deg);
-}
-
-.icon__graph {
-    margin-right: 0.4em;
-}
-
-.icon__table--link, .icon__graph--link {
-    transform: scale(2);
-    height: 0.8em;
-    width: 0.8em;
-    margin-top: 0.4em;
-    padding: 0.08em .25em;
 }
 
 .icon__gear {

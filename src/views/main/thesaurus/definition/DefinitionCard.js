@@ -1,11 +1,11 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { DefinitionCardContext } from "../../../../providers/DefinitionCardProvider" 
 import { ThesaurusContext } from "../../../../providers/ThesaurusProvider"
 import { CollectionContext } from "../../../../providers/CollectionProvider"
 import { WordContext } from "../../../../providers/WordProvider"
 import { IconClose, IconArrow } from "../../../../components/icons/Icons"
 import WordButton from "../../../../components/word/WordButton"
-import { ChangeSvgClassOnHover } from "../../../../utils/ChangeSvgClassOnHover"
+import { ChangeArrowIconClassOnHover } from "../../../../utils/ChangeArrowIconClass"
 import "./DefinitionCard.css"
 // Definition cards handle all information related to retrieved search terms
 
@@ -13,6 +13,9 @@ export const DefinitionCard = props => {
     // stores incoming array of all definitions for current term
     const definitions = props.props
     const userId = parseInt(sessionStorage.getItem("userId"))
+
+    // setState for previous and next buttons
+    const [ defPrevBtnDisabled, setDefPrevBtnDisabled ] = useState(true)
 
     // DefinitionCards hold the array of current cards
     const { definitionCards, setDefinitionCards } = useContext(ThesaurusContext)
@@ -31,6 +34,14 @@ export const DefinitionCard = props => {
     useEffect(() => {
         setCurrentDef(definitions[0])
     }, [definitions])
+
+    useEffect(() => {
+            if (definitions.indexOf(currentDef) === 0) {
+                setDefPrevBtnDisabled(true)
+            } else {
+                setDefPrevBtnDisabled(false)
+            }
+    }, [currentDef])
 
     if (!currentDef) {
         return null;
@@ -64,10 +75,10 @@ export const DefinitionCard = props => {
                         const previous = definitions.indexOf(currentDef) - 1
                         setCurrentDef(definitions[previous])
                     }}
-                    onMouseOver={e => ChangeSvgClassOnHover(e, true)}
-                    onMouseLeave={e => ChangeSvgClassOnHover(e, false)}
+                    onMouseOver={e => ChangeArrowIconClassOnHover(e, true)}
+                    onMouseLeave={e => ChangeArrowIconClassOnHover(e, false)}
                     className={definitions.indexOf(currentDef) === 0 ? "btn btn__arrow btn__disabled" : "btn btn__arrow"}>
-                        <IconArrow rotation="icon__arrow--rotated" color="icon__black" />
+                        <IconArrow rotation="icon__arrow--rotated" color="icon__black" disabled={defPrevBtnDisabled} />
                     </button>
 
                     <p className="next__text"> {definitions.indexOf(currentDef) + 1} / {definitions.length}</p>
@@ -77,10 +88,10 @@ export const DefinitionCard = props => {
                         const next = definitions.indexOf(currentDef) + 1
                         setCurrentDef(definitions[next])
                     }}
-                    onMouseOver={e => ChangeSvgClassOnHover(e, true)}
-                    onMouseLeave={e => ChangeSvgClassOnHover(e, false)}
+                    onMouseOver={e => ChangeArrowIconClassOnHover(e, true)}
+                    onMouseLeave={e => ChangeArrowIconClassOnHover(e, false)}
                     className={definitions.indexOf(currentDef) === definitions.length - 1 ? "btn btn__arrow btn__disabled" : "btn btn__arrow"}>
-                        <IconArrow color="icon__black" />
+                        <IconArrow color="icon__black" disabled={false} />
                     </button>
                 </div>
             }
