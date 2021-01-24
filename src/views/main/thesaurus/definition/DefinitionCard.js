@@ -4,7 +4,7 @@ import { ThesaurusContext } from "../../../../providers/ThesaurusProvider"
 import { CollectionContext } from "../../../../providers/CollectionProvider"
 import { WordContext } from "../../../../providers/WordProvider"
 import { IconClose, IconArrow } from "../../../../components/icons/Icons"
-import WordButton from "../../../../components/word/WordButton"
+import DefinitionCardSynonyms from "./DefinitionCardSynonyms"
 import { ChangeIconClassOnHover } from "../../../../utils/ChangeIconClassOnHover"
 import "./DefinitionCard.css"
 // Definition cards handle all information related to retrieved search terms
@@ -51,7 +51,6 @@ export const DefinitionCard = props => {
         } else {
             setDefNextBtnDisabled(false)
         }
-
     }, [currentDef])
 
     if (!currentDef) {
@@ -123,29 +122,8 @@ export const DefinitionCard = props => {
                     })
                 }
             </ol>
-         
-            {/* SYNONYM SECTION  */}
-            {
-                // If there are no synonyms, don't show the section
-                currentDef.meta.syns.length === 0 ? null :
-                <>
-                    <hr className="definition__divider"></hr>
-                    <h4 className="card__h4 definition__h4--synonym">
-                        synonyms
-                    </h4>
 
-                    {/* word button list */}
-                    <ul className="word__list definition__words">
-                        {
-                            currentDef.meta.syns.map(synonymArray => {
-                                return synonymArray.map(synonym => {
-                                    return <WordButton key={synonymArray.indexOf(synonym)} props={{word: synonym}} />
-                                })
-                            })
-                        }
-                    </ul>
-                </>
-            }
+            <DefinitionCardSynonyms currentDef={currentDef} />
             
             {/* ADD/REMOVE BUTTON SECTION */}
             {
