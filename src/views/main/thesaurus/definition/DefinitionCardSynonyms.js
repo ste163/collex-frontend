@@ -10,7 +10,7 @@ const DefinitionCardSynonyms = ({ currentDef }) => {
     useEffect(() => {
         setArrayOfSynonymArrays(SeparateListOfSynsIntoTens())
         console.log("Array of Arrays", arrayOfSynonymArrays)
-    }, [])
+    }, [currentDef])
     
     // Find total of synonyms for "Showing X out of TOTAL"
     const CalculateTotalSyns = () => {
@@ -65,11 +65,13 @@ const DefinitionCardSynonyms = ({ currentDef }) => {
             <h4 className="card__h4 definition__h4--synonym">
                 synonyms
             </h4>
-            {/* ONLY SHOW THE SHOWING X OUT OF AND PREV NEXT BTNS IF THERE'S MORE THAN ONE ARRAY */}
-            <p className="synonym__total">
-                Showing X out of {CalculateTotalSyns()}
-            </p>
-
+            {
+                arrayOfSynonymArrays.length === 1 ? null :
+                // Only show if there is more than one "page" of synonyms
+                <p className="synonym__total">
+                    Showing X out of {CalculateTotalSyns()}
+                </p>
+            }
             <ul className="word__list definition__words">
                 {
                     // allSynonyms.map(synonym => {
