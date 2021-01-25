@@ -55,6 +55,29 @@ const DefinitionCardSynonyms = ({ currentDef }) => {
         return totalSyns
     }
 
+    // Find total shown synonyms per page
+    const CalculateShowingSynAmount = () => {
+        const currentIndex = arrayOfSynonymArrays.indexOf(currentSynArray)
+        let synCount = 0
+        
+        // If on first page, set as currentSynArray.length else, we're on another page
+        if (currentIndex === 0) {
+            synCount = currentSynArray.length
+            return synCount
+        } else if (currentIndex > 0) {
+            // Loop over arrayOfSynonymArrays and stop and currentIndex
+            arrayOfSynonymArrays.forEach(array => {
+                // get the index of current array
+                const arrayIndex = arrayOfSynonymArrays.indexOf(array)
+                if (arrayIndex <= currentIndex) {
+                    // Add array's length to synonym count
+                    synCount += array.length
+                }
+            })
+            return synCount
+        }
+    }
+
     // Create a combined list of all synonyms for this definition
     // Returns nothing because it's affecting allSynonyms
     const CreateArrayOfAllSyns = () => {
@@ -110,8 +133,7 @@ const DefinitionCardSynonyms = ({ currentDef }) => {
                 // Only show if there is more than one "page" of synonyms
                 arrayOfSynonymArrays.length === 1 ? null :
                 <>
-                {/* NEED TO MAKE A PROPER SHOWING NUMBER BY ADDING FROM PREVIOUS ARRAY LENGTHS TO GET TOTALS */}
-                <p className="synonym__total">Showing {currentSynArray.length} out of {CalculateTotalSyns()}</p>
+                <p className="synonym__total">showing {CalculateShowingSynAmount()} out of {CalculateTotalSyns()}</p>
                 
                 {/* MAKE THIS A COMPONENT BECAUSE IT'S USED BY BOTH DEFINITIONS AND SYNONYMS */}
                 <div className="synonym__next">

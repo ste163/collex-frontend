@@ -11,7 +11,7 @@ export const ThesaurusSearch = () => {
 
     const { word, getWord } = useContext(ThesaurusContext)
     const { selectedCollection } = useContext(CollectionContext)
-    const { getRecents, addRecent, createRecentWordObj } = useContext(RecentContext)
+    const { getRecents, createRecentWordObj } = useContext(RecentContext)
 
     const [ search, setSearch ] = useState("")
 
