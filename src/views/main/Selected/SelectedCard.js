@@ -68,7 +68,7 @@ const SelectedCard = () => {
                     // Organize into buttons by alphabetical. With option for by part of speech
                     // Will probably need to store the part of speech in db for quick sorting
                         // Organize part of speech alphabetically
-                    wordsInCollection.map(w => <WordButton key={w.id} props={{word: w.word}} />)
+                    wordsInCollection.map(w => <WordButton key={w.id} props={{word: w.word, isSelectedCard: true}} />)
                 }
             </section>
 

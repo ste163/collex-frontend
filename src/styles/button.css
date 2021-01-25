@@ -12,9 +12,15 @@
     transition: .1s;
   }
 
+  .btn__disabled {
+    pointer-events: none;
+    border-color: var(--mediumGray);
+    background-color: var(--mediumGray);
+    transition: .1s;
+  }
+
   .btn:hover {
     cursor: pointer;
-    font-weight:var(--weightHeavy);
     background-color: var(--lightBlack);
     border-color: var(--lightBlack);
     color: var(--fontColorBtn);
@@ -23,6 +29,11 @@
   .btn:active {
     background-color: var(--black);
     border-color: var(--black);
+  }
+
+  .btn__arrow {
+    margin: 0;
+    padding: 0 0 0.1em 0;
   }
 
   .btn__close {

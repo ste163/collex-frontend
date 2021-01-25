@@ -5,19 +5,13 @@ import "./Icons.css"
 // To use Icons, pass in the following
     // a "Color=value" with the value based on Icons.css
 
-export const IconDividerVertical = props => (
-    <svg className="icon__divider" width="6" height="30" version="1.1" viewBox="0 0 1.5875 7.9376" xmlns="http://www.w3.org/2000/svg">
-        <title>Divider Icon</title>
-        <rect className={props.color}id="line_vert" x=".021209" y=".060976" width="1.5" height="7.8156" ry=".77252"/>
-    </svg>
-)
-
+// Takes a disabled prop
 export const IconArrow = props => (
-    <svg className="icon__arrow" width="35" height="20" version="1.1" viewBox="0 0 9.2606 5.2918" xmlns="http://www.w3.org/2000/svg">
+    <svg className={`icon__arrow ${props.rotation}`} width="35" height="20" version="1.1" viewBox="0 0 9.2606 5.2918" xmlns="http://www.w3.org/2000/svg">
         <title>Arrow Icon</title>
         <g transform="matrix(.526 0 0 .526 -.93661 -2.9209)">
-            <rect className={props.color} id="line_right" transform="rotate(45)" x="16.259" y="-8.8998" width="2.5113" height="12.703"/>
-            <rect className={props.color} id="line_left" transform="rotate(135)" x="1.2924" y="-18.771" width="2.5113" height="12.703"/>
+            <rect className={props.disabled ? "icon__disabled" : props.color} id="line_right" transform="rotate(45)" x="16.259" y="-8.8998" width="2.5113" height="12.703"/>
+            <rect className={props.disabled ? "icon__disabled" : props.color} id="line_left" transform="rotate(135)" x="1.2924" y="-18.771" width="2.5113" height="12.703"/>
         </g>
     </svg>
 )

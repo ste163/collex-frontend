@@ -4,6 +4,8 @@ export const RecentContext = createContext()
 
 export const RecentProvider = props => {
 
+    const userId = parseInt(sessionStorage.getItem("userId"))
+
     const [ recents, setRecents ] = useState([])
 
     // Should be by collectionId, if no collection selected, get all recents will a NULL selection.
@@ -49,9 +51,21 @@ export const RecentProvider = props => {
     //     .then(getRecents(userId))
     // }
 
+    const createRecentWordObj = (word, selectedCollection) => {
+        const collectionId = selectedCollection === undefined ? null : selectedCollection.id
+
+        const newRecent = {
+            userId,
+            collectionId,
+            word
+        }
+
+        addRecent(newRecent)
+    }
+
     return (
         <RecentContext.Provider value={{
-            recents, getRecents, addRecent, deleteRecent
+            recents, getRecents, addRecent, deleteRecent, createRecentWordObj
         }}>
             {props.children}
         </RecentContext.Provider>

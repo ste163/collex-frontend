@@ -1,10 +1,12 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
+import { ChangeIconClassOnHover } from "../../../../utils/ChangeIconClassOnHover"
 import { DefinitionCardContext } from "../../../../providers/DefinitionCardProvider" 
 import { ThesaurusContext } from "../../../../providers/ThesaurusProvider"
 import { CollectionContext } from "../../../../providers/CollectionProvider"
-import { IconClose } from "../../../../components/icons/Icons"
 import { WordContext } from "../../../../providers/WordProvider"
-import WordButton from "../../../../components/word/WordButton"
+import { IconClose, IconArrow } from "../../../../components/icons/Icons"
+import DefinitionCardSynonyms from "./DefinitionCardSynonyms"
+import Modal from "../../../../components/modal/Modal"
 import "./DefinitionCard.css"
 // Definition cards handle all information related to retrieved search terms
 
@@ -12,6 +14,10 @@ export const DefinitionCard = props => {
     // stores incoming array of all definitions for current term
     const definitions = props.props
     const userId = parseInt(sessionStorage.getItem("userId"))
+
+    // setState for previous and next buttons
+    const [ defPrevBtnDisabled, setDefPrevBtnDisabled ] = useState(true)
+    const [ defNextBtnDisabled, setDefNextBtnDisabled ] = useState(false)
 
     // DefinitionCards hold the array of current cards
     const { definitionCards, setDefinitionCards } = useContext(ThesaurusContext)
@@ -31,91 +37,106 @@ export const DefinitionCard = props => {
         setCurrentDef(definitions[0])
     }, [definitions])
 
+    // Need useEffect to always check if the next def buttons should have
+    // active or disabled SVG arrow class state per card
+    useEffect(() => {
+        // PreviousDefinitionBtn State
+        if (definitions.indexOf(currentDef) === 0) {
+            setDefPrevBtnDisabled(true)
+        } else {
+            setDefPrevBtnDisabled(false)
+        }
+        // NextDefinitionBtn State
+        if (definitions.indexOf(currentDef) === definitions.length - 1) {
+            setDefNextBtnDisabled(true)
+        } else {
+            setDefNextBtnDisabled(false)
+        }
+    }, [currentDef])
+
+    if (!currentDef) {
+        return null;
+    }
+
     return (
-        !currentDef ? null : 
-            <article className="card card__color--white card__definition">
-                <button className="btn__close card__definition--close"
-                onClick={e => {
-                    const removed = definitionCards.filter(card => definitionCards.indexOf(card) !== props.cardId)
-                    setDefinitionCards(removed)
-                }}>
-                    <IconClose color="icon__gray" />
-                </button>
+        <article className="card card__color--white card__definition">
 
-                <h2 className="card__h2">
-                    Definition
-                </h2>
-                
-                <h3 className="card__h3 definition__h3">
-                    {/* Displays currentDefintion's name */}
-                    {currentDef.meta.id}
-                </h3>
+            <button className="btn__close card__definition--close"
+            onClick={e => {
+                const removed = definitionCards.filter(card => definitionCards.indexOf(card) !== props.cardId)
+                setDefinitionCards(removed)
+            }}
+            onMouseOver={e => ChangeIconClassOnHover(e, true, "icon__gray", "icon__hovered")}
+            onMouseLeave={e => ChangeIconClassOnHover(e, true, "icon__hovered", "icon__gray")}>
+                <IconClose color="icon__gray" />
+            </button>
 
-                {
-                    // If more than one definition, show previous/next buttons to cycle through definitions
-                    definitions.length === 1 ? null :
-                    <div className="definition__next">
-                        {
-                            <button
-                            disabled={definitions.indexOf(currentDef) === 0}                           
-                            onClick={e => {
-                                const previous = definitions.indexOf(currentDef) - 1
-                                setCurrentDef(definitions[previous])
-                            }}
-                            className="btn">Previous</button>
-                        }
+            <h2 className="card__h2 definition__h2">
+                Definition
+            </h2>
+            
+            <h3 className="card__h3 definition__h3">
+                {/* Displays currentDefintion's name */}
+                {currentDef.meta.id}
+            </h3>
 
-                        <p className="next__text"> {definitions.indexOf(currentDef) + 1} / {definitions.length}</p>
+            {
+                // If more than one definition, show previous/next buttons to cycle through definitions
+                definitions.length === 1 ? null :
+                <div className="definition__next">
+                    <button                      
+                    onClick={e => {
+                        const previous = definitions.indexOf(currentDef) - 1
+                        setCurrentDef(definitions[previous])
+                    }}
+                    onMouseOver={e => ChangeIconClassOnHover(e, true, "icon__black", "icon__white")}
+                    onMouseLeave={e => ChangeIconClassOnHover(e, false, "icon__black", "icon__white")}
+                    className={definitions.indexOf(currentDef) === 0 ? "btn btn__arrow btn__disabled" : "btn btn__arrow"}>
+                        <IconArrow rotation="icon__arrow--rotated" color="icon__black" disabled={defPrevBtnDisabled} />
+                    </button>
 
-                        {
-                            <button
-                            disabled={definitions.indexOf(currentDef) === definitions.length - 1}  
-                            onClick={e => {
-                                const next = definitions.indexOf(currentDef) + 1
-                                setCurrentDef(definitions[next])
-                            }}
-                            className="btn">Next</button>
-                        }
-                    </div>
-                }
-
-                <h4 className="card__h4 definition__h4--speech">
-                    {currentDef.fl}
-                </h4>
-                <div className="card__definition--text">
-                    {
-                        // RENAME THIS CONTAINER
-                        // NEED TO IMPROVE STYLING WITH BULLETS, ETC.
-                        currentDef.shortdef.map(shortDefinition => {
-                            return <p key={currentDef.shortdef.indexOf(shortDefinition)}>{shortDefinition}</p>
-                        })
-                    }
+                    <p className="next__text"> {definitions.indexOf(currentDef) + 1} / {definitions.length}</p>
+                    
+                    <button
+                    onClick={e => {
+                        const next = definitions.indexOf(currentDef) + 1
+                        setCurrentDef(definitions[next])
+                    }}
+                    onMouseOver={e => ChangeIconClassOnHover(e, true, "icon__black", "icon__white")}
+                    onMouseLeave={e => ChangeIconClassOnHover(e, false, "icon__black", "icon__white")}
+                    className={definitions.indexOf(currentDef) === definitions.length - 1 ? "btn btn__arrow btn__disabled" : "btn btn__arrow"}>
+                        <IconArrow color="icon__black" disabled={defNextBtnDisabled} />
+                    </button>
                 </div>
-                
-                {
-                    // If there are no synonyms, don't show the section
-                    currentDef.meta.syns.length === 0 ? null :
-                        <>
-                            <h4 className="card__h4 definition__h4--synonym">
-                                synonyms
-                            </h4>
+            }
+            
+            {/* OPEN MODAL WITH SEARCH TO MW'S DICTIONARY API FOR CURRENT DEFINITION */}
+            <a className="definition__expanded"
+            onClick={e => {
+                console.log('FETCH INFO FROM MW DICTIONARY WITH CURRENT WORD & PART OF SPEECH, PASS INTO MODAL')
+                // Will probably need a Ref to the modal to pass the info into? Or maybe it is just based on state
+            }}>
+                See Expanded Definition
+            </a>
 
-                            {/* word button list */}
-                            <ul className="word__list definition__words">
-                                {
-                                    currentDef.meta.syns.map(synonymArray => {
-                                        return synonymArray.map(synonym => {
-                                            return <WordButton key={synonymArray.indexOf(synonym)} props={{word: synonym}} />
-                                        })
-                                    })
-                                }
-                            </ul>
-                        </>
-                }
-                
+            {/* DEFINITION LIST SECTION */}
+            <h4 className="card__h4 definition__h4--speech">
+                {currentDef.fl}
+            </h4>
+            <ol className="definitions__list">
                 {
-                    // If word is already in the user's collection, change this to REMOVE
-                    selectedCollection.id === 0 ? null :
+                currentDef.shortdef.map(shortDefinition => {
+                        return <li className="list__definition" key={currentDef.shortdef.indexOf(shortDefinition)}>{shortDefinition}</li>
+                    })
+                }
+            </ol>
+
+            <DefinitionCardSynonyms currentDef={currentDef} />
+            
+            {/* ADD/REMOVE BUTTON SECTION */}
+            {
+                // If word is already in the user's collection, change this to REMOVE
+                selectedCollection.id === 0 ? null :
                     <button className="btn definition__submit"
                     onClick={e => {
                         const word = {
@@ -128,7 +149,7 @@ export const DefinitionCard = props => {
                     }}>
                         Add to {selectedCollection.name}
                     </button>
-                }
-            </article>
+            }
+        </article>
     )
 }

@@ -1,3 +1,10 @@
+.card__definition {
+    display: grid;
+    padding: 0.5em;
+    height: min-content;
+    width: var(--cardWidthThesaurusColumn);
+}
+
 .card__definition--close {
     grid-row: 1;
     grid-column: 2;
@@ -5,8 +12,13 @@
     align-self: start;
 }
 
+.definition__h2 {
+    margin: 0;
+}
+
 .definition__h3 {
-    margin-bottom: 0.3em;
+    grid-column: 1 / 3 !important;
+    margin: 0em !important;
 }
 
 .definition__next {
@@ -15,7 +27,7 @@
     display: flex;
     flex-flow: row;
     align-items: center;
-    margin-bottom: 0.5em;
+    margin: 0.2em 0 0.5em 0;
 }
 
 .next__text {
@@ -26,29 +38,70 @@
 .definition__h4--speech {
     grid-column: 1;
     grid-row: 4;
+    margin: 0 0 0.2em 0;
 }
 
-.card__definition--text {
+.definitions__list {
     grid-row: 5;
     grid-column: 1 / 3;
-    margin-bottom: 0.5em;
-    font-size: 1em;
+    margin: 0;
+    padding-left: 1.5em;
+    font-size: 0.8em;
     font-weight: var(--weightNormal);
+}
+
+.list__definition {
+    padding-right: 0.2em;
+    padding-bottom: 0.5em;
+}
+
+.definition__expanded {
+    grid-column: 1 / 3;
+    grid-row: 6;
+    justify-self: right;
+    font-size: 0.65em;
+    font-weight: var(--weightHeavy);
+    cursor: pointer;
+    margin-bottom: 0.45em;
+}
+
+.definition__divider {
+    grid-column: 1 / 3;
+    grid-row: 7;
+    margin: 0.3em 0 0.75em 0;
 }
 
 .definition__h4--synonym {
     grid-column: 1;
-    grid-row: 6;
+    grid-row: 8;
+    margin-bottom: 0.2em !important;
 }
 
-.definition__words {
-    grid-row: 7;
+.synonym__total {
+    grid-column: 1 / 3;
+    grid-row: 9;
+    margin-bottom: 0.5em;
+    font-size: 0.7em;
+    font-weight: var(--weightThin)
+}
+
+.synonym__next {
+    grid-column: 1;
+    grid-row: 10;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin: 0.2em 0 0.5em 0;
+}
+
+.synonym__words {
+    grid-row: 11;
     grid-column: 1 / 3;
 }
 
 .definition__submit {
     margin-top: 1em;
-    grid-row: 8;
+    grid-row: 12;
     grid-column: 1 / 3;
 }
 

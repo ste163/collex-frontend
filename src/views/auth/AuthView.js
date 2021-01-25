@@ -1,6 +1,6 @@
 import React, { useRef, useState, useContext } from "react"
 import { useHistory } from "react-router-dom"
-import { Modal } from "../../components/modal/Modal";
+import Modal from "../../components/modal/Modal";
 import { SettingsContext } from "../../providers/SettingsProvider"
 import ChangeColorMode from "../../utils/ChangeColorMode"
 import LexLogo from "../../components/branding/LexLogo"

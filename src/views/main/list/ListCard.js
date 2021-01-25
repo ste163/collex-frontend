@@ -25,7 +25,7 @@ const ListCard = ({collection}) => {
             <h2 id={collection.id} className="collection__h2--card">{collection.name}</h2>
             <p id={collection.id} className="collection__p">{collection.description}</p>
             <div id={collection.id} className="collection__arrow">
-                <IconArrow id={collection.id} color="icon__gray"/>
+                <IconArrow id={collection.id} color="icon__gray" />
             </div>
         </button>
     )
