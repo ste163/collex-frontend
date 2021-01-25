@@ -57,7 +57,7 @@
   --typeMarginBottom: 0.5em;
   
   /* Card Widths */
-  --cardWidthThesaurusColumn: 15em;
+  --cardWidthThesaurusColumn: 40%;
 
   /* Transitions */
   --btnHover: 0.2s

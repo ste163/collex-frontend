@@ -186,12 +186,6 @@
     {
       "userId": 1,
       "collectionId": 20,
-      "word": "balm",
-      "id": 155
-    },
-    {
-      "userId": 1,
-      "collectionId": 20,
       "word": "bouquet",
       "id": 156
     },
@@ -242,6 +236,12 @@
       "collectionId": 0,
       "word": "test",
       "id": 164
+    },
+    {
+      "userId": 1,
+      "collectionId": 20,
+      "word": "redolence",
+      "id": 165
     }
   ],
   "words": [

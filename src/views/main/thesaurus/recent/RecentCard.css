@@ -4,7 +4,7 @@
     margin-bottom: 1.5em;
     padding: .5em;
     align-items: left;
-    width: var(--cardWidthThesaurusColumn);
+    flex-basis: var(--cardWidthThesaurusColumn);
     height: min-content;
 }
 
